@@ -30,7 +30,10 @@ Route::get('hello/captcha/{tmp}', 'HelloController@captcha');
 //验证
 Route::post('yanzheng','HelloController@yanzheng');
 //重置密码
-Route::get('zhaohui/{name}','HelloController@zhaohui');
+//Route::get('hello/zhao/{name}','HelloController@zhao');
+Route::get('zhao','HelloController@zhao');
+//发送邮件常见问题
+Route::get('question1','HelloController@question');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
