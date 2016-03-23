@@ -169,9 +169,14 @@ class HelloController extends Controller
             echo '发送邮件失败，请重试！';
         }
     }
-    public function zhaohui($name){
-        $arr=DB::select("select * from user1 where md5(u_email)=$name");
-print_r($arr);
-        return view('zhaohui',['name'=>$name]);
+    public function zhao(){
+        $name=$_GET['name'];
+        $arr=DB::select("select * from user1 where md5(u_email)='$name'");
+        $email=$arr[0]['u_email'];
+        return view('zhaohui',['email'=>$email]);
+    }
+    //邮箱常见问题
+    public function question(){
+        return view('question');
     }
 }
