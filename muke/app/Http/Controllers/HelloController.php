@@ -14,9 +14,6 @@ use Mail;
 
 class HelloController extends Controller
 {
-	public function wangping(){
-		echo 'dddd';
-	}
     public function Learn(){
     	//方向查询
     	//$direction=DB::table('direction')->get();
