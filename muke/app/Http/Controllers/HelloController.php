@@ -14,9 +14,7 @@ use Mail;
 
 class HelloController extends Controller
 {
-    public function sdfjfshd(){
-        echo 999;
-    }
+    
     public function Learn(){
     	//方向查询
     	//$direction=DB::table('direction')->get();
