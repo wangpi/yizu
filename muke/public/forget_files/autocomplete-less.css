@@ -1,0 +1,32 @@
+.autoul {
+  width: 298px;
+  margin: 0px;
+  margin-top: -5px;
+  padding: 0px;
+  border: 1px solid #98a1a6;
+  border-top: 0 none;
+  overflow: hidden;
+}
+.autoul .autoli {
+  color: #787d82;
+  height: 39px;
+  line-height: 39px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 10px;
+  overflow: hidden;
+  display: none;
+  /*当对象内文本溢出时显示省略标记*/
+  text-overflow: ellipsis;
+}
+.lihover {
+  background-color: #edf1f2;
+}
+span {
+  padding-right: 2px;
+}
+.autoul .showli {
+  display: block;
+}
+/* 经过过滤的li的样式 */
