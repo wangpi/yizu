@@ -29,10 +29,6 @@ var is_choice = "";
     var ownName="271833261@qq.com"
 
 </script>
-
-
-    <link type="text/css" rel="stylesheet" href="../css/css.css" />
-
     <script>
         function openNew(){
             //获取页面的高度和宽度
