@@ -31,7 +31,7 @@ var is_choice = "";
 </script>
 
 
-    <link type="text/css" rel="stylesheet" href="../css/css.css" />
+    
 
     <script>
         function openNew(){
