@@ -75,8 +75,20 @@ class HelloController extends Controller
 
     }
 
+
     public function Com(){
     	$text=$_GET['text'];
     	echo $text;
+    }
+    public function zhao(){
+        $name=$_GET['name'];
+        $arr=DB::select("select * from user1 where md5(u_email)='$name'");
+        $email=$arr[0]['u_email'];
+        return view('zhaohui',['email'=>$email]);
+    }
+    //邮箱常见问题
+    public function question(){
+        return view('question');
+
     }
 }

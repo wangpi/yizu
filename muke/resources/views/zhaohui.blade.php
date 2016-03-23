@@ -12,9 +12,9 @@
     <meta name="keywords" content="慕课网，慕课官网，MOOC，移动开发，IT技能培训，免费编程视频，php开发教程，web前端开发，在线编程学习，html5视频教程，css教程，ios开发培训，安卓开发教程">
     <meta name="description" content="慕课网（IMOOC）是学习编程最简单的免费平台。慕课网提供了丰富的移动端开发、php开发、web前端、html5教程以及css3视频教程等课程资源。它富有交互性及趣味性，并且你可以和朋友一起编程。">
 
-    <link rel="stylesheet" href="././base.css" type="text/css">
-    <link rel="stylesheet" href="././common-less.css" type="text/css">
-    <script src="./push.js"></script><script src="././rt.js" async="" type="text/javascript"></script><script type="text/javascript">
+    <link rel="stylesheet" href="./zhaohui/base.css" type="text/css">
+    <link rel="stylesheet" href="./zhaohui/common-less.css" type="text/css">
+    <script src="./zhaohui/push.js"></script><script src="./zhaohui/rt.js" async="" type="text/javascript"></script><script type="text/javascript">
 
         var OP_CONFIG={"module":"user","page":"resetpasspage"};
         var isLogin = 0;
@@ -24,17 +24,11 @@
 
     </script>
 
-    <link rel="stylesheet" href="./login-regist.css">
-    <link rel="stylesheet" href="./settings.css">
+    <link rel="stylesheet" href="./zhaohui/login-regist.css">
+    <link rel="stylesheet" href="./zhaohui/settings.css">
 
-    <script src="./jquery.js" async="" charset="utf-8"></script><script src="././seajs-text.js" async="" charset="utf-8"></script><script src="././common.js" async="" charset="utf-8"></script><script src="././string.js" async="" charset="utf-8"></script><script src="././suggest.js" async="" charset="utf-8"></script><script src="././store.js" async="" charset="utf-8"></script><script src="././json.js" async="" charset="utf-8"></script><script src="././im.js" async="" charset="utf-8"></script><script src="././resetpasspage.js" async="" charset="utf-8"></script><script src="././socket.js" async="" charset="utf-8"></script><script src="././placeholder.js" async="" charset="utf-8"></script><script src="././validate.js" async="" charset="utf-8"></script></head>
+    <script src="./zhaohui/jquery.js" async="" charset="utf-8"></script><script src="./zhaohui/seajs-text.js" async="" charset="utf-8"></script><script src="./zhaohui/common.js" async="" charset="utf-8"></script><script src="./zhaohui/string.js" async="" charset="utf-8"></script><script src="././suggest.js" async="" charset="utf-8"></script><script src="./zhaohui/store.js" async="" charset="utf-8"></script><script src="./zhaohui/json.js" async="" charset="utf-8"></script><script src="./zhaohui/im.js" async="" charset="utf-8"></script><script src="./zhaohui/resetpasspage.js" async="" charset="utf-8"></script><script src="./zhaohui/socket.js" async="" charset="utf-8"></script><script src="./zhaohui/placeholder.js" async="" charset="utf-8"></script><script src="./zhaohui/validate.js" async="" charset="utf-8"></script></head>
 <body>
-
-<div id="head" class="sig-head">
-    <a href="http://www.imooc.com/" target="_self" class="sig-img">慕课网</a>
-</div>
-
-
 <div id="main">
 
     <div class="wcontainer">
@@ -42,7 +36,7 @@
             <div class="pwd-reset-box">
                 <div class="wel-hd">
                     <h1 class="form-h1">重设密码</h1>
-                    <h2 class="user-email">帐号：<span>{{$name}}</span></h2>
+                    <h2 class="user-email">帐号：<span>{{$email}}</span></h2>
                 </div>
                 <form action="/user/resetpassword" method="post" id="pagePwReset">
                     <div class="wlfg-box">
@@ -90,6 +84,7 @@
 
 
 <div style="display: none">
+
     <script type="text/javascript">
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));

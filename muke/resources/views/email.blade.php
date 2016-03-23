@@ -12,9 +12,9 @@
     <meta name="keywords" content="慕课网，慕课官网，MOOC，移动开发，IT技能培训，免费编程视频，php开发教程，web前端开发，在线编程学习，html5视频教程，css教程，ios开发培训，安卓开发教程">
     <meta name="description" content="慕课网（IMOOC）是学习编程最简单的免费平台。慕课网提供了丰富的移动端开发、php开发、web前端、html5教程以及css3视频教程等课程资源。它富有交互性及趣味性，并且你可以和朋友一起编程。">
 
-    <link rel="stylesheet" href="forget_files/base.css" type="text/css">
-    <link rel="stylesheet" href="forget_files/common-less.css" type="text/css">
-    <script src="forget_files/push.js"></script><script src="forget_files/rt.js" async="" type="text/javascript"></script><script type="text/javascript">
+    <link rel="stylesheet" href="forget/base.css" type="text/css">
+    <link rel="stylesheet" href="forget/common-less.css" type="text/css">
+    <script src="forget/push.js"></script><script src="forget/rt.js" async="" type="text/javascript"></script><script type="text/javascript">
 
         var OP_CONFIG={"module":"user","page":"newforgot"};
         var isLogin = 0;
@@ -24,11 +24,11 @@
 
     </script>
 
-    <link rel="stylesheet" href="forget_files/loginsign-less.css">
-    <link rel="stylesheet" href="forget_files/autocomplete-less.css">
-    <link rel="stylesheet" href="forget_files/settings.css">
+    <link rel="stylesheet" href="forget/loginsign-less.css">
+    <link rel="stylesheet" href="forget/autocomplete-less.css">
+    <link rel="stylesheet" href="forget/settings.css">
 
-    <script src="forget_files/jquery.js" async="" charset="utf-8"></script><script src="forget_files/seajs-text.js" async="" charset="utf-8"></script><script src="forget_files/common.js" async="" charset="utf-8"></script><script src="forget_files/string.js" async="" charset="utf-8"></script><script src="forget_files/suggest.js" async="" charset="utf-8"></script><script src="forget_files/store.js" async="" charset="utf-8"></script><script src="forget_files/json.js" async="" charset="utf-8"></script><script src="forget_files/im.js" async="" charset="utf-8"></script><script src="forget_files/newforgot.js" async="" charset="utf-8"></script><script src="forget_files/socket.js" async="" charset="utf-8"></script><script src="forget_files/placeholder.js" async="" charset="utf-8"></script><script src="forget_files/modal.js" async="" charset="utf-8"></script><script src="forget_files/validate.js" async="" charset="utf-8"></script></head>
+    <script src="forget/jquery.js" async="" charset="utf-8"></script><script src="forget/seajs-text.js" async="" charset="utf-8"></script><script src="forget/common.js" async="" charset="utf-8"></script><script src="forget/string.js" async="" charset="utf-8"></script><script src="forget/suggest.js" async="" charset="utf-8"></script><script src="forget/store.js" async="" charset="utf-8"></script><script src="forget/json.js" async="" charset="utf-8"></script><script src="forget/im.js" async="" charset="utf-8"></script><script src="forget/newforgot.js" async="" charset="utf-8"></script><script src="forget/socket.js" async="" charset="utf-8"></script><script src="forget/placeholder.js" async="" charset="utf-8"></script><script src="forget/modal.js" async="" charset="utf-8"></script><script src="forget/validate.js" async="" charset="utf-8"></script></head>
 <body>
 
 <div id="head" class="sig-head">
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-control form-control-verify">
                                 <input id="verify-ipt" name="verify" maxlength="4" class="ipt" placeholder="请输入验证码" type="text">
-                                <img class="verify-img js-change-verify-code" src="forget_files/getcode.png" alt="验证码" title="验证码">
+                                <img class="verify-img js-change-verify-code" src="forget/getcode.png" alt="验证码" title="验证码">
                                 <a href="javascript:void(0)" class="icon-refresh js-change-verify-code"></a>
                                 <p class="tips"></p>
                             </div>
@@ -67,7 +67,7 @@
                                 <a href="javascript:void(0);" id="js-forgot-submit" class="btn btn-red link-btn btn-block">提交</a>
                             </div>
                             <div class="faq-link">
-                                收不到邮件？查看 <a href="http://www.imooc.com/about/faq?t=2" target="_blank">常见问题</a>
+                                收不到邮件？查看 <a href="question" target="_blank">常见问题</a>
                             </div>
                         </form>
                     </div>
@@ -76,7 +76,8 @@
                         <p class="js-email-add">密码重设连接邮件已发送到您的邮箱<br><a href="http://mail.qq.com/" target="_blank">查看邮件&gt;&gt;</a></p>
                         <p class="get-info">请注意查收并重新设置密码</p>
                         <a href="learn" class="btn btn-red link-btn back-regir">返回登录</a>
-                        <p class="get-info" style="padding-top:20px">收不到邮件？查看<a href="http://www.imooc.com/about/faq?t=2" target="_blank" style="color: #f00000 !important"> 常见问题</a></p>
+                        <p class="get-info" style="padding-top:20px">收不到邮件？查看
+                            <a href="question1" target="_blank" style="color: #f00000 !important"> 常见问题</a></p>
                         <!-- <p>
                         密码重设连接邮件已发送到您的邮箱<em></em><br/>
                         请注意查收并重新设置密码
@@ -95,9 +96,9 @@
 
 
 <!--script-->
-<script src="forget_files/ssologin.js"></script>
-<script type="text/javascript" src="forget_files/sea.js"></script>
-<script type="text/javascript" src="forget_files/sea_config.js"></script>
+<script src="forget/ssologin.js"></script>
+<script type="text/javascript" src="forget/sea.js"></script>
+<script type="text/javascript" src="forget/sea_config.js"></script>
 <script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
 
 
@@ -113,7 +114,7 @@
             var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
             var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
         })(document);
-    </script><script src="forget_files/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=f0cfcccd7b1393990c78efdeebff3968" target="_blank"><img src="forget_files/21.gif" height="20" border="0" width="20"></a>
+    </script><script src="forget/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=f0cfcccd7b1393990c78efdeebff3968" target="_blank"><img src="forget/21.gif" height="20" border="0" width="20"></a>
     <script>
         (function(){
             var bp = document.createElement('script');
@@ -122,7 +123,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-</div><script src="forget_files/user.htm" type="text/javascript"></script><script src="forget_files/iplookup.php" type="text/javascript"></script>
+</div><script src="forget/user.htm" type="text/javascript"></script><script src="forget/iplookup.php" type="text/javascript"></script>
 
 
 </body></html>
