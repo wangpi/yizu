@@ -26,18 +26,36 @@ class HelloController extends Controller
     	//难度查询
     	//$nandu = DB::table('difficulty')->get();
         $nandu=DB::select("select * from difficulty");
+        $list = DB::select("select * from course inner join difficulty on course.direction_id=difficulty.d_id limit 20");
+        @$nan_id = $_REQUEST['nan_id'];
+        @$c_id = $_REQUEST['c_id'];
+        @$d_id = $_REQUEST['d_id'];
+        $nan_id = $nan_id=""?"":$nan_id;
+        $c_id = $c_id=""?"":$c_id;
+        $d_id = $d_id=""?"":$d_id;
+        $id = array(
+                'nan_id'=>$nan_id,
+                'c_id'=>$c_id,
+                'd_id'=>$d_id
+            );
+        //print_r($id);die;
         session_start();
         $session_id=session_id();
 
         //$name="王平";
         if(empty($_SESSION['name'])){
-            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu]);
+            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'list'=>$list,'id'=>$id]);
         }else{
             $name=$_SESSION['name'];
             //根据名称查询个人信息
             $arr=DB::select("select * from user1 where u_name='$name'");
-            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'name'=>$name,'arr'=>$arr]);
+            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'name'=>$name,'arr'=>$arr,'list'=>$list,'id'=>$id]);
         }
+    }
+    public function Shai(){
+        $nan_id = $_REQUEST['nan_id'];
+        $c_id = $_REQUEST['c_id'];
+        echo $nan_id,$c_id;die;
     }
     public function Fenlei(){
     	$d_id = $_REQUEST['d_id'];
@@ -166,6 +184,156 @@ class HelloController extends Controller
     public function question(){
         return view('question');
     }
+
+
+	
+
+    public function Index(){
+    	$user = session('user');
+    	$k_id = $_REQUEST['k_id'];
+    	$sql="select * from zhangjie where k_id = '$k_id'";
+    	$re=DB::select($sql);
+    	if(empty($user)){
+    	//print_r($re);die;
+            $sq="select * from course where c_id='$k_id'";
+            $rr=DB::select($sq);
+            //print_r($rr);die;
+    		return view('index')->with(['name'=>$re,'id'=>$k_id,'rr'=>$rr]);
+    	}
+    }
+
+    public function Go(){
+    	//Session::put('key', 'value');
+    	 //$user = session('key');
+    	 //echo $user;die;
+    	$id=$_GET['id'];
+    	$sql="select * from zhangjie where k_id = '$id'";
+    	$re=DB::select($sql);
+   		return view('go')->with(['re'=>$re]);
+    }
+
+    public function Golist(){
+    	$id=$_POST['name'];
+    	$sql="select v_title,v_id from video where z_id = '$id'";
+    	$re=DB::select($sql);
+    	echo json_encode($re);
+    }
+
+    public function Beg(){
+        $id=$_GET['id'];
+        session_start();
+    	$user = $_SESSION['user'];
+    	if(empty($user)){
+    		echo '1';
+    	}
+    	else{
+    		$id=$_SESSION['id'];
+        $sql="select * from user1 where u_id='$id'";
+        $re=DB::select($sql);
+        $sq="select * from video where v_id='$id'";
+        $rr=DB::select($sq);
+        //print_r($rr);die;
+        //print_r($re);die;
+        return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+    	}
+    }
+
+    public function Log(){
+    	$log=$_POST['log'];
+    	$pass=$_POST['pwd'];
+    	$sql="select u_name,u_pwd,u_id from user1  where u_name = '$log'";
+    	$re=DB::select($sql);
+    	//print_r($re);die;
+    	if($re){
+    		if($pass==$re['0']['u_pwd']){
+                session_start();
+    			$_SESSION['user'] = $re['0']['u_name'];
+    			$_SESSION['id']=$re['0']['u_id'];
+
+       			return redirect('/poh');
+    		}
+    		else{
+    			echo "<script>alert('密码错误请重新输入');
+    			window.history.go(-1)</script>";
+    		}
+    	}
+    	else{
+    		echo "<script>alert('用户名有误');window.history.go(-1)</script>";
+    	}
+
+    }
+
+    public function pohion(){
+       session_start();
+        $id=$_SESSION['id'];
+        $sql="select * from user1 where u_id='$id'";
+        $re=DB::select($sql);
+        //print_r($re);die;
+        return view('blsh')->with(['re'=>$re]);
+    }
+
+    public function Com(){
+    	$text=$_GET['text'];
+        $vi=$_GET['vi'];
+        $id=$_SESSION['id'];
+        //echo $text;
+        $time=date("Y-m-d H:i:s",time());
+        //echo $time;
+       // $sql="insert into comment(aid,)";
+    	
+    }
+
+    public function Lian(){
+    	$re=DB::table('liu')->paginate(1);
+    	return view('lian')->with(['re'=>$re]);
+    }
+
+    public function liko(){
+    	$name=$_GET['name'];
+    	$sql="insert into liu(liu) values('$name')";
+    	$re=DB::insert($sql);
+    	if($re){
+    		echo '1';
+    	}
+    	else{
+    		echo '0';
+    	}
+    }
+
+    public function del(){
+    	$id=$_GET['id'];
+    	$sql="delete from liu where id='$id'";
+    	$re=DB::insert($sql);
+    	if($re){
+    		echo "<script>alert('删除成功');</script>";
+    	}
+    	else{
+    		echo "<script>alert('删除失败');</script>";
+    	}
+    }
+
+    public function up(){
+    	$id=$_GET['id'];
+    	$sql="select * from liu where id='$id'";
+    	$re=DB::select($sql);
+       // print_r($re);die;
+    	return view('up')->with(['re'=>$re]);
+    }
+
+    public function que(){
+        $id=$_POST['bb'];
+        $liu=$_POST['aa'];
+        $sql="update liu set liu='$liu' where id= '$id'";
+        $re=DB::update($sql);
+        if($re){
+            echo "<script>alert('修改成功');</script>";
+        }
+        else{
+            echo "<script>alert('修改成功');</script>";
+        }
+
+    }
+
     //修改密码
     public function xiugai(){
         $email=$_POST['email'];
@@ -213,5 +381,8 @@ class HelloController extends Controller
                 echo 2;
             }
         }
+
+        echo $email;
+
     }
 }
