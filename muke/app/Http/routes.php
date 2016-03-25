@@ -34,6 +34,8 @@ Route::post('yanzheng','HelloController@yanzheng');
 Route::get('zhao','HelloController@zhao');
 //发送邮件常见问题
 Route::get('question1','HelloController@question');
+//筛选
+Route::get('shai','HelloController@shai');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

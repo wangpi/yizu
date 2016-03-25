@@ -26,18 +26,33 @@ class HelloController extends Controller
     	//难度查询
     	//$nandu = DB::table('difficulty')->get();
         $nandu=DB::select("select * from difficulty");
+        $list = DB::select("select * from course inner join difficulty on course.direction_id=difficulty.d_id limit 20");
+        $nan_id = "";
+        $c_id = "";
+        $d_id = "";
+        $id = array(
+                'nan_id'=>$nan_id,
+                'c_id'=>$c_id,
+                'd_id'=>$d_id
+            );
+        //print_r($id);die;
         session_start();
         $session_id=session_id();
 
         //$name="王平";
         if(empty($_SESSION['name'])){
-            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu]);
+            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'list'=>$list,'id'=>$id]);
         }else{
             $name=$_SESSION['name'];
             //根据名称查询个人信息
             $arr=DB::select("select * from user1 where u_name='$name'");
-            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'name'=>$name,'arr'=>$arr]);
+            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'name'=>$name,'arr'=>$arr,'list'=>$list,'id'=>$id]);
         }
+    }
+    public function Shai(){
+        $nan_id = $_REQUEST['nan_id'];
+        $c_id = $_REQUEST['c_id'];
+        echo $nan_id,$c_id;die;
     }
     public function Fenlei(){
     	$d_id = $_REQUEST['d_id'];
