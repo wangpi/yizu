@@ -284,7 +284,7 @@ class HelloController extends Controller
         else{
             echo "<script>alert('修改成功');</script>";
         }
-
+   }
     //修改密码
     public function xiugai(){
         $email=$_POST['email'];
