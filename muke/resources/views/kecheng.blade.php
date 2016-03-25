@@ -29,13 +29,6 @@ var is_choice = "";
     var ownName="271833261@qq.com"
 
 </script>
-<<<<<<< HEAD
-
-
-    
-
-=======
->>>>>>> 5b0feb313d83a4555513db638ceade15222c1f55
     <script>
         function openNew(){
             //获取页面的高度和宽度
@@ -224,12 +217,12 @@ var is_choice = "";
                         <ul class="">
 
                             <li class="course-nav-item on">
-                                <a href="fenlei?d_id=0">全部</a>
+                                <a href="#">全部</a>
                             </li>
                                 <?php foreach($direction as $k=>$v){?>
                                                                 <li class="course-nav-item
                                 ">
-                                    <a href="fenlei?d_id=<?php echo $v['d_id']?>" data-ct="be"><?php echo $v['d_name']?></a>
+                                    <a href="#" data-ct="be" id="dir" dir_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                                 </li>
                                <?php }?>
 
@@ -240,11 +233,11 @@ var is_choice = "";
                     <div class="bd">
                         <ul class="">
                                                                                                         <li class="course-nav-item on">
-                                <a href="http://www.imooc.com/course/list?c=">全部</a>
+                                <a href="#">全部</a>
                             </li>
                                         <?php foreach($class as $k=>$v){?>
                                                                                 <li class="course-nav-item ">
-                                            <a href="http://www.imooc.com/course/list?c=javascript" data-id="44" data-ct="fe"><?php echo $v['c_name']?></a>
+                                            <a href="#" data-id="44" data-ct="fe" id="c_id" c_id="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></a>
                                         </li>
                                         <?php }?>
                                                                                </div>
@@ -254,17 +247,27 @@ var is_choice = "";
                     <div class="bd">
                         <ul class="">
                                                                                                                     <li class="course-nav-item  on">
-                                <a href="http://www.imooc.com/course/list?is_easy=0">全部</a>
+                                <a href="#">全部</a>
                             </li>
                             <?php foreach ($nandu as $k=>$v){?>
                             <li class="course-nav-item ">
-                                <a href="http://www.imooc.com/course/list?is_easy=1"><?php echo $v['d_name']?></a>
+                                <a href="#" id="nan" nan_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                             </li>
                             <?php }?>
                         </ul>
                     </div>
                 </div>
             </div>
+            <input type="hidden" value="<?php echo $id['nan_id']?>" />
+            <input type="hidden" value="<?php echo $id['d_id']?>" />
+            <input type="hidden" value="<?php echo $id['c_id']?>" />
+<script>
+   
+        $(document).on('click','#nan',function(){
+            nan_id = $(this).attr('nan_id');
+            alert(nan_id);
+        })
+</script>
             <div class="course-tool-bar clearfix">
                 <div class="tool-left l">
                                             <a href="http://www.imooc.com/course/list?sort=last" class="sort-item">最新</a>
@@ -295,29 +298,32 @@ var is_choice = "";
 
 
 
+                                                        <?php foreach ($list as $k => $v): ?>
+
+
                                                         <li class="course-one">
-                            <a href="http://www.imooc.com/view/9" target="_self">
+                            <a href="#" target="_self">
                         <div class="course-list-img">
-                <img width="240" height="135" alt="HTML+CSS基础课程" src="./kecheng/529dc3380001379906000338-240-135.jpg">
+                <img width="240" height="135" alt="HTML+CSS基础课程" src="./img/<?php echo $v['c_img']?>">
                         </div>
             <h5>
-                <span>HTML+CSS基础课程</span>
+                <span><?php echo $v['c_name']?></span>
             </h5>
             <div class="tips">
-                <p class="text-ellipsis">8小时带领大家步步深入学习标签的基础知识，掌握各种样式的基本用法。</p>
+                <p class="text-ellipsis"><?php echo $v['c_desc']?></p>
                                     <span class="l ">更新完毕</span>
 
                 <span class="l ml20">
-                                285513
-                                人学习</span>
+                                <?php echo $v['c_ren']?>人学习</span>
             </div>
             <span class="time-label">
-                                    9小时17分钟 | 初级
+                                    <?php echo $v['c_addtime']?> | <?php echo $v['d_name']?>
                             </span>
             <b class="follow-label">跟我学</b>
             </a>
         </li>
-                                        <li class="course-one">
+    <?php endforeach ?>
+                                        <<!-- li class="course-one">
                             <a href="http://www.imooc.com/view/85" target="_self">
                         <div class="course-list-img">
                 <img width="240" height="135" alt="Java入门第一季" src="./kecheng/536059be00010b6d06000338-240-135.jpg">
@@ -734,7 +740,7 @@ var is_choice = "";
                             </span>
             <b class="follow-label">跟我学</b>
             </a>
-        </li>
+        </li> -->
                                             </ul>
                 </div>
                 <div class="page"><span class="disabled_page">首页</span><span class="disabled_page">上一页</span><a href="javascript:void(0)" class="active">1</a><a href="http://www.imooc.com/course/list?page=2">2</a><a href="http://www.imooc.com/course/list?page=3">3</a><a href="http://www.imooc.com/course/list?page=4">4</a><a href="http://www.imooc.com/course/list?page=5">5</a><a href="http://www.imooc.com/course/list?page=6">6</a><a href="http://www.imooc.com/course/list?page=7">7</a><a href="http://www.imooc.com/course/list?page=2">下一页</a><a href="http://www.imooc.com/course/list?page=26">尾页</a></div>
