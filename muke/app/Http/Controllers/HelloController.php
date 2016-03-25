@@ -156,19 +156,6 @@ class HelloController extends Controller
             }
         }
     }
-    public function send()
-    {
-        $name = '慕课网';
-        $flag = Mail::send('emails.test',['name'=>$name],function($message){
-            $to = '1749537612@qq.com';
-            $message ->to($to)->subject('么么哒');
-        });
-        if($flag){
-            echo '发送邮件成功，请查收！';
-        }else{
-            echo '发送邮件失败，请重试！';
-        }
-    }
     public function zhao(){
         $name=$_GET['name'];
         $arr=DB::select("select * from user1 where md5(u_email)='$name'");
@@ -178,5 +165,11 @@ class HelloController extends Controller
     //邮箱常见问题
     public function question(){
         return view('question');
+    }
+    //修改密码
+    public function xiugai(){
+        $email=$_POST['email'];
+        $pwd=$_POST['newpass'];
+        echo $email;
     }
 }
