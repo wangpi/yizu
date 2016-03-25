@@ -21,7 +21,7 @@ class HelloController extends Controller
     	//print_r($re);die;
     	//分类查询
     	//$class = DB::table('class')->get();
-        $class=DB::select("select * from class");
+        $class=DB::select("select * from classs");
     	//print_r($class);die;
     	//难度查询
     	//$nandu = DB::table('difficulty')->get();
@@ -60,9 +60,9 @@ class HelloController extends Controller
     public function Fenlei(){
     	$d_id = $_REQUEST['d_id'];
     	if ($d_id==0) {
-            $class=DB::select("select * from class");
+            $class=DB::select("select * from classs");
     	}else{
-    		$class = DB::select("select * from class where d_id='$d_id'");
+    		$class = DB::select("select * from classs where d_id='$d_id'");
     	}
     	//方向查询
         $direction=DB::select("select * from direction");
@@ -220,27 +220,25 @@ class HelloController extends Controller
     }
 
     public function Beg(){
-        $id=$_GET['id'];
         session_start();
-    	$user = $_SESSION['user'];
-    	if(empty($user)){
+    	if(!isset($_SESSION['user'])){
     		echo '1';
     	}
     	else{
-    		$id=$_SESSION['id'];
-        $sql="select * from user1 where u_id='$id'";
-        $re=DB::select($sql);
-        $sq="select * from video where v_id='$id'";
-        $rr=DB::select($sq);
-        //print_r($rr);die;
-        //print_r($re);die;
-        return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+            
+             $ppo=$_GET['id'];
+        	 $id=$_SESSION['id'];
+             $sql="select * from user1 where u_id='$id'";
+             $re=DB::select($sql);
+             $sq="select * from video where v_id='$ppo'";
+             $rr=DB::select($sq);
+             return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
     	}
     }
 
     public function Log(){
     	$log=$_POST['log'];
-    	$pass=$_POST['pwd'];
+    	$pass=md5($_POST['pwd']);
     	$sql="select u_name,u_pwd,u_id from user1  where u_name = '$log'";
     	$re=DB::select($sql);
     	//print_r($re);die;
@@ -249,7 +247,6 @@ class HelloController extends Controller
                 session_start();
     			$_SESSION['user'] = $re['0']['u_name'];
     			$_SESSION['id']=$re['0']['u_id'];
-
        			return redirect('/poh');
     		}
     		else{
@@ -268,18 +265,29 @@ class HelloController extends Controller
         $id=$_SESSION['id'];
         $sql="select * from user1 where u_id='$id'";
         $re=DB::select($sql);
+        $ppo='1';
+        $sq="select * from video where v_id='$ppo'";
+        $rr=DB::select($sq);
         //print_r($re);die;
-        return view('blsh')->with(['re'=>$re]);
+        return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
     }
 
     public function Com(){
+        session_start();
     	$text=$_GET['text'];
         $vi=$_GET['vi'];
         $id=$_SESSION['id'];
-        //echo $text;
         $time=date("Y-m-d H:i:s",time());
         //echo $time;
-       // $sql="insert into comment(aid,)";
+        $sql="insert into comment(v_id,comment,ctime,u_id) values('$vi','$text','$time','$id')";
+        //echo $sql;
+        $re=DB::insert($sql);
+         if($re){
+            echo '1';
+        }
+         else{
+            echo '2';
+        }
     	
     }
 

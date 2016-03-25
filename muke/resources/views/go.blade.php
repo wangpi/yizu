@@ -196,16 +196,16 @@ var GC = {
   <div class="content-wrap clearfix">
     <div class="content">
       <div class="mod-tab-menu">
-	<ul class="course-menu clearfix">
-		<li><a class="ui-tabs-active active" id="learnOn" href="./go/jQuery基础修炼圣典—DOM篇_技术学习教程_慕课网.html"><span>章节</span></a></li>
-		<li><a id="commentOn" class="" href="http://www.imooc.com/comment/530"><span>评论</span></a></li>
-		<li><a id="qaOn" class="" href="http://www.imooc.com/qa/530"><span>问答</span></a></li>
-		<li><a id="noteOn" class="" href="http://www.imooc.com/note/530?sort=last"><span>笔记</span></a></li>
-	    <!--
+  <ul class="course-menu clearfix">
+    <li><a class="ui-tabs-active active" id="learnOn" href="./go/jQuery基础修炼圣典—DOM篇_技术学习教程_慕课网.html"><span>章节</span></a></li>
+    <li><a id="commentOn" class="" href="http://www.imooc.com/comment/530"><span>评论</span></a></li>
+    <li><a id="qaOn" class="" href="http://www.imooc.com/qa/530"><span>问答</span></a></li>
+    <li><a id="noteOn" class="" href="http://www.imooc.com/note/530?sort=last"><span>笔记</span></a></li>
+      <!--
         <li><a id="wikiOn" class="" href="/wiki/530">WIKI</a></li>
         -->
-	</ul>
-	</div>
+  </ul>
+  </div>
 
       
 
@@ -366,7 +366,7 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
 
 
 <script type="text/javascript" src="./go/user"></script><script type="text/javascript" src="./go/iplookup.php"></script>
-<script src="./go/jquery-1.8.3.js"></script>		
+<script src="./go/jquery-1.8.3.js"></script>    
 <script>
     $(".aaa").click( function () { 
         var aaa=$(this).attr("opp");
@@ -386,9 +386,9 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
             }
         });
     });
-</script>	
+</script> 
 <link rel="stylesheet" href="./go/lanrenzhijia.css" media="all">
-<script src="./go/jquery.min.js"></script>	
+<script src="./go/jquery.min.js"></script>  
 <script>
 jQuery(document).ready(function($) {
     $('.theme-login').click(function(){
