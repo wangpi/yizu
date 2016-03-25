@@ -23162,3 +23162,21 @@ Stack trace:
 #32 E:\WWW\three\yizu\muke\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #33 E:\WWW\three\yizu\muke\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #34 {main}  
+[2016-03-26 07:14:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'public' (T_PUBLIC)' in E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php:99
+Stack trace:
+#0 {main}  
+[2016-03-26 07:15:11] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php:454
+Stack trace:
+#0 {main}  
+[2016-03-26 07:15:12] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php:454
+Stack trace:
+#0 {main}  
+[2016-03-26 07:15:29] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'public' (T_PUBLIC)' in E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php:100
+Stack trace:
+#0 {main}  
+[2016-03-26 07:15:30] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'public' (T_PUBLIC)' in E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php:100
+Stack trace:
+#0 {main}  
+[2016-03-26 07:15:53] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php:454
+Stack trace:
+#0 {main}  
