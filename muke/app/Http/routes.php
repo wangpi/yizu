@@ -32,8 +32,17 @@ Route::post('yanzheng','HelloController@yanzheng');
 //重置密码
 //Route::get('hello/zhao/{name}','HelloController@zhao');
 Route::get('zhao','HelloController@zhao');
+Route::post('xiugai','HelloController@xiugai');
 //发送邮件常见问题
 Route::get('question1','HelloController@question');
+
+//注册
+Route::get('register','HelloController@register');
+
+Route::get('register1','HelloController@register1');
+
+Route::post('zhu','HelloController@zhuce');
+
 //体验学习
 Route::get('aaa',"HelloController@Index");
 //开始学习
@@ -46,6 +55,9 @@ Route::get('oo',"HelloController@Beg");
 Route::post('pl',"HelloController@Log");
 //用户观看视频评论
 Route::get('co',"HelloController@Com");
+//用户头像
+Route::get('poh',"HelloController@pohion");
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

@@ -34,7 +34,6 @@ var is_choice = "";
             //获取页面的高度和宽度
             var sWidth=document.body.scrollWidth;
             var sHeight=document.body.scrollHeight;
-
             //获取页面的可视区域高度和宽度
             var wHeight=document.documentElement.clientHeight;
 
@@ -45,7 +44,7 @@ var is_choice = "";
             document.body.appendChild(oMask);
             var oLogin=document.createElement("div");
             oLogin.id="login";
-            oLogin.innerHTML="<div id='signin' class='rl-modal in' aria-hidden='false'><div class='rl-modal-header'><h1><span class='active-title'>登录</span><span data-fromto='signin:signup'>注册</span></h1><button type='button' class='rl-close' data-dismiss='modal' hidefocus='true' aria-hidden='true'></button></div><div class='rl-modal-body'><div class='clearfix'><div class='l-left-wrap l'>" +
+            oLogin.innerHTML="<div id='signin' class='rl-modal in' aria-hidden='false'><div class='rl-modal-header'><h1><span class='active-title'>登录</span></h1><button type='button' class='rl-close' data-dismiss='modal' hidefocus='true' aria-hidden='true'></button></div><div class='rl-modal-body'><div class='clearfix'><div class='l-left-wrap l'>" +
             "<form id='signup-form' autocomplete='off'><p class='rlf-tip-globle' id='signin-globle-error'></p><div class='rlf-group'>" +
             "<input type='text' value='' id='email' data-validate='email' autocomplete='off' class='ipt ipt-email js-own-name' placeholder='请输入登录邮箱'><span id='email_sp'></span><p class='rlf-tip-wrap'></p></div><input style='display:none' type='text' name='fakeusernameremembered'><input style='display:none' type='password' name='fakepasswordremembered'><div class='rlf-group'>" +
             "<input type='password' id='pwd' autocomplete='off' class='ipt ipt-pwd ipt-error' placeholder='请输入密码'>" +
@@ -76,12 +75,8 @@ var is_choice = "";
                 openNew();
                 return false;
             }
-
         }
     </script>
-
-
-
 
 
 
@@ -124,7 +119,7 @@ var is_choice = "";
                     <a href="#" id="btnLogin">登录</a>
                 </li>
                 <li class="header-signup">
-                    <a href="#" id="btnRe">注册</a>
+                    <a href="register" id="btnZhu">注册</a>
                 </li>
                 <?php }else{ ?>
                 <li class='header-app'>
