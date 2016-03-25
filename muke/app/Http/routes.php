@@ -34,6 +34,18 @@ Route::post('yanzheng','HelloController@yanzheng');
 Route::get('zhao','HelloController@zhao');
 //发送邮件常见问题
 Route::get('question1','HelloController@question');
+//体验学习
+Route::get('aaa',"HelloController@Index");
+//开始学习
+Route::get('bbb',"HelloController@Go");
+//开始学习点击效果
+Route::post('bl',"HelloController@Golist");
+//判断登录session弹出登陆框
+Route::get('oo',"HelloController@Beg");
+//判断用户观看视频登录
+Route::post('pl',"HelloController@Log");
+//用户观看视频评论
+Route::get('co',"HelloController@Com");
 /*
 |--------------------------------------------------------------------------
 | Application Routes
