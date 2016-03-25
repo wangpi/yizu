@@ -91,7 +91,7 @@ var videoTitle = "1-1 需求分析和项目准备";
                     </a>
                 </li>
                 <li class="set_btn user-card-box">
-                    <a id="header-avator" class="user-card-item" action-type="my_menu" href="http://www.imooc.com/u/3056088/courses" target="_self"><img src="./blsh/56e9f6a00001a0c901000100-40-40.jpg" width="40" height="40">
+                    <a id="header-avator" class="user-card-item" action-type="my_menu" href="http://www.imooc.com/u/3056088/courses" target="_self"><img src="<?php echo $re['0']['u_photo']?>" width="40" height="40">
                         <i class="myspace_remind" style="display: none;"></i>
                         <span style="display: none;">动态提醒</span>
                     </a>
@@ -141,9 +141,9 @@ var videoTitle = "1-1 需求分析和项目准备";
  
 <div id="bgarea" class="video-con">
     
-        
+        <input type="hidden" id="vi" value="<?php echo $rr['0']['v_id']?>">
         <video controls="controls" width="800px" height="200px" id="mp4" autoplay>
-				<source src="./video/1.mp4" type="video/mp4">
+				<source src="<?php echo $rr['0']['v_src']?>" type="video/mp4">
 		</video>
 
 		<div class="next-box J_next-box hide">
@@ -555,11 +555,12 @@ body{margin:8px;font-family:sans-serif;font-size:16px;}p{margin:5px 0;}&lt;/styl
 <script>
 	$("#js-pl-submit").click( function () { 
 			var aa=$("#js-pl-textarea").val();
+            var vi=$("#vi").val();
 			//alert(aa);
 			$.ajax({
 			   type: "GET",
 			   url: "co",
-			   data: "text="+aa,
+			   data: "text="+aa+"&vi="+vi,
 			   success: function(msg){
 			     alert(  msg );
 			   }

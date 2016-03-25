@@ -195,7 +195,10 @@ class HelloController extends Controller
     	$re=DB::select($sql);
     	if(empty($user)){
     	//print_r($re);die;
-    		return view('index')->with(['name'=>$re,'id'=>$k_id]);
+            $sq="select * from course where c_id='$k_id'";
+            $rr=DB::select($sq);
+            //print_r($rr);die;
+    		return view('index')->with(['name'=>$re,'id'=>$k_id,'rr'=>$rr]);
     	}
     }
 
@@ -217,12 +220,21 @@ class HelloController extends Controller
     }
 
     public function Beg(){
-    	$user = session('user');
+        $id=$_GET['id'];
+        session_start();
+    	$user = $_SESSION['user'];
     	if(empty($user)){
     		echo '1';
     	}
     	else{
-    		return view('blsh');
+    		$id=$_SESSION['id'];
+        $sql="select * from user1 where u_id='$id'";
+        $re=DB::select($sql);
+        $sq="select * from video where v_id='$id'";
+        $rr=DB::select($sq);
+        //print_r($rr);die;
+        //print_r($re);die;
+        return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
     	}
     }
 
@@ -234,9 +246,11 @@ class HelloController extends Controller
     	//print_r($re);die;
     	if($re){
     		if($pass==$re['0']['u_pwd']){
+                session_start();
     			$_SESSION['user'] = $re['0']['u_name'];
     			$_SESSION['id']=$re['0']['u_id'];
-       			return view('blsh');
+
+       			return redirect('/poh');
     		}
     		else{
     			echo "<script>alert('密码错误请重新输入');
@@ -249,8 +263,23 @@ class HelloController extends Controller
 
     }
 
+    public function pohion(){
+       session_start();
+        $id=$_SESSION['id'];
+        $sql="select * from user1 where u_id='$id'";
+        $re=DB::select($sql);
+        //print_r($re);die;
+        return view('blsh')->with(['re'=>$re]);
+    }
+
     public function Com(){
     	$text=$_GET['text'];
+        $vi=$_GET['vi'];
+        $id=$_SESSION['id'];
+        //echo $text;
+        $time=date("Y-m-d H:i:s",time());
+        //echo $time;
+       // $sql="insert into comment(aid,)";
     	
     }
 

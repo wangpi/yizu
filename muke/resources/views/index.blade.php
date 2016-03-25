@@ -3,7 +3,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <title>
-            前端开发工具技巧介绍—Sublime篇
+           <?php echo $rr['0']['c_name'];?>
     </title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="renderer" content="webkit">
@@ -115,27 +115,27 @@ var GC = {
         <a href="http://www.imooc.com/course/list">课程</a>
                 <i class="path-split">\</i><a href="http://www.imooc.com/course/list?c=fe">前端开发</a>
                         <i class="path-split">\</i><a href="http://www.imooc.com/course/list?c=fetool">前端工具</a>
-                <i class="path-split">\</i><span>前端开发工具技巧介绍—Sublime篇</span>
+                <i class="path-split">\</i><span><?php echo $rr['0']['c_name']?></span>
     </div>
     <div class="hd">
-      <h2 class="l">前端开发工具技巧介绍—Sublime篇</h2>
+      <h2 class="l"><?php echo $rr['0']['c_name']?></h2>
             <a href="javascript:;" class="l video-desc-trigger" id="js-video-trigger">
         <i class="ic-video"></i>视频介绍
       </a>
           </div>
     <div class="statics clearfix">
       <div class="static-item ">
-        <span class="meta-value"><strong>初级</strong></span>
+        <span class="meta-value"><strong><?php echo $rr['0']['c_nan']?></strong></span>
         <span class="meta">难度</span>
         <em></em>
       </div>
       <div class="static-item static-time">
-        <span class="meta-value"><strong> 1</strong>小时<strong> 0</strong>分</span>
+        <span class="meta-value"><strong><?php echo $rr['0']['c_addtime']?></span>
         <span class="meta">时长</span>
         <em></em>
       </div>
       <div class="static-item">
-        <span class="meta-value"><strong>80143</strong></span>
+        <span class="meta-value"><strong><?php echo $rr['0']['c_ren']?></strong></span>
         <span class="meta">学习人数</span>
         <em></em>
       </div>
@@ -198,15 +198,15 @@ var GC = {
         <div class="condition-box">
         <div class="condition">
             <h3>内容实用</h3>
-            <p>10.0</p>
+            <p><?php echo $rr['0']['c_nei']?></p>
         </div>
         <div class="condition">
             <h3>通俗易懂</h3>
-            <p>9.6</p>
+            <p><?php echo $rr['0']['c_tong']?></p>
         </div>
         <div class="condition">
             <h3>逻辑清晰</h3>
-            <p>9.4</p>
+            <p><?php echo $rr['0']['c_luo']?></p>
         </div>
     </div><!--condition-box end-->
             <p class="person-num noLogin"><a href="javascript:;" target="_blank">178人评价</a></p>
@@ -216,23 +216,9 @@ var GC = {
     <div class="content">
       <div class="course-brief">
         <h3 class="ctit">课程介绍</h3>
-        <p class="auto-wrap">本课程主要对Sublime Text这款前端开发工具中的非常优秀的特性进行介绍，命令模式、Goto anything、多行游标等这些能极大提高你的生产力，不愧是码农进阶必备神器。</p>
+        <p class="auto-wrap"><?php echo $rr['0']['c_zong']?></p>
       </div>
       <div class="course-outline">
-        <div class="bar clearfix">
-          <h3 class="ctit l">课程提纲</h3>
-          <ul class="tools l">
-            <li class="l">
-              13<i class="icon-video"></i><span>视频</span>
-            </li>
-            <li class="l">
-              3<i class="icon-test"></i><span>练习题</span>
-            </li>
-            <li class="l">
-              0<i class="icon-code"></i><span>编程练习</span>
-            </li>
-          </ul>
-        </div>
         <div class="outline-list">
                       <ul> 
                     <?php

@@ -48,6 +48,9 @@ Route::get('oo',"HelloController@Beg");
 Route::post('pl',"HelloController@Log");
 //用户观看视频评论
 Route::get('co',"HelloController@Com");
+//用户头像
+Route::get('poh',"HelloController@pohion");
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

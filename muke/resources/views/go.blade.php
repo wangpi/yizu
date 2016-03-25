@@ -380,7 +380,7 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
            success: function(msg){
             //alert(msg);
             for(i in msg){
-                bbb+=" <h4><a target='_blank' href='bo?id="+msg[i]['v_id']+"' class='J-media-item studyvideo'>"+msg[i]['v_title']+"</a></h4>"
+                bbb+=" <h4><a target='_blank' href='oo?id="+msg[i]['v_id']+"' class='J-media-item studyvideo'>"+msg[i]['v_title']+"</a></h4>"
             } 
               ooo.html(bbb);
             }
