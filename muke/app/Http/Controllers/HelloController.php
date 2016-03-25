@@ -21,54 +21,78 @@ class HelloController extends Controller
     	//print_r($re);die;
     	//分类查询
     	//$class = DB::table('class')->get();
-        $class=DB::select("select * from class");
+        $class=DB::select("select * from classs");
     	//print_r($class);die;
     	//难度查询
     	//$nandu = DB::table('difficulty')->get();
         $nandu=DB::select("select * from difficulty");
-        $list = DB::select("select * from course inner join difficulty on course.direction_id=difficulty.d_id limit 20");
+        //最新最热
+        $hot = DB::table('hot')->get();
+        //多条件筛选
         @$nan_id = $_REQUEST['nan_id'];
         @$c_id = $_REQUEST['c_id'];
+        @$z_id = $_REQUEST['z_id'];
         @$d_id = $_REQUEST['d_id'];
         $nan_id = $nan_id=""?"":$nan_id;
         $c_id = $c_id=""?"":$c_id;
+        $z_id = $z_id=""?"":$z_id;
         $d_id = $d_id=""?"":$d_id;
         $id = array(
                 'nan_id'=>$nan_id,
                 'c_id'=>$c_id,
+                'z_id'=>$z_id,
                 'd_id'=>$d_id
             );
         //print_r($id);die;
+        //$where = "";
+        $where = empty($z_id) ? 1 : "z_id like '%$z_id%'";
+        $where = empty($nan_id) ? $where : $where . " and nandu_id like '%$nan_id%'";
+        $where = empty($c_id) ? $where : $where . " and class_id like '%$c_id%'";
+        //列表查询
+        $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where limit 20");
+        
         session_start();
         $session_id=session_id();
 
         //$name="王平";
         if(empty($_SESSION['name'])){
-            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'list'=>$list,'id'=>$id]);
+            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'list'=>$list,'id'=>$id,'hot'=>$hot]);
         }else{
             $name=$_SESSION['name'];
             //根据名称查询个人信息
             $arr=DB::select("select * from user1 where u_name='$name'");
-            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'name'=>$name,'arr'=>$arr,'list'=>$list,'id'=>$id]);
+            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'name'=>$name,'arr'=>$arr,'list'=>$list,'id'=>$id,'hot'=>$hot]);
         }
     }
-    public function Shai(){
-        $nan_id = $_REQUEST['nan_id'];
-        $c_id = $_REQUEST['c_id'];
-        echo $nan_id,$c_id;die;
-    }
     public function Fenlei(){
-    	$d_id = $_REQUEST['d_id'];
-    	if ($d_id==0) {
-            $class=DB::select("select * from class");
+        //多条件筛选
+        @$nan_id = $_REQUEST['nan_id'];
+        @$c_id = $_REQUEST['c_id'];
+        @$d_id = $_REQUEST['d_id'];
+        @$z_id = $_REQUEST['z_id'];
+        $nan_id = $nan_id=""?"":$nan_id;
+        $c_id = $c_id=""?"":$c_id;
+        $z_id = $z_id=""?"":$z_id;
+        $d_id = $d_id=""?"":$d_id;
+        $id = array(
+                'nan_id'=>$nan_id,
+                'c_id'=>$c_id,
+                'z_id'=>$z_id,
+                'd_id'=>$d_id
+            );
+    	if ($d_id=="") {
+            $class=DB::select("select * from classs");
+            $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id limit 20");
     	}else{
-    		$class = DB::select("select * from class where d_id='$d_id'");
+    		$class = DB::select("select * from classs where d_id='$d_id'");
+            $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where direction_id='$d_id' limit 20");
     	}
     	//方向查询
         $direction=DB::select("select * from direction");
     	//难度查询
         $nandu=DB::select("select * from difficulty");
-    	return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu]);
+        $hot = DB::table('hot')->get();
+    	return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu,'id'=>$id,'list'=>$list,'hot'=>$hot]);
     }
     public function Login(){
         $name=$_REQUEST['name'];
