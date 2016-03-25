@@ -77,13 +77,13 @@
 
 <!--script-->
 <script src="./ssologin.js"></script>
-<script type="text/javascript" src="././sea.js"></script>
-<script type="text/javascript" src="././sea_config.js"></script>
+<script type="text/javascript" src="./sea.js"></script>
+<script type="text/javascript" src="./sea_config.js"></script>
 <script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
 
 
 
-<script type="text/javascript" src="././forget.js"></script>
+<script type="text/javascript" src="./forget.js"></script>
 
 
 <div style="display: none">
@@ -134,10 +134,46 @@
             $("#confirm_sp").html("<font style='color:red'>两次密码不一致！</font>");
         }else{
             $("#confirm_sp").html(" ");
+        }
+    })
+    $("#reset-submit").click(function(){
+        var newpass=$("#newpass").val();
+        var confirm=$("#confirm").val();
+        var email=$("#email").val();
+        //计算新密码的长度
+        var newpass=$("#newpass").val();
+        newpass.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        if(newpass.length>16 || newpass.length<6){
+            $("#newpass_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+            return false;
+            $("#newpass").keyup(function(){
+                var newpa=$("#newpass").val();
+                if(newpa.length==0){
+                    $("#newpass_sp").html("<font style='color:red'>密码不能为空！</font>");
+                    return false;
+                }else if(newpa.length<6){
+                    $("#newpass_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+                    return false;
+                }else{
+                    $("#newpass_sp").html(" ");
+                    return true;
+                }
+            })
+        }
+        if(confirm!=newpass){
+            $("#confirm_sp").html("<font style='color:red'>两次密码不一致！</font>");
+        }else if(confirm!=""){
             $.post('xiugai',{
-                'newpass':newpass,
-                'email':email
-            },function(){});
+                'email':email,
+                'newpass':newpass
+            },function(txt){
+                if(txt==1){
+                    alert('修改密码成功');
+                    location.href='learn';
+                }else if(txt==0){
+                    alert('修改密码失败');
+                }
+            })
         }
     })
 </script>
