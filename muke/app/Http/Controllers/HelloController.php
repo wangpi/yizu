@@ -21,7 +21,7 @@ class HelloController extends Controller
     	//print_r($re);die;
     	//分类查询
     	//$class = DB::table('class')->get();
-        $class=DB::select("select * from class");
+        $class=DB::select("select * from classs");
     	//print_r($class);die;
     	//难度查询
     	//$nandu = DB::table('difficulty')->get();
@@ -42,9 +42,9 @@ class HelloController extends Controller
     public function Fenlei(){
     	$d_id = $_REQUEST['d_id'];
     	if ($d_id==0) {
-            $class=DB::select("select * from class");
+            $class=DB::select("select * from classs");
     	}else{
-    		$class = DB::select("select * from class where d_id='$d_id'");
+    		$class = DB::select("select * from classs where d_id='$d_id'");
     	}
     	//方向查询
         $direction=DB::select("select * from direction");
@@ -54,7 +54,7 @@ class HelloController extends Controller
     }
     public function Login(){
         $name=$_REQUEST['name'];
-        $pwd=$_REQUEST['pwd'];
+        $pwd=md5($_REQUEST['pwd']);
         //防sql注入
         $arr=array('select','insert','delete','update');
         for($i=0;$i<count($arr);$i++){
@@ -107,7 +107,7 @@ class HelloController extends Controller
         //print_r($re);die;
         //分类查询
         //$class = DB::table('class')->get();
-        $class=DB::select("select * from class");
+        $class=DB::select("select * from classs");
         //print_r($class);die;
         //难度查询
         //$nandu = DB::table('difficulty')->get();
@@ -170,6 +170,48 @@ class HelloController extends Controller
     public function xiugai(){
         $email=$_POST['email'];
         $pwd=$_POST['newpass'];
-        echo $email;
+        $arr = DB::table('user1')
+            ->where('u_email', $email)
+            ->update(['u_pwd' => $pwd,'u_num'=>0]);
+        if($arr){
+            echo '1';
+        }else{
+            echo '0';
+        }
+    }
+    //注册功能
+    public function Register(){
+        return view('register');
+    }
+    public function register1(){
+        $email=$_GET['email'];
+        $arr=DB::table('user1')->where(['u_email'=>$email])->get();
+        if($arr){
+            echo 0;
+        }else{
+            echo 1;
+        }
+    }
+    public function zhuce(){
+        $email=$_POST['email'];
+        $pwd=md5($_POST['pwd']);
+        $nick=$_POST['nick'];
+        $yzm=$_POST['yzm'];
+        session_start();
+        if(!empty($_SESSION['milkcaptcha'] )){
+            if ($_SESSION['milkcaptcha'] == $yzm) {
+                //做添加
+                $sql="insert into user1(u_name,u_pwd,u_email) values('$nick','$pwd','$email')";
+                $arr=DB::insert($sql);
+                if($arr){
+                    echo 1;
+                }else{
+                    echo 0;
+                }
+            }else {
+                //用户输入验证码错误
+                echo 2;
+            }
+        }
     }
 }

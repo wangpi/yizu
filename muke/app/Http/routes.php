@@ -32,8 +32,15 @@ Route::post('yanzheng','HelloController@yanzheng');
 //重置密码
 //Route::get('hello/zhao/{name}','HelloController@zhao');
 Route::get('zhao','HelloController@zhao');
+Route::post('xiugai','HelloController@xiugai');
 //发送邮件常见问题
 Route::get('question1','HelloController@question');
+//注册
+Route::get('register','HelloController@register');
+
+Route::get('register1','HelloController@register1');
+
+Route::post('zhu','HelloController@zhuce');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
