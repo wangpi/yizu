@@ -29,6 +29,13 @@ var is_choice = "";
     var ownName="271833261@qq.com"
 
 </script>
+<<<<<<< HEAD
+
+
+    
+
+=======
+>>>>>>> 5b0feb313d83a4555513db638ceade15222c1f55
     <script>
         function openNew(){
             //获取页面的高度和宽度
