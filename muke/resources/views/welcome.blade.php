@@ -63,10 +63,10 @@ var is_choice = "";
                     </div>
                 </li>
                 <li class="header-signin">
-                    <a href="http://www.imooc.com/#" id="js-signin-btn">登录</a>
+                    <a href="denglu" id="js-signin-btn">登录</a>
                 </li>
                 <li class="header-signup">
-                    <a href="http://www.imooc.com/#" id="js-signup-btn">注册</a>
+                    <a href="register" id="js-signup-btn">注册</a>
                 </li>
             </ul>
         </div>

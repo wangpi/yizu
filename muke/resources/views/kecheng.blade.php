@@ -29,62 +29,6 @@ var is_choice = "";
     var ownName="271833261@qq.com"
 
 </script>
-    <script>
-        function openNew(){
-            //获取页面的高度和宽度
-            var sWidth=document.body.scrollWidth;
-            var sHeight=document.body.scrollHeight;
-
-            //获取页面的可视区域高度和宽度
-            var wHeight=document.documentElement.clientHeight;
-
-            var oMask=document.createElement("div");
-            oMask.id="mask";
-            oMask.style.height=sHeight+"px";
-            oMask.style.width=sWidth+"px";
-            document.body.appendChild(oMask);
-            var oLogin=document.createElement("div");
-            oLogin.id="login";
-            oLogin.innerHTML="<div id='signin' class='rl-modal in' aria-hidden='false'><div class='rl-modal-header'><h1><span class='active-title'>登录</span><span data-fromto='signin:signup'>注册</span></h1><button type='button' class='rl-close' data-dismiss='modal' hidefocus='true' aria-hidden='true'></button></div><div class='rl-modal-body'><div class='clearfix'><div class='l-left-wrap l'>" +
-            "<form id='signup-form' autocomplete='off'><p class='rlf-tip-globle' id='signin-globle-error'></p><div class='rlf-group'>" +
-            "<input type='text' value='' id='email' data-validate='email' autocomplete='off' class='ipt ipt-email js-own-name' placeholder='请输入登录邮箱'><span id='email_sp'></span><p class='rlf-tip-wrap'></p></div><input style='display:none' type='text' name='fakeusernameremembered'><input style='display:none' type='password' name='fakepasswordremembered'><div class='rlf-group'>" +
-            "<input type='password' id='pwd' autocomplete='off' class='ipt ipt-pwd ipt-error' placeholder='请输入密码'>" +
-            "<span class='rlf-tip-wrap rlf-tip-error' id='pwd_sp'></span></div><div class='rlf-group js-verify-row clearfix' style='display: none'><input type='text' name='verify' class='ipt ipt-verify l' placeholder='请输入验证码'><a href='javascript:void(0)' class='verify-img-wrap js-verify-refresh'><img class='verify-img' src='../js/verifycode'></a><a href='javascript:void(0)' class='icon-refresh js-verify-refresh'></a><p class='rlf-tip-wrap'></p></div><div class='rlf-group rlf-appendix clearfix'><label for='auto-signin' class='rlf-autoin l' hidefocus='true'><input type='checkbox' checked='checked' class='auto-cbx' id='auto-signin'>下次自动登录</label><a href='forgot' class='rlf-forget r' target='_blank' hidefocus='true'>忘记密码 </a></div><div class='rlf-group clearfix'>" +
-            "<input type='button' id='signin-btn' value='登录' hidefocus='true' class='btn-red btn-full login'>&nbsp&nbsp&nbsp&nbsp<input type='reset' id='signin-btn' value='取消' hidefocus='true' class='btn-red btn-full'></div></form></div></div></div><div class='rl-model-footer'><div class='pop-login-sns clearfix'><span class='l'>其他方式登录</span><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=weibo' class='pop-sns-weibo r'><i class='icon-weibo'></i></a><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=qq' class='pop-sns-qq r'><i class='icon-qq'></i></a><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=weixin' class='pop-sns-weixin r'><i class='icon-weixin'></i></a></div></div></div><div id='close'><font color='black'>X</font></div>";
-            document.body.appendChild(oLogin);
-
-            //获取登陆框的宽和高
-            var dHeight=oLogin.offsetHeight;
-            var dWidth=oLogin.offsetWidth;
-            //设置登陆框的left和top
-            oLogin.style.left=sWidth/2-dWidth/2+"px";
-            oLogin.style.top=wHeight/2-dHeight/2+"px";
-            //点击关闭按钮
-            var oClose=document.getElementById("close");
-
-            //点击登陆框以外的区域也可以关闭登陆框
-            oClose.onclick=oMask.onclick=function(){
-                document.body.removeChild(oLogin);
-                document.body.removeChild(oMask);
-            };
-        };
-
-        window.onload=function(){
-            var oBtn=document.getElementById("btnLogin");
-            //点击登录按钮
-            oBtn.onclick=function(){
-                openNew();
-                return false;
-            }
-
-        }
-    </script>
-
-
-
-
-
-
 <link rel="stylesheet" href="./kecheng/saved_resource" type="text/css">
 <script charset="utf-8" async="" src="./kecheng/jquery.js"></script><script charset="utf-8" async="" src="./kecheng/seajs-text.js"></script><script charset="utf-8" async="" src="./kecheng/common.js"></script><script charset="utf-8" async="" src="./kecheng/string.js"></script><script charset="utf-8" async="" src="./kecheng/suggest.js"></script><script charset="utf-8" async="" src="./kecheng/store.js"></script><script charset="utf-8" async="" src="./kecheng/json.js"></script><script charset="utf-8" async="" src="./kecheng/im.js"></script><script charset="utf-8" async="" src="./kecheng/list.js"></script><script charset="utf-8" async="" src="./kecheng/socket.io.min.js"></script></head>
 <body id="List_courseId">
@@ -111,31 +55,32 @@ var is_choice = "";
                 <li class="header-app">
                     <a href="http://www.imooc.com/mobile/app">
                         <span class="icon-appdownload"></span>
+                        <img src="./img/serach.png"/>
                     </a>
                     <div class="QR-download">
                         <p id="app-text">慕课网APP下载</p>
                         <p id="app-type">iPhone / Android / iPad</p>
-                        <img src="./img/QR-code.jpg">
+                        <img src="./img/app.png">
                     </div>
                 </li>
 
                 <?php if(empty($_SESSION['name'])){ ?>
                 <li class="header-signin">
-                    <a href="#" id="btnLogin">登录</a>
+                    <a href="denglu" id="">登录</a>
                 </li>
                 <li class="header-signup">
-                    <a href="#" id="btnRe">注册</a>
+                    <a href="register" id="btnZhu">注册</a>
                 </li>
                 <?php }else{ ?>
                 <li class='header-app'>
                     <i class="msg_remind"></i>
-                    <a target="_blank" href='/u/3059476/notices'><i class='icon-notifi'></i></a>
+                    <a target="_blank" href='#'>
+                    <img src="./img/ling.png"/>
+                    </a>
                 </li>
                 <li class="header-app header-unlogin clearfix">
-                    <a href="/u/3059476/messages" title="我的消息" target="_blank">
-                        <span class="msg_icon" style="display: none;"></span>
-                        <i class="icon-mail"></i>
-                        <span style="display: none;">我的消息</span>
+                    <a href="#" title="我的消息" target="_blank">
+                        <img src="./img/message.png"/>
                     </a>
                 </li>
 
@@ -195,7 +140,7 @@ var is_choice = "";
                 <ul class="search-area-result" data-suggest-result="suggest-result">
                 </ul>
             </div>
-            <div class="showhide-search" data-show="no"><i class="icon-search"></i></div>
+            <div class="showhide-search" data-show="no"></div>
         </div>
     </div>
 </div>
@@ -215,14 +160,15 @@ var is_choice = "";
                     <span class="hd l">方向：</span>
                     <div class="bd">
                         <ul class="">
-
-                            <li class="course-nav-item on">
-                                <a href="#">全部</a>
+                        <li class="course-nav-item on">
+                                <a href="fenlei">全部</a>
                             </li>
+
+                            
                                 <?php foreach($direction as $k=>$v){?>
                                                                 <li class="course-nav-item
                                 ">
-                                    <a href="javascript:void(0)" data-ct="be" id="d" d_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
+                                    <a href="fenlei?d_id=<?php echo $v['d_id']?>" data-ct="be" id="d" d_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                                 </li>
                                <?php }?>
 
@@ -231,10 +177,10 @@ var is_choice = "";
                 <div class="course-nav-row clearfix">
                     <span class="hd l">分类：</span>
                     <div class="bd">
-                        <ul class="">
-                                                                                                        <li class="course-nav-item on">
-                                <a href="#">全部</a>
+                    <li class="course-nav-item on">
+                                <a href="javascript:void(0)" onclick="fen()">全部</a>
                             </li>
+                        
                                         <?php foreach($class as $k=>$v){?>
                                                                                 <li class="course-nav-item ">
                                             <a href="javascript:void(0)" data-id="44" data-ct="fe" id="c" c_id="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></a>
@@ -246,8 +192,8 @@ var is_choice = "";
                     <span class="hd l">难度：</span>
                     <div class="bd">
                         <ul class="">
-                                                                                                                    <li class="course-nav-item  on">
-                                <a href="#">全部</a>
+                        <li class="course-nav-item on">
+                                <a href="javascript:void(0)" onclick="nandu()">全部</a>
                             </li>
                             <?php foreach ($nandu as $k=>$v){?>
                             <li class="course-nav-item ">
@@ -259,7 +205,7 @@ var is_choice = "";
                 </div>
             </div>
             <input type="hidden" value="<?php echo $id['nan_id']?>" id='zhi1'/>
-            <input type="hidden" value="<?php echo $id['d_id']?>" id='zhi2'/>
+            <input type="hidden" value="<?php echo $id['z_id']?>" id='zhi2'/>
             <input type="hidden" value="<?php echo $id['c_id']?>" id='zhi3'/>
 <script>
    
@@ -268,8 +214,8 @@ var is_choice = "";
             //alert(nan_id);
             var c_id = $('#zhi3').attr('value');
             //alert(c_id)
-            var d_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            var z_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
             location=url;
         })
         $(document).on('click','#c',function(){
@@ -277,24 +223,43 @@ var is_choice = "";
             //alert(nan_id);
             var nan_id = $('#zhi1').attr('value');
             //alert(c_id)
-            var d_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            var z_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
             location=url;
         })
-        $(document).on('click','#d',function(){
-            var d_id = $(this).attr('d_id');
-            //alert(nan_id);
+        $(document).on('click','#z',function(){
+            var z_id = $(this).attr('z_id');
+            //alert(z_id);
             var c_id = $('#zhi3').attr('value');
             //alert(c_id)
             var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
             location=url;
         })
+        function nandu(){
+            var nan_id = '';
+            $('#zhi1').val(nan_id);
+            var c_id = $('#zhi3').attr('value');
+            var z_id = $('#zhi2').attr('value');
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        }
+        function fen(){
+            var c_id = '';
+            $('#zhi3').val(c_id);
+            var c_id = $('#zhi3').attr('value');
+            var z_id = $('#zhi2').attr('value');
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        }
 </script>
             <div class="course-tool-bar clearfix">
                 <div class="tool-left l">
-                                            <a href="http://www.imooc.com/course/list?sort=last" class="sort-item">最新</a>
-                        <a href="http://www.imooc.com/course/list?sort=pop" class="sort-item active">最热</a>
+                <?php foreach ($hot as $k => $v): ?>
+                                            <a href="javascript:void(0)" class="sort-item" id="z" z_id="<?php echo $v['z_id']?>"><?php echo $v['z_name']?></a>
+                                        <?php endforeach ?>
                                     </div>
                 <div class="l">
                     <span class="tool-item" style="display: none;">
