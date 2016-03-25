@@ -160,14 +160,15 @@ var is_choice = "";
                     <span class="hd l">方向：</span>
                     <div class="bd">
                         <ul class="">
-
-                            <li class="course-nav-item on">
-                                <a href="#">全部</a>
+                        <li class="course-nav-item on">
+                                <a href="fenlei">全部</a>
                             </li>
+
+                            
                                 <?php foreach($direction as $k=>$v){?>
                                                                 <li class="course-nav-item
                                 ">
-                                    <a href="javascript:void(0)" data-ct="be" id="d" d_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
+                                    <a href="fenlei?d_id=<?php echo $v['d_id']?>" data-ct="be" id="d" d_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                                 </li>
                                <?php }?>
 
@@ -176,10 +177,10 @@ var is_choice = "";
                 <div class="course-nav-row clearfix">
                     <span class="hd l">分类：</span>
                     <div class="bd">
-                        <ul class="">
-                                                                                                        <li class="course-nav-item on">
-                                <a href="#">全部</a>
+                    <li class="course-nav-item on">
+                                <a href="javascript:void(0)" onclick="fen()">全部</a>
                             </li>
+                        
                                         <?php foreach($class as $k=>$v){?>
                                                                                 <li class="course-nav-item ">
                                             <a href="javascript:void(0)" data-id="44" data-ct="fe" id="c" c_id="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></a>
@@ -191,8 +192,8 @@ var is_choice = "";
                     <span class="hd l">难度：</span>
                     <div class="bd">
                         <ul class="">
-                                                                                                                    <li class="course-nav-item  on">
-                                <a href="#">全部</a>
+                        <li class="course-nav-item on">
+                                <a href="javascript:void(0)" onclick="nandu()">全部</a>
                             </li>
                             <?php foreach ($nandu as $k=>$v){?>
                             <li class="course-nav-item ">
@@ -204,7 +205,7 @@ var is_choice = "";
                 </div>
             </div>
             <input type="hidden" value="<?php echo $id['nan_id']?>" id='zhi1'/>
-            <input type="hidden" value="<?php echo $id['d_id']?>" id='zhi2'/>
+            <input type="hidden" value="<?php echo $id['z_id']?>" id='zhi2'/>
             <input type="hidden" value="<?php echo $id['c_id']?>" id='zhi3'/>
 <script>
    
@@ -213,8 +214,8 @@ var is_choice = "";
             //alert(nan_id);
             var c_id = $('#zhi3').attr('value');
             //alert(c_id)
-            var d_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            var z_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
             location=url;
         })
         $(document).on('click','#c',function(){
@@ -222,24 +223,43 @@ var is_choice = "";
             //alert(nan_id);
             var nan_id = $('#zhi1').attr('value');
             //alert(c_id)
-            var d_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            var z_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
             location=url;
         })
-        $(document).on('click','#d',function(){
-            var d_id = $(this).attr('d_id');
-            //alert(nan_id);
+        $(document).on('click','#z',function(){
+            var z_id = $(this).attr('z_id');
+            //alert(z_id);
             var c_id = $('#zhi3').attr('value');
             //alert(c_id)
             var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
             location=url;
         })
+        function nandu(){
+            var nan_id = '';
+            $('#zhi1').val(nan_id);
+            var c_id = $('#zhi3').attr('value');
+            var z_id = $('#zhi2').attr('value');
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        }
+        function fen(){
+            var c_id = '';
+            $('#zhi3').val(c_id);
+            var c_id = $('#zhi3').attr('value');
+            var z_id = $('#zhi2').attr('value');
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        }
 </script>
             <div class="course-tool-bar clearfix">
                 <div class="tool-left l">
-                                            <a href="http://www.imooc.com/course/list?sort=last" class="sort-item">最新</a>
-                        <a href="http://www.imooc.com/course/list?sort=pop" class="sort-item active">最热</a>
+                <?php foreach ($hot as $k => $v): ?>
+                                            <a href="javascript:void(0)" class="sort-item" id="z" z_id="<?php echo $v['z_id']?>"><?php echo $v['z_name']?></a>
+                                        <?php endforeach ?>
                                     </div>
                 <div class="l">
                     <span class="tool-item" style="display: none;">

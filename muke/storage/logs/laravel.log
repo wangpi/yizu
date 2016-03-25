@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2016-03-18 07:44:02] local.ERROR: exception 'ErrorException' with message 'Undefined index: id' in E:\php\dashixun\app\Http\Controllers\HelloController.php:13
 Stack trace:
 #0 E:\php\dashixun\app\Http\Controllers\HelloController.php(13): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined index...', 'E:\\php\\dashixun...', 13, Array)
@@ -20176,8 +20177,6 @@ Stack trace:
 #32 E:\WWW\three\yizu\muke\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #33 E:\WWW\three\yizu\muke\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #34 {main}  
->>>>>>> 5b0feb313d83a4555513db638ceade15222c1f55
-<<<<<<< HEAD
 [2016-03-25 08:20:49] local.ERROR: exception 'ErrorException' with message 'Undefined index: yzm' in E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php:199
 Stack trace:
 #0 E:\WWW\three\yizu\muke\app\Http\Controllers\HelloController.php(199): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined index...', 'E:\\WWW\\three\\yi...', 199, Array)
@@ -21651,11 +21650,12 @@ Stack trace:
 [2016-03-25 16:46:37] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '$time' (T_VARIABLE)' in F:\yizu\muke\app\Http\Controllers\HelloController.php:280
 Stack trace:
 #0 {main}  
->>>>>>> 88fcc1d7a6d2dd57b1fda6e9e3457c26e920b9ee
+
 [2016-03-25 20:23:39] local.ERROR: exception 'ErrorException' with message 'Undefined variable: id' in E:\WWW\three\yizu\muke\storage\framework\views\9e3c72927f1cebc65d5fd3c4fee0ae7d92b6b7f4.php:256
 Stack trace:
 #0 E:\WWW\three\yizu\muke\storage\framework\views\9e3c72927f1cebc65d5fd3c4fee0ae7d92b6b7f4.php(256): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', 'E:\\WWW\\three\\yi...', 256, Array)
-#1 E:\WWW\three\yizu\muke\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(42): include('E:\\WWW\\three\\yi...')
+#1 E:\WWW\three\yi
+zu\muke\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(42): include('E:\\WWW\\three\\yi...')
 #2 E:\WWW\three\yizu\muke\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('E:\\WWW\\three\\yi...', Array)
 #3 E:\WWW\three\yizu\muke\vendor\laravel\framework\src\Illuminate\View\View.php(147): Illuminate\View\Engines\CompilerEngine->get('E:\\WWW\\three\\yi...', Array)
 #4 E:\WWW\three\yizu\muke\vendor\laravel\framework\src\Illuminate\View\View.php(118): Illuminate\View\View->getContents()
