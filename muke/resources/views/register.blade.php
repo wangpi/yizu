@@ -45,7 +45,7 @@
                 <div class="login-wrap">
                     <div class="wel-hd">
                         <h1 class="form-h1 l">欢迎注册</h1>
-                        <a href="learn" class="on-register r">直接登录</a>
+                        <a href="denglu" class="on-register r">直接登录</a>
                         <span class="no-account r">已有帐号</span>
                     </div>
                     <div class="form-controls">
@@ -140,6 +140,23 @@
             return true;
         }
     })
+    $("#yzm").blur(function(){
+        var yzm=$("#yzm").val();
+        if(yzm==""){
+            $("#yzm_sp").html("<font style='color:red'>验证码不能为空！</font>");
+            return false;
+        }else{
+            $("#yzm_sp").html(" ");
+            $.post('zhu',{
+                'yzm':yzm
+            },function (txt){
+                if(txt==2){
+                    $("#yzm_sp").html("<font style='color:red'>验证码错误！</font>");
+                }
+            })
+            return true;
+        }
+    })
     $("#email").blur(function(){
         var email=$("#email").val();
         if(email==""){
@@ -213,7 +230,7 @@
         },function(txt){
             if(txt==1){
                 alert('注册成功');
-                window.location.href='learn';
+                window.location.href='denglu';
             }else if(txt==0){
                 alert('注册失败');
                 window.location.href='learn';

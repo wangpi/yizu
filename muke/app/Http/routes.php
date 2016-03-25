@@ -57,7 +57,8 @@ Route::post('pl',"HelloController@Log");
 Route::get('co',"HelloController@Com");
 //用户头像
 Route::get('poh',"HelloController@pohion");
-
+//登陆
+Route::get('denglu',"HelloController@denglu");
 /*
 |--------------------------------------------------------------------------
 | Application Routes

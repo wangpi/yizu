@@ -169,7 +169,7 @@
             },function(txt){
                 if(txt==1){
                     alert('修改密码成功');
-                    location.href='learn';
+                    location.href='denglu';
                 }else if(txt==0){
                     alert('修改密码失败');
                 }

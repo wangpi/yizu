@@ -116,21 +116,13 @@ class HelloController extends Controller
             echo 2;
         }
     }
+    public function denglu(){
+        return view('denglu');
+    }
     public function layout(){
         session_start();
         unset($_SESSION['name']);
-        //方向查询
-        //$direction=DB::table('direction')->get();
-        $direction=DB::select("select * from direction");
-        //print_r($re);die;
-        //分类查询
-        //$class = DB::table('class')->get();
-        $class=DB::select("select * from classs");
-        //print_r($class);die;
-        //难度查询
-        //$nandu = DB::table('difficulty')->get();
-        $nandu=DB::select("select * from difficulty");
-            return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu]);
+        return redirect('/learn');
     }
     public function forget(){
         return view('forget');
@@ -337,7 +329,7 @@ class HelloController extends Controller
     //修改密码
     public function xiugai(){
         $email=$_POST['email'];
-        $pwd=$_POST['newpass'];
+        $pwd=md5($_POST['newpass']);
         $arr = DB::table('user1')
             ->where('u_email', $email)
             ->update(['u_pwd' => $pwd,'u_num'=>0]);
@@ -366,23 +358,20 @@ class HelloController extends Controller
         $nick=$_POST['nick'];
         $yzm=$_POST['yzm'];
         session_start();
-        if(!empty($_SESSION['milkcaptcha'] )){
+        if(!empty($_SESSION['milkcaptcha'] )) {
             if ($_SESSION['milkcaptcha'] == $yzm) {
                 //做添加
-                $sql="insert into user1(u_name,u_pwd,u_email) values('$nick','$pwd','$email')";
-                $arr=DB::insert($sql);
-                if($arr){
+                $sql = "insert into user1(u_name,u_pwd,u_email,u_photo) values('$nick','$pwd','$email','./img/tiger.jpg')";
+                $arr = DB::insert($sql);
+                if ($arr) {
                     echo 1;
-                }else{
+                } else {
                     echo 0;
                 }
-            }else {
+            } else {
                 //用户输入验证码错误
                 echo 2;
             }
         }
-
-        echo $email;
-
     }
 }
