@@ -27,9 +27,12 @@ class HelloController extends Controller
     	//$nandu = DB::table('difficulty')->get();
         $nandu=DB::select("select * from difficulty");
         $list = DB::select("select * from course inner join difficulty on course.direction_id=difficulty.d_id limit 20");
-        $nan_id = "";
-        $c_id = "";
-        $d_id = "";
+        @$nan_id = $_REQUEST['nan_id'];
+        @$c_id = $_REQUEST['c_id'];
+        @$d_id = $_REQUEST['d_id'];
+        $nan_id = $nan_id=""?"":$nan_id;
+        $c_id = $c_id=""?"":$c_id;
+        $d_id = $d_id=""?"":$d_id;
         $id = array(
                 'nan_id'=>$nan_id,
                 'c_id'=>$c_id,
@@ -187,7 +190,7 @@ class HelloController extends Controller
 
     public function Index(){
     	$user = session('user');
-    	$k_id='1';
+    	$k_id = $_REQUEST['k_id'];
     	$sql="select * from zhangjie where k_id = '$k_id'";
     	$re=DB::select($sql);
     	if(empty($user)){

@@ -222,7 +222,7 @@ var is_choice = "";
                                 <?php foreach($direction as $k=>$v){?>
                                                                 <li class="course-nav-item
                                 ">
-                                    <a href="#" data-ct="be" id="dir" dir_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
+                                    <a href="javascript:void(0)" data-ct="be" id="d" d_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                                 </li>
                                <?php }?>
 
@@ -237,7 +237,7 @@ var is_choice = "";
                             </li>
                                         <?php foreach($class as $k=>$v){?>
                                                                                 <li class="course-nav-item ">
-                                            <a href="#" data-id="44" data-ct="fe" id="c_id" c_id="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></a>
+                                            <a href="javascript:void(0)" data-id="44" data-ct="fe" id="c" c_id="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></a>
                                         </li>
                                         <?php }?>
                                                                                </div>
@@ -251,21 +251,44 @@ var is_choice = "";
                             </li>
                             <?php foreach ($nandu as $k=>$v){?>
                             <li class="course-nav-item ">
-                                <a href="#" id="nan" nan_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
+                                <a href="javascript:void(0)" id="nan" nan_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                             </li>
                             <?php }?>
                         </ul>
                     </div>
                 </div>
             </div>
-            <input type="hidden" value="<?php echo $id['nan_id']?>" />
-            <input type="hidden" value="<?php echo $id['d_id']?>" />
-            <input type="hidden" value="<?php echo $id['c_id']?>" />
+            <input type="hidden" value="<?php echo $id['nan_id']?>" id='zhi1'/>
+            <input type="hidden" value="<?php echo $id['d_id']?>" id='zhi2'/>
+            <input type="hidden" value="<?php echo $id['c_id']?>" id='zhi3'/>
 <script>
    
         $(document).on('click','#nan',function(){
-            nan_id = $(this).attr('nan_id');
-            alert(nan_id);
+            var nan_id = $(this).attr('nan_id');
+            //alert(nan_id);
+            var c_id = $('#zhi3').attr('value');
+            //alert(c_id)
+            var d_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            location=url;
+        })
+        $(document).on('click','#c',function(){
+            var c_id = $(this).attr('c_id');
+            //alert(nan_id);
+            var nan_id = $('#zhi1').attr('value');
+            //alert(c_id)
+            var d_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            location=url;
+        })
+        $(document).on('click','#d',function(){
+            var d_id = $(this).attr('d_id');
+            //alert(nan_id);
+            var c_id = $('#zhi3').attr('value');
+            //alert(c_id)
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&d_id="+d_id;
+            location=url;
         })
 </script>
             <div class="course-tool-bar clearfix">
@@ -302,7 +325,7 @@ var is_choice = "";
 
 
                                                         <li class="course-one">
-                            <a href="#" target="_self">
+                            <a href="aaa?k_id=<?php echo $v['c_id']?>" target="_self">
                         <div class="course-list-img">
                 <img width="240" height="135" alt="HTML+CSS基础课程" src="./img/<?php echo $v['c_img']?>">
                         </div>
