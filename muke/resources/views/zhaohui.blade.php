@@ -42,13 +42,15 @@
                     <div class="wlfg-box">
                         <div class="rlf-group">
                             <input data-validate="password" name="newpass" id="newpass" class="ipt rlf-input-pwd" placeholder="请输入新密码" type="password"><!-- 请输入6-16位密码，区分大小写，不能使用空格！ -->
+                            <span id="newpass_sp"></span>
                             <p class="rlf-tip-wrap"></p>
                         </div>
                     </div>
                     <div class="wlfg-box">
                         <div class="rlf-group">
                             <input name="confirm" id="confirm" class="ipt rlf-input-pwd" placeholder="请确认新密码" type="password">
-                            <p class="rlf-tip-wrap"></p><!-- 请输入确认密码！ -->
+                            <p class="rlf-tip-wrap"></p>
+                            <span id="confirm_sp"></span><!-- 请输入确认密码！ -->
                         </div>
                     </div>
                     <div class="wlfg-box">
@@ -57,6 +59,7 @@
                             <span id="reset-submit" hidefocus="true" data-dismiss="modal" aria-role="button" class="btn-red btn-block">提交</span>
                         </div>
                     </div>
+                    <input type="hidden" value="{{$email}}" id="email">
                     <input id="hideVal" class="hideVal" name="active" value="MTc0OTUzNzYxMkBxcS5jb20sMTQ1ODY4ODY2MQ==" type="hidden">
                     <input id="hideVal" class="hideVal" name="linkid" value="1126585" type="hidden">
                     <input id="hideVal" class="hideVal" name="checkstr" value="MTQ1ODY4ODY2MTMwNTc3MTBhZWphYnY=" type="hidden">
@@ -103,6 +106,39 @@
         })();
     </script>
 </div><script src="././user.htm" type="text/javascript"></script><script src="././iplookup.php" type="text/javascript"></script>
-
-
+<script src="./js/jquery.1.8.min.js"></script>
+<script>
+    $("#newpass").blur(function(){
+        //计算新密码的长度
+        var newpass=$("#newpass").val();
+        newpass.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        if(newpass.length>16 || newpass.length<6){
+            $("#newpass_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+            $("#newpass").keyup(function(){
+                var newpa=$("#newpass").val();
+                if(newpa.length==0){
+                    $("#newpass_sp").html("<font style='color:red'>密码不能为空！</font>");
+                }else if(newpa.length<6){
+                    $("#newpass_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+                }else{
+                    $("#newpass_sp").html(" ");
+                }
+            })
+        }
+    })
+    $("#confirm").keyup(function(){
+        var newpass=$("#newpass").val();
+        var confirm=$("#confirm").val();
+        var email=$("#email").val();
+        if(confirm!=newpass){
+            $("#confirm_sp").html("<font style='color:red'>两次密码不一致！</font>");
+        }else{
+            $("#confirm_sp").html(" ");
+            $.post('xiugai',{
+                'newpass':newpass,
+                'email':email
+            },function(){});
+        }
+    })
+</script>
 </body></html>

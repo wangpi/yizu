@@ -171,19 +171,6 @@ class HelloController extends Controller
             }
         }
     }
-    public function send()
-    {
-        $name = '慕课网';
-        $flag = Mail::send('emails.test',['name'=>$name],function($message){
-            $to = '1749537612@qq.com';
-            $message ->to($to)->subject('么么哒');
-        });
-        if($flag){
-            echo '发送邮件成功，请查收！';
-        }else{
-            echo '发送邮件失败，请重试！';
-        }
-    }
     public function zhao(){
         $name=$_GET['name'];
         $arr=DB::select("select * from user1 where md5(u_email)='$name'");
@@ -193,5 +180,131 @@ class HelloController extends Controller
     //邮箱常见问题
     public function question(){
         return view('question');
+    }
+
+
+	
+
+    public function Index(){
+    	$user = session('user');
+    	$k_id='1';
+    	$sql="select * from zhangjie where k_id = '$k_id'";
+    	$re=DB::select($sql);
+    	if(empty($user)){
+    	//print_r($re);die;
+    		return view('index')->with(['name'=>$re,'id'=>$k_id]);
+    	}
+    }
+
+    public function Go(){
+    	//Session::put('key', 'value');
+    	 //$user = session('key');
+    	 //echo $user;die;
+    	$id=$_GET['id'];
+    	$sql="select * from zhangjie where k_id = '$id'";
+    	$re=DB::select($sql);
+   		return view('go')->with(['re'=>$re]);
+    }
+
+    public function Golist(){
+    	$id=$_POST['name'];
+    	$sql="select v_title,v_id from video where z_id = '$id'";
+    	$re=DB::select($sql);
+    	echo json_encode($re);
+    }
+
+    public function Beg(){
+    	$user = session('user');
+    	if(empty($user)){
+    		echo '1';
+    	}
+    	else{
+    		return view('blsh');
+    	}
+    }
+
+    public function Log(){
+    	$log=$_POST['log'];
+    	$pass=$_POST['pwd'];
+    	$sql="select u_name,u_pwd,u_id from user1  where u_name = '$log'";
+    	$re=DB::select($sql);
+    	//print_r($re);die;
+    	if($re){
+    		if($pass==$re['0']['u_pwd']){
+    			$_SESSION['user'] = $re['0']['u_name'];
+    			$_SESSION['id']=$re['0']['u_id'];
+       			return view('blsh');
+    		}
+    		else{
+    			echo "<script>alert('密码错误请重新输入');
+    			window.history.go(-1)</script>";
+    		}
+    	}
+    	else{
+    		echo "<script>alert('用户名有误');window.history.go(-1)</script>";
+    	}
+
+    }
+
+    public function Com(){
+    	$text=$_GET['text'];
+    	
+    }
+
+    public function Lian(){
+    	$re=DB::table('liu')->paginate(1);
+    	return view('lian')->with(['re'=>$re]);
+    }
+
+    public function liko(){
+    	$name=$_GET['name'];
+    	$sql="insert into liu(liu) values('$name')";
+    	$re=DB::insert($sql);
+    	if($re){
+    		echo '1';
+    	}
+    	else{
+    		echo '0';
+    	}
+    }
+
+    public function del(){
+    	$id=$_GET['id'];
+    	$sql="delete from liu where id='$id'";
+    	$re=DB::insert($sql);
+    	if($re){
+    		echo "<script>alert('删除成功');</script>";
+    	}
+    	else{
+    		echo "<script>alert('删除失败');</script>";
+    	}
+    }
+
+    public function up(){
+    	$id=$_GET['id'];
+    	$sql="select * from liu where id='$id'";
+    	$re=DB::select($sql);
+       // print_r($re);die;
+    	return view('up')->with(['re'=>$re]);
+    }
+
+    public function que(){
+        $id=$_POST['bb'];
+        $liu=$_POST['aa'];
+        $sql="update liu set liu='$liu' where id= '$id'";
+        $re=DB::update($sql);
+        if($re){
+            echo "<script>alert('修改成功');</script>";
+        }
+        else{
+            echo "<script>alert('修改成功');</script>";
+        }
+
+    //修改密码
+    public function xiugai(){
+        $email=$_POST['email'];
+        $pwd=$_POST['newpass'];
+        echo $email;
+
     }
 }

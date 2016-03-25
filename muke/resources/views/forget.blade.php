@@ -69,7 +69,7 @@
                                 <input id="js-forgot-submit" type="submit" class="btn btn-red link-btn btn-block" value="提交">
                             </div>
                             <div class="faq-link">
-                                收不到邮件？查看 <a href="http://www.imooc.com/about/faq?t=2" target="_blank">常见问题</a>
+                                收不到邮件？查看 <a href="question1" target="_blank">常见问题</a>
                             </div>
                         </form>
                     </div>
@@ -78,7 +78,7 @@
                         <p class="js-email-add">密码重设连接邮件已发送到您的邮箱</p>
                         <p class="get-info">请注意查收并重新设置密码</p>
                         <a href="http://www.imooc.com/user/newlogin" class="btn btn-red link-btn back-regir">返回登录</a>
-                        <p class="get-info" style="padding-top:20px">收不到邮件？查看<a href="http://www.imooc.com/about/faq?t=2" target="_blank" style="color: #f00000 !important"> 常见问题</a></p>
+                        <p class="get-info" style="padding-top:20px">收不到邮件？查看<a href="question1" target="_blank" style="color: #f00000 !important"> 常见问题</a></p>
                         <!-- <p>
                         密码重设连接邮件已发送到您的邮箱<em></em><br/>
                         请注意查收并重新设置密码
