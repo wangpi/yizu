@@ -28,51 +28,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HelloController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HelloController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33701658" vertical-offset="13227" max-vertical-offset="13770">
-              <caret line="447" column="28" selection-start-line="447" selection-start-column="28" selection-end-line="447" selection-end-column="28" />
+            <state vertical-scroll-proportion="-1.5384616" vertical-offset="90" max-vertical-offset="13680">
+              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding>
-                <element signature="e#40#85#0#PHP" expanded="true" />
-                <marker date="1458947767202" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
-                <marker date="1458947767202" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
-                <marker date="1458947767202" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
-                <marker date="1458947767202" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
-                <marker date="1458947767202" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
-                <marker date="1458947767202" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
-                <marker date="1458947767202" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
-                <marker date="1458947767202" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
-                <marker date="1458947767202" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
-                <marker date="1458947767202" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
-                <marker date="1458947767202" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
-                <marker date="1458947767202" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
-                <marker date="1458947767202" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
-                <marker date="1458947767202" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
-                <marker date="1458947767202" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
-                <marker date="1458947767202" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
-                <marker date="1458947767202" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
-                <marker date="1458947767202" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
-                <marker date="1458947767202" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
-                <marker date="1458947767202" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
-                <marker date="1458947767202" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
-                <marker date="1458947767202" expanded="true" signature="10379:10436" placeholder="..." />
-                <marker date="1458947767202" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
-                <marker date="1458947767202" expanded="true" signature="11468:11504" placeholder="insert into ..." />
-                <marker date="1458947767202" expanded="true" signature="11763:11793" placeholder="delete from ..." />
-                <marker date="1458947767202" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
-                <marker date="1458947767202" expanded="true" signature="12411:12452" placeholder="update liu s..." />
-                <marker date="1458947767202" expanded="true" signature="13871:13968" placeholder="insert into ..." />
+                <marker date="1458948383258" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
+                <marker date="1458948383258" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
+                <marker date="1458948383258" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
+                <marker date="1458948383258" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
+                <marker date="1458948383258" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
+                <marker date="1458948383258" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
+                <marker date="1458948383258" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
+                <marker date="1458948383258" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
+                <marker date="1458948383258" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
+                <marker date="1458948383258" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
+                <marker date="1458948383258" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
+                <marker date="1458948383258" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
+                <marker date="1458948383258" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
+                <marker date="1458948383258" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
+                <marker date="1458948383258" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
+                <marker date="1458948383258" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
+                <marker date="1458948383258" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
+                <marker date="1458948383258" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
+                <marker date="1458948383258" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
+                <marker date="1458948383258" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
+                <marker date="1458948383258" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
+                <marker date="1458948383258" expanded="true" signature="10379:10436" placeholder="..." />
+                <marker date="1458948383258" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
+                <marker date="1458948383258" expanded="true" signature="11468:11504" placeholder="insert into ..." />
+                <marker date="1458948383258" expanded="true" signature="11763:11793" placeholder="delete from ..." />
+                <marker date="1458948383258" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
+                <marker date="1458948383258" expanded="true" signature="12411:12452" placeholder="update liu s..." />
+                <marker date="1458948383258" expanded="true" signature="13847:13944" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kecheng.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ArticleController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.025641" vertical-offset="194" max-vertical-offset="780">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#85#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/article/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="159.97437" vertical-offset="31439" max-vertical-offset="40380">
+              <caret line="840" column="118" selection-start-line="840" selection-start-column="118" selection-end-line="840" selection-end-column="118" />
+              <folding>
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#3;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.0769231" vertical-offset="1500" max-vertical-offset="2250">
+              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kecheng.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/kecheng.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8461537" vertical-offset="2820" max-vertical-offset="27000">
-              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.22099447" vertical-offset="2730" max-vertical-offset="27000">
+              <caret line="96" column="64" selection-start-line="96" selection-start-column="64" selection-end-line="96" selection-end-column="64" />
               <folding>
                 <marker date="1458946973936" expanded="true" signature="37915:37924" placeholder="..." />
                 <marker date="1458946973936" expanded="true" signature="38160:38169" placeholder="..." />
@@ -107,13 +142,15 @@
         <option value="$USER_HOME$/Desktop/BanController.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/logi.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/denglu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/zhaohui.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/kecheng.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HelloController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" />
+        <option value="$PROJECT_DIR$/resources/views/article/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -203,6 +240,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="article" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashixun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="muke" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashixun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="muke" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashixun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="muke" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,65 +399,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/email.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2010" max-vertical-offset="4020">
-          <caret line="76" column="39" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1410">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4977" max-vertical-offset="5640">
-          <caret line="173" column="60" selection-start-line="173" selection-start-column="60" selection-end-line="173" selection-end-column="60" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <marker date="1458947767202" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
-            <marker date="1458947767202" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
-            <marker date="1458947767202" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
-            <marker date="1458947767202" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
-            <marker date="1458947767202" expanded="true" signature="10379:10436" placeholder="..." />
-            <marker date="1458947767202" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="11468:11504" placeholder="insert into ..." />
-            <marker date="1458947767202" expanded="true" signature="11763:11793" placeholder="delete from ..." />
-            <marker date="1458947767202" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
-            <marker date="1458947767202" expanded="true" signature="12411:12452" placeholder="update liu s..." />
-            <marker date="1458947767202" expanded="true" signature="13871:13968" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/zhaohui.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="3390">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/email.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4020">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -376,6 +408,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1410">
           <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -384,35 +417,34 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5490">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <marker date="1458947767202" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
-            <marker date="1458947767202" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
-            <marker date="1458947767202" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
-            <marker date="1458947767202" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
-            <marker date="1458947767202" expanded="true" signature="10379:10436" placeholder="..." />
-            <marker date="1458947767202" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="11468:11504" placeholder="insert into ..." />
-            <marker date="1458947767202" expanded="true" signature="11763:11793" placeholder="delete from ..." />
-            <marker date="1458947767202" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
-            <marker date="1458947767202" expanded="true" signature="12411:12452" placeholder="update liu s..." />
-            <marker date="1458947767202" expanded="true" signature="13871:13968" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
+            <marker date="1458948383258" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
+            <marker date="1458948383258" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
+            <marker date="1458948383258" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
+            <marker date="1458948383258" expanded="true" signature="10379:10436" placeholder="..." />
+            <marker date="1458948383258" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="11468:11504" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="11763:11793" placeholder="delete from ..." />
+            <marker date="1458948383258" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
+            <marker date="1458948383258" expanded="true" signature="12411:12452" placeholder="update liu s..." />
+            <marker date="1458948383258" expanded="true" signature="13847:13944" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -435,6 +467,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="1320">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -457,35 +490,34 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4380" max-vertical-offset="5280">
           <caret line="146" column="49" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
           <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <marker date="1458947767202" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
-            <marker date="1458947767202" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
-            <marker date="1458947767202" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
-            <marker date="1458947767202" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
-            <marker date="1458947767202" expanded="true" signature="10379:10436" placeholder="..." />
-            <marker date="1458947767202" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="11468:11504" placeholder="insert into ..." />
-            <marker date="1458947767202" expanded="true" signature="11763:11793" placeholder="delete from ..." />
-            <marker date="1458947767202" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
-            <marker date="1458947767202" expanded="true" signature="12411:12452" placeholder="update liu s..." />
-            <marker date="1458947767202" expanded="true" signature="13871:13968" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
+            <marker date="1458948383258" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
+            <marker date="1458948383258" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
+            <marker date="1458948383258" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
+            <marker date="1458948383258" expanded="true" signature="10379:10436" placeholder="..." />
+            <marker date="1458948383258" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="11468:11504" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="11763:11793" placeholder="delete from ..." />
+            <marker date="1458948383258" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
+            <marker date="1458948383258" expanded="true" signature="12411:12452" placeholder="update liu s..." />
+            <marker date="1458948383258" expanded="true" signature="13847:13944" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -509,35 +541,34 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3870">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <marker date="1458947767202" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
-            <marker date="1458947767202" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
-            <marker date="1458947767202" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
-            <marker date="1458947767202" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
-            <marker date="1458947767202" expanded="true" signature="10379:10436" placeholder="..." />
-            <marker date="1458947767202" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="11468:11504" placeholder="insert into ..." />
-            <marker date="1458947767202" expanded="true" signature="11763:11793" placeholder="delete from ..." />
-            <marker date="1458947767202" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
-            <marker date="1458947767202" expanded="true" signature="12411:12452" placeholder="update liu s..." />
-            <marker date="1458947767202" expanded="true" signature="13871:13968" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
+            <marker date="1458948383258" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
+            <marker date="1458948383258" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
+            <marker date="1458948383258" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
+            <marker date="1458948383258" expanded="true" signature="10379:10436" placeholder="..." />
+            <marker date="1458948383258" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="11468:11504" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="11763:11793" placeholder="delete from ..." />
+            <marker date="1458948383258" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
+            <marker date="1458948383258" expanded="true" signature="12411:12452" placeholder="update liu s..." />
+            <marker date="1458948383258" expanded="true" signature="13847:13944" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -575,35 +606,34 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2520">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <marker date="1458947767202" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
-            <marker date="1458947767202" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
-            <marker date="1458947767202" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
-            <marker date="1458947767202" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
-            <marker date="1458947767202" expanded="true" signature="10379:10436" placeholder="..." />
-            <marker date="1458947767202" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="11468:11504" placeholder="insert into ..." />
-            <marker date="1458947767202" expanded="true" signature="11763:11793" placeholder="delete from ..." />
-            <marker date="1458947767202" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
-            <marker date="1458947767202" expanded="true" signature="12411:12452" placeholder="update liu s..." />
-            <marker date="1458947767202" expanded="true" signature="13871:13968" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
+            <marker date="1458948383258" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
+            <marker date="1458948383258" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
+            <marker date="1458948383258" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
+            <marker date="1458948383258" expanded="true" signature="10379:10436" placeholder="..." />
+            <marker date="1458948383258" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="11468:11504" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="11763:11793" placeholder="delete from ..." />
+            <marker date="1458948383258" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
+            <marker date="1458948383258" expanded="true" signature="12411:12452" placeholder="update liu s..." />
+            <marker date="1458948383258" expanded="true" signature="13847:13944" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -756,13 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.923077" vertical-offset="600" max-vertical-offset="2160">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/denglu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.9130435" vertical-offset="2127" max-vertical-offset="7320">
@@ -805,54 +828,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/go.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.110497236" vertical-offset="0" max-vertical-offset="13110">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0769231" vertical-offset="1500" max-vertical-offset="2250">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5384616" vertical-offset="90" max-vertical-offset="13680">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding>
+            <marker date="1458948383258" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
+            <marker date="1458948383258" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
+            <marker date="1458948383258" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
+            <marker date="1458948383258" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
+            <marker date="1458948383258" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
+            <marker date="1458948383258" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
+            <marker date="1458948383258" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
+            <marker date="1458948383258" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
+            <marker date="1458948383258" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
+            <marker date="1458948383258" expanded="true" signature="10379:10436" placeholder="..." />
+            <marker date="1458948383258" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
+            <marker date="1458948383258" expanded="true" signature="11468:11504" placeholder="insert into ..." />
+            <marker date="1458948383258" expanded="true" signature="11763:11793" placeholder="delete from ..." />
+            <marker date="1458948383258" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
+            <marker date="1458948383258" expanded="true" signature="12411:12452" placeholder="update liu s..." />
+            <marker date="1458948383258" expanded="true" signature="13847:13944" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/article/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="159.97437" vertical-offset="31439" max-vertical-offset="40380">
+          <caret line="840" column="118" selection-start-line="840" selection-start-column="118" selection-end-line="840" selection-end-column="118" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.025641" vertical-offset="194" max-vertical-offset="780">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/kecheng.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8461537" vertical-offset="2820" max-vertical-offset="27000">
-          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.22099447" vertical-offset="2730" max-vertical-offset="27000">
+          <caret line="96" column="64" selection-start-line="96" selection-start-column="64" selection-end-line="96" selection-end-column="64" />
           <folding>
             <marker date="1458946973936" expanded="true" signature="37915:37924" placeholder="..." />
             <marker date="1458946973936" expanded="true" signature="38160:38169" placeholder="..." />
             <marker date="1458946973936" expanded="true" signature="38443:38452" placeholder="..." />
             <marker date="1458946973936" expanded="true" signature="38889:38898" placeholder="..." />
             <marker date="1458946973936" expanded="true" signature="39008:39017" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33701658" vertical-offset="13227" max-vertical-offset="13770">
-          <caret line="447" column="28" selection-start-line="447" selection-start-column="28" selection-end-line="447" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <marker date="1458947767202" expanded="true" signature="531:554" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="676:696" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="826:850" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="1715:1814" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="2203:2243" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="3024:3044" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3080:3166" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3220:3259" placeholder="select * fro..classs..." />
-            <marker date="1458947767202" expanded="true" signature="3295:3408" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="3468:3491" placeholder="select * fro..direction..." />
-            <marker date="1458947767202" expanded="true" signature="3547:3571" placeholder="select * fro..difficulty..." />
-            <marker date="1458947767202" expanded="true" signature="4463:4503" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="5163:5207" placeholder="select u_num..user1..." />
-            <marker date="1458947767202" expanded="true" signature="7726:7772" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="8150:8193" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="8323:8362" placeholder="select * fro..course..." />
-            <marker date="1458947767202" expanded="true" signature="8764:8805" placeholder="select * fro..zhangjie..." />
-            <marker date="1458947767202" expanded="true" signature="9012:9061" placeholder="select v_tit..video..." />
-            <marker date="1458947767202" expanded="true" signature="9435:9471" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="9537:9573" placeholder="select * fro..video..." />
-            <marker date="1458947767202" expanded="true" signature="9920:9978" placeholder="select u_nam..user1..." />
-            <marker date="1458947767202" expanded="true" signature="10379:10436" placeholder="..." />
-            <marker date="1458947767202" expanded="true" signature="10718:10754" placeholder="select * fro..user1..." />
-            <marker date="1458947767202" expanded="true" signature="11468:11504" placeholder="insert into ..." />
-            <marker date="1458947767202" expanded="true" signature="11763:11793" placeholder="delete from ..." />
-            <marker date="1458947767202" expanded="true" signature="12111:12143" placeholder="select * fro..liu..." />
-            <marker date="1458947767202" expanded="true" signature="12411:12452" placeholder="update liu s..." />
-            <marker date="1458947767202" expanded="true" signature="13871:13968" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>

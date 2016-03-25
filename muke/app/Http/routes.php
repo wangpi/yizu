@@ -59,6 +59,9 @@ Route::get('co',"HelloController@Com");
 Route::get('poh',"HelloController@pohion");
 //登陆
 Route::get('denglu',"HelloController@denglu");
+
+//文章
+Route::get('article',"ArticleController@show");
 /*
 |--------------------------------------------------------------------------
 | Application Routes

@@ -408,14 +408,12 @@ class HelloController extends Controller
         }
 
         //注册功能
-        public
-        function Register()
+        public function Register()
         {
             return view('register');
         }
 
-        public
-        function register1()
+        public function register1()
         {
             $email = $_GET['email'];
             $arr = DB::table('user1')->where(['u_email' => $email])->get();
@@ -426,8 +424,7 @@ class HelloController extends Controller
             }
         }
 
-        public
-        function zhuce()
+        public function zhuce()
         {
             $email = $_POST['email'];
             $pwd = md5($_POST['pwd']);
