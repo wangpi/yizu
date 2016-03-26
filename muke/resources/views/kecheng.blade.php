@@ -207,54 +207,7 @@ var is_choice = "";
             <input type="hidden" value="<?php echo $id['nan_id']?>" id='zhi1'/>
             <input type="hidden" value="<?php echo $id['z_id']?>" id='zhi2'/>
             <input type="hidden" value="<?php echo $id['c_id']?>" id='zhi3'/>
-<script>
-   
-        $(document).on('click','#nan',function(){
-            var nan_id = $(this).attr('nan_id');
-            //alert(nan_id);
-            var c_id = $('#zhi3').attr('value');
-            //alert(c_id)
-            var z_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        })
-        $(document).on('click','#c',function(){
-            var c_id = $(this).attr('c_id');
-            //alert(nan_id);
-            var nan_id = $('#zhi1').attr('value');
-            //alert(c_id)
-            var z_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        })
-        $(document).on('click','#z',function(){
-            var z_id = $(this).attr('z_id');
-            //alert(z_id);
-            var c_id = $('#zhi3').attr('value');
-            //alert(c_id)
-            var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        })
-        function nandu(){
-            var nan_id = '';
-            $('#zhi1').val(nan_id);
-            var c_id = $('#zhi3').attr('value');
-            var z_id = $('#zhi2').attr('value');
-            var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        }
-        function fen(){
-            var c_id = '';
-            $('#zhi3').val(c_id);
-            var c_id = $('#zhi3').attr('value');
-            var z_id = $('#zhi2').attr('value');
-            var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        }
-</script>
+
             <div class="course-tool-bar clearfix">
                 <div class="tool-left l">
                 <?php foreach ($hot as $k => $v): ?>
@@ -311,424 +264,7 @@ var is_choice = "";
             </a>
         </li>
     <?php endforeach ?>
-                                        <<!-- li class="course-one">
-                            <a href="http://www.imooc.com/view/85" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="Java入门第一季" src="./kecheng/536059be00010b6d06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>Java入门第一季</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">本课程会从Java环境搭建、基础语法开始，带你进入神秘的进入Java世界</p>
-                                    <span class="l ">更新完毕</span>
 
-                <span class="l ml20">
-                                275230
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    5小时 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/139" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="PS入门教程——新手过招" src="./kecheng/53a28e960001311b06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>PS入门教程——新手过招</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">PS的基本使用方法，带你入门。</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                219305
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    9小时44分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/249" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="C语言入门" src="./kecheng/54a38eb4000120ad06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>C语言入门</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">进入编程世界的必修课-C语言</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                199382
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    4小时50分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/36" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="JavaScript入门篇" src="./kecheng/53e1d0470001ad1e06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>JavaScript入门篇</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">做为一名Web攻城狮的必备技术，让您从糊涂到明白，快速认识JavaScript。</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                173112
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    1小时35分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/54" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="PHP入门篇" src="./kecheng/53daee770001dd0706000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>PHP入门篇</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">3小时轻松帮您快速掌握PHP语言基础知识，为后续PHP进级课程学习打下基础。</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                154690
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    5小时56分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/159" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="PS大神通关教程" src="./kecheng/53d068840001a89906000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>PS大神通关教程</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">一路的升级打怪，让你实现ps菜鸟到大神的炫酷逆袭。</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                146422
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    8小时11分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/96" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="Android攻城狮的第一门课（入门篇）" src="./kecheng/53bf89100001684e06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>Android攻城狮的第一门课（入门篇）</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">想快速进入Android开发领域的程序猿的首选课程</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                139554
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    5小时 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/124" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="Java入门第二季" src="./kecheng/53b65f70000148d306000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>Java入门第二季</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">掌握面向对象的基本原则以及 Java 面向对象编程基本实现原理</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                138794
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    4小时 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/10" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="JavaScript进阶篇" src="./kecheng/529dc3450001eb3606000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>JavaScript进阶篇</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">JavaScript带您进入网页动态交互世界，为网页增色，为技术加分。</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                126266
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    8小时55分钟 | 中级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/175" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt=" Linux达人养成计划 I" src="./kecheng/53fbd87f0001e4c006000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span> Linux达人养成计划 I</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">Linux的入门级课程！</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                117447
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    6小时 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/11" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="jQuery基础课程" src="./kecheng/53daeec60001058206000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>jQuery基础课程</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">加入jQuery基础课程学习，有效提高网站前端开发速度！</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                117231
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    9小时57分钟 | 中级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/177" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="Python入门" src="./kecheng/540e57300001d6d906000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>Python入门</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">未来您要会的优雅、明确、简单语言</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                116667
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    5小时 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/110" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="Java入门第三季" src="./kecheng/537587c60001def606000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>Java入门第三季</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">异常处理 + 集合框架 + 字符串操作 + 常用类使用 = Java中你必须懂得</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                110502
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    5小时 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/141" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="玩转Bootstrap（基础）" src="./kecheng/54a2180a0001a2ce06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>玩转Bootstrap（基础）</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">了解Bootstrap框架并告诉你怎么使用Bootstrap。</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                105586
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    10小时 | 中级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/122" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="与MySQL的零距离接触" src="./kecheng/53b3d133000158e206000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>与MySQL的零距离接触</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">只要不花钱，必定用的多，不花钱的关系型数据库，你懂得！</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                103756
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    8小时29分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/33" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="十天精通CSS3" src="./kecheng/52e1d29d000161fe06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>十天精通CSS3</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                95983
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    5小时 | 高级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/277" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="JavaScript深入浅出" src="./kecheng/54aa0335000197eb06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>JavaScript深入浅出</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">结合实例由浅入深学习JS，且解析JS常见误区。</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                90624
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    5小时27分钟 | 高级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/95" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="网页布局基础" src="./kecheng/53eafb44000146c706000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>网页布局基础</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">让你精通CSS中三大定位机制—标准文档流、浮动及绝对定位，彻底掌握布局所有技能！</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                88076
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    1小时30分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li>
-                                        <li class="course-one">
-                            <a href="http://www.imooc.com/view/39" target="_self">
-                        <div class="course-list-img">
-                <img width="240" height="135" alt="前端开发工具技巧介绍—DW篇" src="./kecheng/52e490fb0001e3ef06000338-240-135.jpg">
-                        </div>
-            <h5>
-                <span>前端开发工具技巧介绍—DW篇</span>
-            </h5>
-            <div class="tips">
-                <p class="text-ellipsis">你真的确认会使用Dreamweaver了吗？菜鸟逆袭第一步，从掌握这个工具开始！</p>
-                                    <span class="l ">更新完毕</span>
-
-                <span class="l ml20">
-                                84759
-                                人学习</span>
-            </div>
-            <span class="time-label">
-                                    40分钟 | 初级
-                            </span>
-            <b class="follow-label">跟我学</b>
-            </a>
-        </li> -->
                                             </ul>
                 </div>
                 <div class="page"><span class="disabled_page">首页</span><span class="disabled_page">上一页</span><a href="javascript:void(0)" class="active">1</a><a href="http://www.imooc.com/course/list?page=2">2</a><a href="http://www.imooc.com/course/list?page=3">3</a><a href="http://www.imooc.com/course/list?page=4">4</a><a href="http://www.imooc.com/course/list?page=5">5</a><a href="http://www.imooc.com/course/list?page=6">6</a><a href="http://www.imooc.com/course/list?page=7">7</a><a href="http://www.imooc.com/course/list?page=2">下一页</a><a href="http://www.imooc.com/course/list?page=26">尾页</a></div>
@@ -843,7 +379,7 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
 
 
 </style>
-<script src="js/jquery.1.8.min.js"></script>
+<script src="./js/jquery.1.8.min.js"></script>
 <script>
     $("#layout").click(function(){
         if(confirm("你确定退出吗?")){
@@ -892,4 +428,49 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
             }
         })
     })
+    $(document).on('click','#nan',function(){
+        var nan_id = $(this).attr('nan_id');
+        //alert(nan_id);
+        var c_id = $('#zhi3').attr('value');
+        //alert(c_id)
+        var z_id = $('#zhi2').attr('value');
+        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+        location=url;
+    })
+    $(document).on('click','#c',function(){
+        var c_id = $(this).attr('c_id');
+        //alert(nan_id);
+        var nan_id = $('#zhi1').attr('value');
+        //alert(c_id)
+        var z_id = $('#zhi2').attr('value');
+        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+        location=url;
+    })
+    $(document).on('click','#z',function(){
+        var z_id = $(this).attr('z_id');
+        //alert(z_id);
+        var c_id = $('#zhi3').attr('value');
+        //alert(c_id)
+        var nan_id = $('#zhi1').attr('value');
+        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+        location=url;
+    })
+    function nandu(){
+        var nan_id = '';
+        $('#zhi1').val(nan_id);
+        var c_id = $('#zhi3').attr('value');
+        var z_id = $('#zhi2').attr('value');
+        var nan_id = $('#zhi1').attr('value');
+        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+        location=url;
+    }
+    function fen(){
+        var c_id = '';
+        $('#zhi3').val(c_id);
+        var c_id = $('#zhi3').attr('value');
+        var z_id = $('#zhi2').attr('value');
+        var nan_id = $('#zhi1').attr('value');
+        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+        location=url;
+    }
 </script>
