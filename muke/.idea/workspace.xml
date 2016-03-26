@@ -67,8 +67,8 @@
       <file leaf-file-name="kecheng.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/kecheng.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53216374" vertical-offset="12567" max-vertical-offset="14430">
-              <caret line="429" column="6" selection-start-line="429" selection-start-column="6" selection-end-line="429" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.7076023" vertical-offset="12567" max-vertical-offset="14430">
+              <caret line="432" column="24" selection-start-line="432" selection-start-column="24" selection-end-line="432" selection-end-column="24" />
               <folding>
                 <marker date="1458953859652" expanded="true" signature="18410:18419" placeholder="..." />
                 <marker date="1458953859652" expanded="true" signature="18655:18664" placeholder="..." />
@@ -332,7 +332,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="1369" height="733" extended-state="0" />
+    <frame x="-7" y="2" width="1369" height="733" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -903,8 +903,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/kecheng.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53216374" vertical-offset="12567" max-vertical-offset="14430">
-          <caret line="429" column="6" selection-start-line="429" selection-start-column="6" selection-end-line="429" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.7076023" vertical-offset="12567" max-vertical-offset="14430">
+          <caret line="432" column="24" selection-start-line="432" selection-start-column="24" selection-end-line="432" selection-end-column="24" />
           <folding>
             <marker date="1458953859652" expanded="true" signature="18410:18419" placeholder="..." />
             <marker date="1458953859652" expanded="true" signature="18655:18664" placeholder="..." />
