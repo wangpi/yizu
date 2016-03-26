@@ -14,21 +14,6 @@ use Mail;
 
 class HelloController extends Controller
 {
-
-    public function Learn(){
-    	//方向查询
-    	//$direction=DB::table('direction')->get();
-        $direction=DB::select("select * from direction");
-    	//print_r($re);die;
-    	//分类查询
-    	//$class = DB::table('class')->get();
-        $class=DB::select("select * from classs");
-    	//print_r($class);die;
-    	//难度查询
-    	//$nandu = DB::table('difficulty')->get();
-        $nandu=DB::select("select * from difficulty");
-        $list = DB::select("select * from course inner join difficulty on course.direction_id=difficulty.d_id limit 20");
-
     public function Learn()
     {
         //方向查询
@@ -87,20 +72,6 @@ class HelloController extends Controller
         $c_id = $_REQUEST['c_id'];
         echo $nan_id,$c_id;die;
     }
-    public function Fenlei(){
-    	$d_id = $_REQUEST['d_id'];
-    	if ($d_id==0) {
-            $class=DB::select("select * from classs");
-    	}else{
-    		$class = DB::select("select * from classs where d_id='$d_id'");
-    	}
-    	//方向查询
-        $direction=DB::select("select * from direction");
-    	//难度查询
-        $nandu=DB::select("select * from difficulty");
-    	return view('kecheng',['direction'=>$direction,'class'=>$class,'nandu'=>$nandu]);
-
-
     public function Fenlei()
     {
         //多条件筛选
@@ -327,59 +298,12 @@ class HelloController extends Controller
 			}
 		}
 	}
-        public
-        function Golist()
+        public function Golist()
         {
             $id = $_POST['name'];
             $sql = "select v_title,v_id from video where z_id = '$id'";
             $re = DB::select($sql);
             echo json_encode($re);
-        }
-
-        public
-        function Beg()
-        {
-            $id = $_GET['id'];
-            session_start();
-            $user = $_SESSION['user'];
-            if (empty($user)) {
-                echo '1';
-            } else {
-                $id = $_SESSION['id'];
-                $sql = "select * from user1 where u_id='$id'";
-                $re = DB::select($sql);
-                $sq = "select * from video where v_id='$id'";
-                $rr = DB::select($sq);
-                //print_r($rr);die;
-                //print_r($re);die;
-                return view('blsh')->with(['re' => $re, 'rr' => $rr]);
-            }
-        }
-
-        public
-        function Log()
-        {
-            $log = $_POST['log'];
-            $pass = $_POST['pwd'];
-            $sql = "select u_name,u_pwd,u_id from user1  where u_name = '$log'";
-            $re = DB::select($sql);
-            //print_r($re);die;
-            if ($re) {
-                if ($pass == $re['0']['u_pwd']) {
-                    session_start();
-                    $_SESSION['user'] = $re['0']['u_name'];
-                    $_SESSION['id'] = $re['0']['u_id'];
-
-                    return redirect('/poh');
-                } else {
-                    echo "<script>alert('密码错误请重新输入');
-
-    			window.history.go(-1)</script>";
-                }
-            } else {
-                echo "<script>alert('用户名有误');window.history.go(-1)</script>";
-            }
-
         }
 
 
@@ -413,31 +337,6 @@ class HelloController extends Controller
         }
     	
     }
-
-        public
-        function pohion()
-        {
-            session_start();
-            $id = $_SESSION['id'];
-            $sql = "select * from user1 where u_id='$id'";
-            $re = DB::select($sql);
-            //print_r($re);die;
-            return view('blsh')->with(['re' => $re]);
-        }
-
-        public
-        function Com()
-        {
-            $text = $_GET['text'];
-            $vi = $_GET['vi'];
-            $id = $_SESSION['id'];
-            //echo $text;
-            $time = date("Y-m-d H:i:s", time());
-            //echo $time;
-            // $sql="insert into comment(aid,)";
-
-
-        }
 
         public
         function Lian()
