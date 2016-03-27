@@ -61,7 +61,11 @@ Route::get('poh',"HelloController@pohion");
 Route::get('denglu',"HelloController@denglu");
 
 //文章
-Route::get('article',"ArticleController@show");
+Route::get('articl',"ArticleController@show");
+
+//个人中心之课程
+Route::get('courses',"CourseController@course");
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
