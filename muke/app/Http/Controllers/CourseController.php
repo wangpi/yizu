@@ -19,7 +19,8 @@ class CourseController extends Controller
         //根据session中存的信息，查询个人基本信息
         session_start();
         $name=$_SESSION['name'];
-        $arr=DB::select();
+        $arr=DB::table("user1")->where(['u_name'=>$name])->get();
+        
         return view('course.course');
     }
 }
