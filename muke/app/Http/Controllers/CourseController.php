@@ -12,10 +12,14 @@ use Cookie;
 use App\Http\Controllers\Session;
 use Mail;
 
-class ArticleController extends Controller
+class CourseController extends Controller
 {
-    //文章首页
-    public function show(){
-        return view('article.show');
+    //个人中心之课程
+    public function course(){
+        //根据session中存的信息，查询个人基本信息
+        session_start();
+        $name=$_SESSION['name'];
+        $arr=DB::select();
+        return view('course.course');
     }
 }
