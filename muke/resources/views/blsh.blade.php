@@ -17,8 +17,8 @@
 <script type="text/javascript">
   var OP_CONFIG={"module":"course","page":"video","userInfo":{"uid":3056088,"nickname":"qq_\u522b\u6252\u6123\u6211_0","head":"http:\/\/img.mukewang.com\/user\/56e9f6a00001a0c901000100-80-80.jpg","usertype":"1","roleid":0}};
   var tplDef={
-	"url_space_u":"/space/u",
-	"url_space_index":"/space/index",
+    "url_space_u":"/space/u",
+    "url_space_index":"/space/index",
     "url_space_course":"/space/course",
     "myclub_rule":"/about/faq?t=3",
     "url_course_qadetail":"/qadetail",
@@ -84,7 +84,7 @@ var videoTitle = "1-1 需求分析和项目准备";
                     <i class="msg_remind" style="display: none;"></i>
                     <a target="_blank" href="http://www.imooc.com/u/3056088/notices"><i class="icon-notifi"></i></a>
                 </li>
-        	    <li class="my_message">
+                <li class="my_message">
                     <a href="http://www.imooc.com/message" title="我的消息" target="_self">
                         <i class="icon-mail"></i>
                         <span style="display: none;">我的消息</span>
@@ -101,8 +101,8 @@ var videoTitle = "1-1 需求分析和项目准备";
                                 <a href="http://www.imooc.com/u/3056088/courses"><img src="./blsh/56e9f6a00001a0c901000100-100-100.jpg" alt="qq_别扒愣我_0" class="l"></a>
                                 <a href="http://www.imooc.com/u/3056088/courses"><span class="name text-ellipsis">qq_别扒愣我_0</span></a>
                                 <p class="meta">
-					<a href="http://www.imooc.com/u/3056088/experience">经验<b id="js-user-mp">0</b></a>
-					<a href="http://www.imooc.com/u/3056088/credit">积分<b id="js-user-credit">0</b></a>            </p>
+                    <a href="http://www.imooc.com/u/3056088/experience">经验<b id="js-user-mp">0</b></a>
+                    <a href="http://www.imooc.com/u/3056088/credit">积分<b id="js-user-credit">0</b></a>            </p>
                     
                                 <a href="http://www.imooc.com/user/setprofile" class="icon-set setup"></a>
                             </div>
@@ -143,10 +143,10 @@ var videoTitle = "1-1 需求分析和项目准备";
     
         <input type="hidden" id="vi" value="<?php echo $rr['0']['v_id']?>">
         <video controls="controls" width="800px" height="200px" id="mp4" autoplay>
-				<source src="<?php echo $rr['0']['v_src']?>" type="video/mp4">
-		</video>
+                <source src="<?php echo $rr['0']['v_src']?>" type="video/mp4">
+        </video>
 
-		<div class="next-box J_next-box hide">
+        <div class="next-box J_next-box hide">
                 <div class="next-box-inner">
                                             <div class="course-tip-layer J-next-course" data-next-src="/video/11174">
                             <h2>下一节课程： 开发环境及工具
@@ -283,14 +283,18 @@ var videoTitle = "1-1 需求分析和项目准备";
 
             </div>
         </div>
-        <div id="plLoadListData"><div class="pl-container"> <ul>   <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/2055456" target="_blank"><img width="40" height="40" src="./blsh/557d99380001fa0301000100-40-40.jpg" title="D__C"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/2055456" target="_blank">D__C</a> </div> <div class="pl-list-content">接口已经过时了，淘宝会返回：We are sorry, but Chrome API does not allow to get a response body for redirect.</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-03-14</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="182107"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/3028413" target="_blank"><img width="40" height="40" src="./blsh/unknow-40.png" title="醉在现实醒在梦里"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/3028413" target="_blank">醉在现实醒在梦里</a> </div> <div class="pl-list-content">如果可以选择我真的不愿意过现在的生活我宁愿回到大山里面当一个没见过市面的女孩。</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-03-12</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="180660"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/2917332" target="_blank"><img width="40" height="40" src="./blsh/5333a1660001394602000200-40-40.jpg" title="makakaka"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/2917332" target="_blank">makakaka</a> </div> <div class="pl-list-content">老师是廊坊人吧</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-02-29</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="174313"><i class="icon-thumb"></i>  <span>1</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/1962882" target="_blank"><img width="40" height="40" src="./blsh/56efb0e500019f5507400553-40-40.jpg" title="晶晶_我们结婚吧"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/1962882" target="_blank">晶晶_我们结婚吧</a> </div> <div class="pl-list-content">老师讲的很好</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-02-29</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="174128"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/1337091" target="_blank"><img width="40" height="40" src="./blsh/55098f3200011b5101000100-40-40.jpg" title="wyc8324689"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/1337091" target="_blank">wyc8324689</a> </div> <div class="pl-list-content">11233</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-02-29</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="174097"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/2168131" target="_blank"><img width="40" height="40" src="./blsh/533e4c910001a72d02000200-40-40.jpg" title="幽壑潜蛟"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/2168131" target="_blank">幽壑潜蛟</a> </div> <div class="pl-list-content">课程发布快。使用。支持慕课网</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-02-27</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="173372"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/225201" target="_blank"><img width="40" height="40" src="./blsh/56c47bba0001e95807480728-40-40.jpg" title="手工客"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/225201" target="_blank">手工客</a> </div> <div class="pl-list-content">来看看。不说话！</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-02-27</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="173285"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/267463" target="_blank"><img width="40" height="40" src="./blsh/53ead3170001232c01000100-40-40.jpg" title="星之七章"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/267463" target="_blank">星之七章</a> </div> <div class="pl-list-content">前排。。。</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-02-26</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="173077"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li>  <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/1126772" target="_blank"><img width="40" height="40" src="./blsh/5498fef30001e3eb01000100-40-40.jpg" title="Hudu2015"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/1126772" target="_blank">Hudu2015</a> </div> <div class="pl-list-content">来个首评!</div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间: 2016-02-26</span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="173071"><i class="icon-thumb"></i>  <span>0</span></a> </div> </div> </li> </ul></div><div class="page pl-list-page"></div></div>
+        <div id="plLoadListData"><div class="pl-container"> <ul>   
+        <?php foreach($qo as $k=>$v){?>
+        <li class="pl-list clearfix"> <div class="pl-list-avator"> <a href="http://www.imooc.com/space/u/uid/2055456" target="_blank"><img width="40" height="40" src="<?php echo $v['u_photo'];?>" title="<?php echo $v['comment'];?>"></a> </div> <div class="pl-list-main"> <div class="pl-list-nick"> <a href="http://www.imooc.com/space/u/uid/2055456" target="_blank"><?php echo $v['u_name'];?></a> </div> <div class="pl-list-content"><?php echo $v['comment'];?></div>  <div class="pl-list-btm clearfix"> <span class="pl-list-time l">时间:<?php echo $v['ctime'];?></span>  <a title="赞" href="javascript:;" class="js-pl-praise list-praise r" data-id="182107"><i class="icon-thumb"></i>  <span><?php echo $v['count'];?></span></a> </div> </div> </li>
+        <?php }?>
+        </ul></div><div class="page pl-list-page"></div></div>
     </div>
     <div id="qa-content" class="list-tab-con" style="display:none">
-        <div id="qaLoadListData"><div class="sortlist"> 			<div class="ordertab"> 				<a href="javascript:void(0)" hidefocus="true" data-order="1" class="quealltab onactive">全部</a>				<a href="javascript:void(0)" hidefocus="true" data-order="2" class="quealltab ">精华</a>			</div>		</div><div class="answertabcon"></div><div class="page discuss-list-page"></div></div>
+        <div id="qaLoadListData"><div class="sortlist">             <div class="ordertab">              <a href="javascript:void(0)" hidefocus="true" data-order="1" class="quealltab onactive">全部</a>              <a href="javascript:void(0)" hidefocus="true" data-order="2" class="quealltab ">精华</a>          </div>      </div><div class="answertabcon"></div><div class="page discuss-list-page"></div></div>
     </div>
     <div id="note-content" class="list-tab-con" style="display:none">
         <div id="noteLoadListData">
-        <div class="course-tool-bar clearfix js-select-state">			<div class="tool-left l js-all-state">		        <a href="javascript:;" class="sort-item active" data-sort="last">最新</a>		        <a href="javascript:;" class="sort-item" data-sort="sugg">点赞</a>		        <a href="javascript:;" class="sort-item" data-sort="coll">采集</a>	        </div>	        <div class="tool-right r">		        <span class="tool-item">		        	<a href="javascript:;" class="js-ower hide-learned tool-chk" data-sort="last">只看我的</a>		        </span>		    </div>		</div><div id="course_note" class="course_note"></div><div class="page note-list-page"></div></div>
+        <div class="course-tool-bar clearfix js-select-state">          <div class="tool-left l js-all-state">              <a href="javascript:;" class="sort-item active" data-sort="last">最新</a>             <a href="javascript:;" class="sort-item" data-sort="sugg">点赞</a>                <a href="javascript:;" class="sort-item" data-sort="coll">采集</a>            </div>          <div class="tool-right r">              <span class="tool-item">                    <a href="javascript:;" class="js-ower hide-learned tool-chk" data-sort="last">只看我的</a>              </span>         </div>      </div><div id="course_note" class="course_note"></div><div class="page note-list-page"></div></div>
     </div>
     <div id="wiki-content" class="list-tab-con" style="display:none;">
         <div id="wikiLoadListData">
@@ -411,8 +415,6 @@ var videoTitle = "1-1 需求分析和项目准备";
         </div>
     </div>
 </div>
-
-
 
 <script type="text/javascript" charset="utf-8" src="./blsh/ueditor.final.min.js"></script>
 
@@ -553,17 +555,47 @@ body{margin:8px;font-family:sans-serif;font-size:16px;}p{margin:5px 0;}&lt;/styl
 <div id="edui_fixedlayer" class="edui-imooc" style="position: fixed; left: 0px; top: 0px; width: 0px; height: 0px;"><div id="edui41" class="edui-popup  edui-bubble edui-imooc" onmousedown="return false;" style="display: none;"> <div id="edui41_body" class="edui-popup-body edui-imooc"> <iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%" height="100%" src="about:blank" class="edui-imooc"></iframe> <div class="edui-shadow edui-imooc"></div> <div id="edui41_content" class="edui-popup-content edui-imooc">  </div> </div></div></div><div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;"><object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" width="100%" height="100%" type="application/x-shockwave-flash" data="http://www.imooc.com/static/lib/ueditor/third-party/zeroclipboard/ZeroClipboard.swf?noCache=1458607277558"><param name="allowScriptAccess" value="sameDomain"><param name="allowNetworking" value="all"><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="trustedOrigins=www.imooc.com%2C%2F%2Fwww.imooc.com%2Chttp%3A%2F%2Fwww.imooc.com"></object></div></body></html>
 <script src='./jquery/jquery-1.8.3.js'></script>
 <script>
-	$("#js-pl-submit").click( function () { 
-			var aa=$("#js-pl-textarea").val();
+    $("#js-pl-submit").click( function () { 
+            var aa=$("#js-pl-textarea").val();
             var vi=$("#vi").val();
-			//alert(aa);
-			$.ajax({
-			   type: "GET",
-			   url: "co",
-			   data: "text="+aa+"&vi="+vi,
-			   success: function(msg){
-			     alert(  msg );
-			   }
-			});
-	 });
+            //alert(aa);
+            $.ajax({
+               type: "GET",
+               url: "co",
+               data: "text="+aa+"&vi="+vi,
+               success: function(msg){
+                 if(msg==1){
+                    alert('评论成功');
+                    window.location.reload();
+                 }
+                else{
+                    alert('评论失败');
+                }
+               }
+            });
+     });
+
+    $("#qaMenu").click( function () {
+            var vi=$("#vi").val();
+            $.ajax({
+               type: "POST",
+               url: "jso",
+               data: "name="+vi,
+               success: function(msg){
+                 alert( msg );
+               }
+            });
+     });  
+
+    $("#noteMenu").click( function () {
+           var vi=$("#vi").val();
+            $.ajax({
+               type: "GET",
+               url: "bi",
+               data: "name="+vi,
+               success: function(msg){
+                    $("#pl-content").html(msg);
+               }
+            });
+     });  
 </script>

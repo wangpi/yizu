@@ -62,6 +62,12 @@ Route::get('denglu',"HelloController@denglu");
 
 //文章
 Route::get('article',"ArticleController@show");
+//问答
+Route::post('jso',"HelloController@json");
+//笔记
+Route::GET('bi',"HelloController@bi");
+//笔记点赞
+Route::GET('zid',"HelloController@zid");
 /*
 |--------------------------------------------------------------------------
 | Application Routes
