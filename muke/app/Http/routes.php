@@ -62,6 +62,29 @@ Route::get('denglu',"HelloController@denglu");
 
 //文章
 Route::get('articl',"ArticleController@show");
+Route::get('articletwo',"ArticleController@show");
+Route::get('articlethree',"ArticleController@show");
+Route::get('articlenew',"ArticleController@show");
+Route::get('articlere',"ArticleController@show");
+Route::get('articledeta',"ArticleController@articledeta");
+Route::get('addarticle',"ArticleController@addarticle");
+Route::post('addarticletwo',"ArticleController@addarticletwo");
+Route::get('ces',"ArticleController@ces");
+Route::post('aclick',"ArticleController@aclick");
+Route::post('noaclick',"ArticleController@noaclick");
+Route::post('collection',"ArticleController@collection");
+Route::post('nocollection',"ArticleController@nocollection");
+Route::post('ifdenglu',"ArticleController@ifdenglu");
+Route::post('commentone',"ArticleController@commentone");
+Route::post('commenttwo',"ArticleController@commenttwo");
+
+//文章结束
+
+
+
+
+
+
 
 //个人中心之课程
 Route::get('courses',"CourseController@course");

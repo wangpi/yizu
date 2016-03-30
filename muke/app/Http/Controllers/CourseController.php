@@ -20,7 +20,7 @@ class CourseController extends Controller
         session_start();
         $name=$_SESSION['name'];
         $arr=DB::table("user1")->where(['u_name'=>$name])->get();
-        
-        return view('course.course');
+        1
+，        return view('course.course');
     }
 }

@@ -134,7 +134,7 @@ class HelloController extends Controller
                         session_start();
                         //$session_id=session_id();
                         //将用户名存session
-                        $_SESSION['name'] = $name;
+                        $_SESSION['u_id'] = $re[0]['u_id'];
                     } else {
                         //密码输入错误三次锁定,修改u_num的值，每次加1
                         $u_num = DB::select("select u_num from user1 where u_name='$name'");
