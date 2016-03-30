@@ -61,7 +61,39 @@ Route::get('poh',"HelloController@pohion");
 Route::get('denglu',"HelloController@denglu");
 
 //文章
+
+Route::get('article',"ArticleController@show");
+//问答
+Route::post('jso',"HelloController@json");
+//笔记
+Route::GET('bi',"HelloController@bi");
+//笔记点赞
+Route::GET('zid',"HelloController@zid");
+
 Route::get('articl',"ArticleController@show");
+Route::get('articletwo',"ArticleController@show");
+Route::get('articlethree',"ArticleController@show");
+Route::get('articlenew',"ArticleController@show");
+Route::get('articlere',"ArticleController@show");
+Route::get('articledeta',"ArticleController@articledeta");
+Route::get('addarticle',"ArticleController@addarticle");
+Route::post('addarticletwo',"ArticleController@addarticletwo");
+Route::get('ces',"ArticleController@ces");
+Route::post('aclick',"ArticleController@aclick");
+Route::post('noaclick',"ArticleController@noaclick");
+Route::post('collection',"ArticleController@collection");
+Route::post('nocollection',"ArticleController@nocollection");
+Route::post('ifdenglu',"ArticleController@ifdenglu");
+Route::post('commentone',"ArticleController@commentone");
+Route::post('commenttwo',"ArticleController@commenttwo");
+
+//文章结束
+
+
+
+
+
+
 
 //个人中心之课程
 Route::get('courses',"CourseController@course");
@@ -93,6 +125,7 @@ Route::get('setemail','SetController@setemail');
 
 //上传头像
 Route::post('upload','SetController@upload');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

@@ -151,7 +151,10 @@ class HelloController extends Controller
                             ->update(['u_num' => 0]);
                         session_start();
                         //$session_id=session_id();
+
+
                         //将用户id存session
+
                         $_SESSION['u_id'] = $re[0]['u_id'];
                     } else {
                         //密码输入错误三次锁定,修改u_num的值，每次加1
@@ -289,13 +292,14 @@ class HelloController extends Controller
     	}
     	else{
             
-             $ppo=$_GET['id'];
-        	 $id=$_SESSION['id'];
-             $sql="select * from user1 where u_id='$id'";
-             $re=DB::select($sql);
-             $sq="select * from video where v_id='$ppo'";
-             $rr=DB::select($sq);
-             return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+          //    $ppo=$_GET['id'];
+        	 // $id=$_SESSION['id'];
+          //    $sql="select * from user1 where u_id='$id'";
+          //    $re=DB::select($sql);
+          //    $sq="select * from video where v_id='$ppo'";
+          //    $rr=DB::select($sq);
+          //    return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+            echo  '2';
     	}
     }
 
@@ -331,11 +335,19 @@ class HelloController extends Controller
         $id=$_SESSION['id'];
         $sql="select * from user1 where u_id='$id'";
         $re=DB::select($sql);
-        $ppo='1';
+        if(!isset($_GET['v_id'])){
+            $ppo='1';
+        }
+        else{
+            $ppo=$_GET['v_id'];
+        }
         $sq="select * from video where v_id='$ppo'";
         $rr=DB::select($sq);
+        $qq="select * from comment inner join user1 on comment.u_id=user1.u_id where v_id='$ppo'";
+        $qo=DB::select($qq);
+        //print_r($qo);die;
         //print_r($re);die;
-        return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+        return view('blsh')->with(['re'=>$re,'rr'=>$rr,'qo'=>$qo]);
     }
 
     public function Com(){
@@ -470,5 +482,38 @@ class HelloController extends Controller
                     echo 2;
                 }
             }
+        }
+
+        public function json(){
+            $vi=$_POST['name'];
+            $sql="select * from  title inner join user1 on title.u_id=user1.u_id inner join nei title.t_id=nei.t_id where v_id='$v_id'";
+            echo $sql;
+        }
+
+        public function bi(){
+            $vi=$_GET['name'];
+            $sql="select * from zan inner join user1 on zan.u_id=user1.u_id where v_id='$vi'";
+            //echo $sql;
+           $re=DB::select($sql);
+           //print_r($re);
+            return view('bi')->with(['re' => $re]);
+        }
+
+        public function zid(){
+            session_start();
+            $zid=$_GET['name'];
+            $id=$_SESSION['id'];
+            $sql="select z_id from z_u where u_id='$id'";
+            $re=DB::select($sql);
+            if(empty($re)){
+               /* $sq="insert into z_u(z_id,u_id) vlues('$zid','$id')";
+                $rr=DB::select($sq);
+                if($rr){*/
+                    echo '1';
+                }
+                else{
+                    echo '3';
+                }
+            
         }
     }

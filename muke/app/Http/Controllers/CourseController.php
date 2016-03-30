@@ -18,7 +18,13 @@ class CourseController extends Controller
     public function course(){
         //根据session中存的信息，查询个人基本信息
         session_start();
+
         $id=$_SESSION['u_id'];//邮箱
+
+        $name=$_SESSION['name'];
+        $arr=DB::table("user1")->where(['u_name'=>$name])->get();
+
+
         //查询职位id
         $re=DB::table('user1')->where(['u_id'=>$id])->get();
         $zhiwei=$re[0]['u_zhiwei'];
@@ -77,6 +83,7 @@ class CourseController extends Controller
             }
         }
         //print_r($brr);
+
         return view('layouts.master',['arr'=>$arr,'brr'=>$brr]);
     }
 }
