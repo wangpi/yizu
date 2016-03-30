@@ -1,0 +1,7 @@
+[30-Mar-2016 14:48:37 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '$k' (T_VARIABLE) in F:\yizu\muke\storage\framework\views\9c68015defbf06c8b647e6cca6ca4eda63cf3047.php on line 3
+[30-Mar-2016 14:56:33 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '$k' (T_VARIABLE) in F:\yizu\muke\storage\framework\views\9c68015defbf06c8b647e6cca6ca4eda63cf3047.php on line 3
+[30-Mar-2016 15:49:23 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '$k' (T_VARIABLE) in F:\yizu\muke\storage\framework\views\9c68015defbf06c8b647e6cca6ca4eda63cf3047.php on line 4
+[30-Mar-2016 15:49:29 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '$k' (T_VARIABLE) in F:\yizu\muke\storage\framework\views\9c68015defbf06c8b647e6cca6ca4eda63cf3047.php on line 4
+[30-Mar-2016 15:49:39 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '$k' (T_VARIABLE) in F:\yizu\muke\storage\framework\views\9c68015defbf06c8b647e6cca6ca4eda63cf3047.php on line 4
+[30-Mar-2016 15:49:42 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '$k' (T_VARIABLE) in F:\yizu\muke\storage\framework\views\9c68015defbf06c8b647e6cca6ca4eda63cf3047.php on line 4
+[30-Mar-2016 16:31:00 Asia/Shanghai] PHP Parse error:  syntax error, unexpected ')' in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 482

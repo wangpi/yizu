@@ -61,6 +61,15 @@ Route::get('poh',"HelloController@pohion");
 Route::get('denglu',"HelloController@denglu");
 
 //文章
+
+Route::get('article',"ArticleController@show");
+//问答
+Route::post('jso',"HelloController@json");
+//笔记
+Route::GET('bi',"HelloController@bi");
+//笔记点赞
+Route::GET('zid',"HelloController@zid");
+
 Route::get('articl',"ArticleController@show");
 Route::get('articletwo',"ArticleController@show");
 Route::get('articlethree',"ArticleController@show");
@@ -88,6 +97,13 @@ Route::post('commenttwo',"ArticleController@commenttwo");
 
 //个人中心之课程
 Route::get('courses',"CourseController@course");
+
+//个人中心之设置
+Route::get('setprofile',"SetController@setprofile");
+
+//个人中心设置的地区
+Route::post('qu','SetController@qu');
+
 
 /*
 |--------------------------------------------------------------------------

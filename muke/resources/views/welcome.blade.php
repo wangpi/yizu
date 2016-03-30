@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+
 <!-- saved from url=(0021)http://www.imooc.com/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html><head>
+    <meta property="wb:webmaster" content="d02665f5353e63f6" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
+
 <title>慕课网-国内最大的IT技能学习平台</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="renderer" content="webkit">

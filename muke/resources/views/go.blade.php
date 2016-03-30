@@ -400,6 +400,9 @@ jQuery(document).ready(function($) {
                          $('.theme-popover-mask').fadeIn(100);
                          $('.theme-popover').slideDown(200);
                     }
+                    else{
+                        window.location.href='poh';
+                    }
                }
         });
        

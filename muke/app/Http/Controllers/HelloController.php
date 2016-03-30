@@ -16,6 +16,13 @@ class HelloController extends Controller
 {
     public function Learn()
     {
+        //微博第三方登录
+        include_once( './weibosdk/config.php' );
+        include_once( './weibosdk/saetv2.ex.class.php' );
+
+        $o = new \SaeTOAuthV2( WB_AKEY , WB_SKEY );
+
+        $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
         //方向查询
         //$direction=DB::table('direction')->get();
         $direction = DB::select("select * from direction");
@@ -53,19 +60,22 @@ class HelloController extends Controller
         //列表查询
         $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where limit 20");
 
-        session_start();
+       session_start();
         $session_id = session_id();
 
+
         //$name="王平";
-        if (empty($_SESSION['name'])) {
-            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'list' => $list, 'id' => $id, 'hot' => $hot]);
+        if (empty($_SESSION['u_id'])) {
+            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'list' => $list, 'id' => $id, 'hot' => $hot,'code_url'=>$code_url]);
         } else {
-            $name = $_SESSION['name'];
-            //根据名称查询个人信息
-            $arr = DB::select("select * from user1 where u_name='$name'");
-            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'name' => $name, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot]);
+            $id = $_SESSION['u_id'];
+            //根据id查询个人信息(两表联查)
+            //$arr=DB::table('user1')->join("user2","user1.u_id","=","user2.u_id")->where(['u_name'=>$name])->get();
+            $arr = DB::select("select * from user1 where u_id='$id'");
+            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot,'code_url'=>$code_url]);
         }
     }
+
 
     public function Shai(){
         $nan_id = $_REQUEST['nan_id'];
@@ -122,26 +132,29 @@ class HelloController extends Controller
                 $pwd = str_replace($brr[$i], ' ', $pwd);
             }
             //判断错误次数
-            $re = DB::select("select * from user1 where u_name='$name'");
+            $re = DB::select("select * from user1 where u_email='$name'");
             if ($re) {
                 if ($re[0]['u_num'] < 3) {
                     if ($re[0]['u_pwd'] == $pwd) {
                         echo 1;
                         //登陆成功后将u_num变成0
                         $arr = DB::table('user1')
-                            ->where('u_name', $name)
+                            ->where('u_email', $name)
                             ->update(['u_num' => 0]);
                         session_start();
                         //$session_id=session_id();
-                        //将用户名存session
+
+
+                        //将用户id存session
+
                         $_SESSION['u_id'] = $re[0]['u_id'];
                     } else {
                         //密码输入错误三次锁定,修改u_num的值，每次加1
-                        $u_num = DB::select("select u_num from user1 where u_name='$name'");
+                        $u_num = DB::select("select u_num from user1 where u_email='$name'");
                         //print_r($u_num);die;
                         $num = $u_num[0]['u_num'] + 1;
                         $arr = DB::table('user1')
-                            ->where('u_name', $name)
+                            ->where('u_email', $name)
                             ->update(['u_num' => $num]);
                         echo 0;
                     }
@@ -163,7 +176,7 @@ class HelloController extends Controller
         function layout()
         {
             session_start();
-            unset($_SESSION['name']);
+            unset($_SESSION['u_id']);
             return redirect('/learn');
         }
 
@@ -270,13 +283,14 @@ class HelloController extends Controller
     	}
     	else{
             
-             $ppo=$_GET['id'];
-        	 $id=$_SESSION['id'];
-             $sql="select * from user1 where u_id='$id'";
-             $re=DB::select($sql);
-             $sq="select * from video where v_id='$ppo'";
-             $rr=DB::select($sq);
-             return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+          //    $ppo=$_GET['id'];
+        	 // $id=$_SESSION['id'];
+          //    $sql="select * from user1 where u_id='$id'";
+          //    $re=DB::select($sql);
+          //    $sq="select * from video where v_id='$ppo'";
+          //    $rr=DB::select($sq);
+          //    return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+            echo  '2';
     	}
     }
 
@@ -312,11 +326,19 @@ class HelloController extends Controller
         $id=$_SESSION['id'];
         $sql="select * from user1 where u_id='$id'";
         $re=DB::select($sql);
-        $ppo='1';
+        if(!isset($_GET['v_id'])){
+            $ppo='1';
+        }
+        else{
+            $ppo=$_GET['v_id'];
+        }
         $sq="select * from video where v_id='$ppo'";
         $rr=DB::select($sq);
+        $qq="select * from comment inner join user1 on comment.u_id=user1.u_id where v_id='$ppo'";
+        $qo=DB::select($qq);
+        //print_r($qo);die;
         //print_r($re);die;
-        return view('blsh')->with(['re'=>$re,'rr'=>$rr]);
+        return view('blsh')->with(['re'=>$re,'rr'=>$rr,'qo'=>$qo]);
     }
 
     public function Com(){
@@ -451,5 +473,38 @@ class HelloController extends Controller
                     echo 2;
                 }
             }
+        }
+
+        public function json(){
+            $vi=$_POST['name'];
+            $sql="select * from  title inner join user1 on title.u_id=user1.u_id inner join nei title.t_id=nei.t_id where v_id='$v_id'";
+            echo $sql;
+        }
+
+        public function bi(){
+            $vi=$_GET['name'];
+            $sql="select * from zan inner join user1 on zan.u_id=user1.u_id where v_id='$vi'";
+            //echo $sql;
+           $re=DB::select($sql);
+           //print_r($re);
+            return view('bi')->with(['re' => $re]);
+        }
+
+        public function zid(){
+            session_start();
+            $zid=$_GET['name'];
+            $id=$_SESSION['id'];
+            $sql="select z_id from z_u where u_id='$id'";
+            $re=DB::select($sql);
+            if(empty($re)){
+               /* $sq="insert into z_u(z_id,u_id) vlues('$zid','$id')";
+                $rr=DB::select($sq);
+                if($rr){*/
+                    echo '1';
+                }
+                else{
+                    echo '3';
+                }
+            
         }
     }

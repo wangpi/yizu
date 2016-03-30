@@ -35,14 +35,15 @@ var is_choice = "";
         <h1>登录</h1>
         <ul class="login-bind-tp">
             <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
-            <li class="sina"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> 微博登录</a> </li>
-            <li class="douban"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> 豆瓣登录</a> </li>
+            <li class="sina"> <a href="<?= $code_url ?>"><em>&nbsp;</em> 微博登录</a> </li>
         </ul>
         <p>或者使用已有帐号登陆：</p>
         <form class="login-form clearfix" method="post" action="">
             <div class="form-arrow"></div>
             <input id="email" type="text" placeholder="请输入您的邮箱：">
-            <input id="password" type="password" placeholder="请输入您的密码：">
+            <span id='email_sp'></span>
+            <input id="pwd" type="password" placeholder="请输入您的密码：">
+            <span id='pwd_sp'></span>
             <input type="button" id="login" class="button-blue login" value="登录">
             <input type="hidden" name="return-url" value="">
             <div class="clearfix"></div>
@@ -50,23 +51,76 @@ var is_choice = "";
                 <input name="remember" type="checkbox" checked/>
                 下次自动登录 </label>
             <a href="forgot">忘记密码？</a>
-            <ul class="third-parties">
-                <li>
-                    <p data-url="">新浪微博帐号</p>
-                </li>
-                <li>
-                    <p data-url="">腾讯微博帐号</p>
-                </li>
-                <li>
-                    <p data-url="">豆瓣帐号</p>
-                </li>
-                <li>
-                    <p data-url=""></p>
-                </li>
-            </ul>
         </form>
     </div>
     <link rel="stylesheet" type="text/css" href="static/css/ui2.css?2013032917">
+    <script src="js/jquery.1.8.min.js"></script>
+    <script>
+        //$(document).on("blur","#email",function() {
+        $("#email").blur(function(){
+            var name = $("#email").val();
+            var reg = /^\w+@\w+(\.)\w+$/;
+            if (name!= " ") {
+                if (reg.test(name)) {
+                    $("#email_sp").html('√');
+                    return true;
+                }else{
+                    $("#email_sp").html('<font style="color:red">邮箱格式错误！</font>');
+                    return false;
+                }
+            }else{
+                $("#email_sp").html('<font style="color:red">邮箱不能为空哦！</font>');
+                return false;
+            }
+        });
+        $(document).on("blur","#pwd",function(){
+            var pwd=$("#pwd").val();
+            if(pwd==""){
+                $("#pwd_sp").html("<font style='color:red'>密码不能为空哦！</font>");
+            }else{
+                $("#pwd_sp").html(" ");
+            }
+        })
+        $(document).on("click","#signin-btn",function(){
+            var name=$("#email").val();
+            var pwd=$("#pwd").val();
+            var reg = /^\w+@\w+(\.)\w+$/;
+            /*if (name!= "") {
+             if (reg.test(name)) {
+             $("#email_sp").html('√');
+             return true;
+             }else{
+             $("#email_sp").html('<font style="color:red">邮箱格式错误！</font>');
+             return false;
+             }
+             }else{
+             $("#email_sp").html('<font style="color:red">邮箱不能为空哦！</font>');
+             return false;
+             }*/
+            if(pwd==""){
+                $("#pwd_sp").html('<font style="color:red">密码不能为空哦！</font>');
+            }else{
+                $("#pwd_sp").html(' ');
+            }
+            $.ajax({
+                url:'login',
+                type:'post',
+                data:'name='+name+'&pwd='+pwd,
+                success:function(txt){
+                    if(txt==1){
+                        $("#pwd_sp").html("√");
+                        window.location.href='learn'
+                    }else if(txt==0){
+                        $("#pwd_sp").html("<font style='color:red'>用户名或密码错误!</font>");
+                    }else if(txt==2){
+                        $("#email_sp").html('<font style="color:red">用户名不存在！</font>');
+                    }else{
+                        alert(txt);
+                    }
+                }
+            })
+        })
+    </script>
     <script>
     function openNew(){
         //获取页面的高度和宽度
@@ -114,8 +168,156 @@ var is_choice = "";
     }
 </script>
 
+    <div class="modal in" id="signup-modal" > <a class="close" data-dismiss="modal">×</a>
+        <h1>注册</h1>
+        <p>使用邮箱注册：</p>
+        <form class="signup-form clearfix" method="post" action="">
+            <p class="error"></p>
+            <input id="emaill" type="text" placeholder="请输入电子邮箱地址：">
+            <span id="emaill_sp"></span>
+            <input id="pwdd" type="password" placeholder="6-16位密码，区分大小写，不能用空格：">
+            <span id="pwdd_sp"></span>
+            <input id="nick" type="text" placeholder="昵称为2-18位，中英文、数字及下划线：">
+            <span id="nick_sp"></span>
+            <input id="yzm" size="20px" placeholder="请输入验证码" type="text">
+            <a onclick="javascript:re_captcha();" >
+                <img src="{{ URL('hello/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="40" id="c2c98f0de5a04167a9e427d883690ff6" border="1"></a>
+            <p class="tips"></p><span id="yzm_sp"></span>
+            <input type="hidden" name="title" value="">
+            <input type="hidden" name="url" value="">
+            <div class="clearfix"></div>
+            <img src="./img/qq.png" width="50px" height="50px">
+            <img src="./img/weibo.jpg" width="50px" height="50px">
+            {{--<ul class="login-bind-tp">
+                <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
+                <li class="sina"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> 微博登录</a> </li>
+            </ul>--}}
+            <input type="button" name="type" class="button-blue reg" value="注册" data-category="UserAccount" data-action="regist" id="js-signup-submit">
+        </form>
+    </div>
 
+    <script>
+        $("#nick").blur(function(){
+            var nick=$("#nick").val();
+            if(nick==""){
+                $("#nick_sp").html("<font style='color:red'>昵称不能为空！</font>");
+                return false;
+            }else{
+                $("#nick_sp").html(" ");
+                return true;
+            }
+        })
+        $("#yzm").blur(function(){
+            var yzm=$("#yzm").val();
+            if(yzm==""){
+                $("#yzm_sp").html("<font style='color:red'>验证码不能为空！</font>");
+                return false;
+            }else{
+                $("#yzm_sp").html(" ");
+                $.post('zhu',{
+                    'yzm':yzm
+                },function (txt){
+                    if(txt==2){
+                        $("#yzm_sp").html("<font style='color:red'>验证码错误！</font>");
+                    }
+                })
+                return true;
+            }
+        })
+        //$("#email").blur(function(){
+        $(document).on("blur","#emaill",function(){
+            var email=$("#emaill").val();
+            if(email==""){
+                $("#emaill_sp").html(" ");
+                return true;
+            }else{
+                var reg=/^\w+@\w+(\.)\w+$/;
+                if(reg.test(email)){
+                    //将邮箱传到前台，判断是否已经注册过
+                    $.get('register1',{
+                        'email':email
+                    },function(txt){
+                        if(txt==1){
+                            $("#emaill_sp").html(" ");
+                            return true;
+                        }else if(txt==0){
+                            $("#emaill_sp").html("<font style='color:red'>已注册！！</font>");
+                            return false;
+                        }
+                    })
+                }else{
+                    $("#emaill_sp").html("<font style='color:red'>邮箱格式不对</font>");
+                    return false;
+                }
+            }
+        });
+        //$("#pwd").blur(function(){
+        $(document).on("blur","#pwdd",function(){
+            //计算密码的长度
+            var pwd=$("#pwdd").val();
+            pwd.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            if(pwd.length>16  ){
+                $("#pwdd_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+                $("#pwdd").keyup(function(){
+                    var pw=$("#pwdd").val();
+                    if(pw.length==0){
+                        $("#pwdd_sp").html("<font style='color:red'>密码不能为空！</font>");
+                    }else if(pw.length<6){
+                        $("#pwdd_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+                    }else{
+                        $("#pwdd_sp").html(" ");
+                    }
+                })
+            }
+        });
+        $("#js-signup-submit").click(function(){
+            var email=$("#emaill").val();
+            var pwd=$("#pwdd").val();
+            var nick=$("#nick").val();
+            var yzm=$("#yzm").val();
+            if(email==""){
+                $("#emaill_sp").html("<font style='color:red'>邮箱不能为空！</font>");
+                return false;
+            }
+            if(pwd==""){
+                $("#pwdd_sp").html("<font style='color:red'>密码不能为空！</font>");
+                return false;
+            }
+            if(nick==""){
+                $("#nick_sp").html("<font style='color:red'>昵称不能为空！</font>");
+                return false;
+            }
+            if(yzm==""){
+                $("#yzm_sp").html("<font style='color:red'>验证码不能为空！</font>");
+                return false;
+            }
+            $.post('zhu',{
+                'email':email,
+                'nick':nick,
+                'pwd':pwd,
+                'yzm':yzm
+            },function(txt){
+                if(txt==1){
+                    alert('注册成功');
+                    window.location.href='denglu';
+                }else if(txt==0){
+                    alert('注册失败');
+                    window.location.href='learn';
+                }else if(txt==2){
+                    alert('验证码有误');
+                    window.history.go(0);
+                }
+            })
+        })
+    </script>
 
+    <script>
+        function re_captcha() {
+            $url = "{{ URL('hello/captcha') }}";
+            $url = $url + "/" + Math.random();
+            document.getElementById('c2c98f0de5a04167a9e427d883690ff6').src=$url;
+        }
+    </script>
 
 <script charset="utf-8" async="" src="./kecheng/jquery.js"></script><script charset="utf-8" async="" src="./kecheng/seajs-text.js"></script><script charset="utf-8" async="" src="./kecheng/common.js"></script><script charset="utf-8" async="" src="./kecheng/string.js"></script><script charset="utf-8" async="" src="./kecheng/suggest.js"></script><script charset="utf-8" async="" src="./kecheng/store.js"></script><script charset="utf-8" async="" src="./kecheng/json.js"></script><script charset="utf-8" async="" src="./kecheng/im.js"></script><script charset="utf-8" async="" src="./kecheng/list.js"></script><script charset="utf-8" async="" src="./kecheng/socket.io.min.js"></script></head>
 <body id="List_courseId">
@@ -151,13 +353,14 @@ var is_choice = "";
                     </div>
                 </li>
 
-                <?php if(empty($_SESSION['name'])){ ?>
+                <?php if(empty($_SESSION['u_id'])){ ?>
                 <li class="header-signin">
-                    <!--<a role="button" data-category="UserAccount" data-action="login" data-toggle="modal" href="#login-modal">登录</a>-->
-                    <a href="denglu" id="btnZhu">登录</a>
+                    <a role="button" data-category="UserAccount" data-action="login" data-toggle="modal" href="#login-modal">登录</a>
+                    <!--<a href="denglu" id="btnZhu">登录</a>-->
                 </li>
                 <li class="header-signup">
-                    <a href="register" id="btnZhu">注册</a>
+                    <!--<a href="register" id="btnZhu">注册</a>-->
+                    <a role="button" data-category="UserAccount" data-action="login" data-toggle="modal" href="#signup-modal">注册</a>
                 </li>
                 <?php }else{ ?>
                 <li class='header-app'>
@@ -182,7 +385,7 @@ var is_choice = "";
                         <div class="card-inner">
                             <div class="card-top">
                                 <a href='/u/3059476/courses'><img src="<?php echo $arr[0]['u_photo']?>" alt="yjtlgp" class="l"></a>
-                                <a href='/u/3059476/courses'><span class="name text-ellipsis"><?php echo $_SESSION['name']?></span></a>
+                                <a href='/u/3059476/courses'><span class="name text-ellipsis"><?php echo $arr[0]['u_name']?></span></a>
                                 <p class="meta">
                                     <a href="/u/3059476/experience">经验<b id="js-user-mp">0</b></a>
                                     <a href="/u/3059476/credit">积分<b id="js-user-credit">0</b></a>            </p>
