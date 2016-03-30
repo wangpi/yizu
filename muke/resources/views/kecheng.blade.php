@@ -757,3 +757,51 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
         location=url;
     }
 </script>
+<script>
+   
+        $(document).on('click','#nan',function(){
+            var nan_id = $(this).attr('nan_id');
+            //alert(nan_id);
+            var c_id = $('#zhi3').attr('value');
+            //alert(c_id)
+            var z_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        })
+        $(document).on('click','#c',function(){
+            var c_id = $(this).attr('c_id');
+            //alert(nan_id);
+            var nan_id = $('#zhi1').attr('value');
+            //alert(c_id)
+            var z_id = $('#zhi2').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        })
+        $(document).on('click','#z',function(){
+            var z_id = $(this).attr('z_id');
+            //alert(z_id);
+            var c_id = $('#zhi3').attr('value');
+            //alert(c_id)
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        })
+        function nandu(){
+            var nan_id = '';
+            $('#zhi1').val(nan_id);
+            var c_id = $('#zhi3').attr('value');
+            var z_id = $('#zhi2').attr('value');
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        }
+        function fen(){
+            var c_id = '';
+            $('#zhi3').val(c_id);
+            var c_id = $('#zhi3').attr('value');
+            var z_id = $('#zhi2').attr('value');
+            var nan_id = $('#zhi1').attr('value');
+            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+            location=url;
+        }
+</script>
