@@ -16,6 +16,6 @@ class ArticleController extends Controller
 {
     //文章首页
     public function show(){
-        return ('show');
+        return view('article.show');
     }
 }

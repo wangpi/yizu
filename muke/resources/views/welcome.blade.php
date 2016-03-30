@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+
 <!-- saved from url=(0021)http://www.imooc.com/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html><head>
+    <meta property="wb:webmaster" content="d02665f5353e63f6" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
+
 <title>慕课网-国内最大的IT技能学习平台</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="renderer" content="webkit">
@@ -26,6 +30,56 @@ var is_choice = "";
     var ownName="271833261@qq.com"
   
 </script>
+
+
+
+    <script>
+        function openNew(){
+            //获取页面的高度和宽度
+            var sWidth=document.body.scrollWidth;
+            var sHeight=document.body.scrollHeight;
+
+            //获取页面的可视区域高度和宽度
+            var wHeight=document.documentElement.clientHeight;
+
+            var oMask=document.createElement("div");
+            oMask.id="mask";
+            oMask.style.height=sHeight+"px";
+            oMask.style.width=sWidth+"px";
+            document.body.appendChild(oMask);
+            var oLogin=document.createElement("div");
+            oLogin.id="login";
+            oLogin.innerHTML="<div id='signin' width='300px' class='rl-modal in' aria-hidden='false'><div class='rl-modal-header'><h1><span class='active-title' id='btnLogin'>登录</span><span data-fromto='signin:signup' id='btnRe'>注册</span></h1><img src='../img/close.png' id='close'><button type='button' class='rl-close' data-dismiss='modal' hidefocus='true' aria-hidden='true'></button></div><div class='rl-modal-body'><div class='clearfix'><div class='l-left-wrap l'><form id='signup-form' autocomplete='off' method='post' action='login'><p class='rlf-tip-globle' id='signin-globle-error'></p><div class='rlf-group'><input type='text' value='' name='email' id='username' data-validate='email' autocomplete='off' class='ipt ipt-email js-own-name' placeholder='请输入登录邮箱'><p class='rlf-tip-wrap'></p></div><input style='display:none' type='text' name='fakeusernameremembered'><input style='display:none' type='password' name='fakepasswordremembered'><div class='rlf-group'><input type='password' name='password' autocomplete='off' class='ipt ipt-pwd ipt-error' placeholder='请输入密码' id='pwd'></div><div class='rlf-group js-verify-row clearfix' style='display: none'><input type='text' name='verify' class='ipt ipt-verify l' placeholder='请输入验证码'><a href='javascript:void(0)' class='verify-img-wrap js-verify-refresh'><img class='verify-img' src='../js/verifycode'></a><a href='javascript:void(0)' class='icon-refresh js-verify-refresh'></a><p class='rlf-tip-wrap'></p></div><div class='rlf-group rlf-appendix clearfix'><label for='auto-signin' class='rlf-autoin l' hidefocus='true'><input type='checkbox' checked='checked' class='auto-cbx' id='auto-signin'>下次自动登录</label><a href='http://www.imooc.com/user/newforgot' class='rlf-forget r' target='_blank' hidefocus='true'>忘记密码 </a></div><div class='rlf-group clearfix'><input type='submit' id='signin-btn' value='登录' hidefocus='true' class='btn-red btn-full'>&nbsp&nbsp&nbsp&nbsp<input type='reset' id='signin-btn' value='取消' hidefocus='true' class='btn-red btn-full'></div></form></div></div></div><div class='rl-model-footer'><div class='pop-login-sns clearfix'><span class='l'>其他方式登录</span><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=weibo' class='pop-sns-weibo r'><i class='icon-weibo'></i></a><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=qq' class='pop-sns-qq r'><i class='icon-qq'></i></a><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=weixin' class='pop-sns-weixin r'><i class='icon-weixin'></i></a></div></div></div><div id='close'>";
+            document.body.appendChild(oLogin);
+
+            //获取登陆框的宽和高
+            var dHeight=oLogin.offsetHeight;
+            var dWidth=oLogin.offsetWidth;
+            //设置登陆框的left和top
+            oLogin.style.left=sWidth/2-dWidth/2+"px";
+            oLogin.style.top=wHeight/2-dHeight/2+"px";
+            //点击关闭按钮
+            var oClose=document.getElementById("close");
+
+            //点击登陆框以外的区域也可以关闭登陆框
+            oClose.onclick=oMask.onclick=function(){
+                document.body.removeChild(oLogin);
+                document.body.removeChild(oMask);
+            };
+        };
+
+
+
+        window.onload=function(){
+            var oBtn=document.getElementById("btnLogin");
+            //点击登录按钮
+            oBtn.onclick=function(){
+                openNew();
+                return false;
+            }
+        }
+    </script>
+
 
 
 
@@ -63,7 +117,8 @@ var is_choice = "";
                     </div>
                 </li>
                 <li class="header-signin">
-                    <a href="denglu" id="js-signin-btn">登录</a>
+                    <!--<a href="dneglu" id="btnLogin">登录</a>-->
+                    <a href="denglu" id="js-signup-btn">登录</a>
                 </li>
                 <li class="header-signup">
                     <a href="register" id="js-signup-btn">注册</a>
@@ -1050,6 +1105,33 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
 })();
 </script>
 </div><script type="text/javascript" src="./shouye/user"></script><script type="text/javascript" src="./shouye/iplookup.php"></script>
+<style type="text/css">
 
+    element.style {
+    }
+    .rl-modal.in {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+    .rl-modal {
+    }
+    .rl-modal {
+        position: fixed;
+        background: #fff;
+        z-index: 100000;
+        width: 360px;
+        padding-bottom: 30px;
+        left: 50%;
+        top: 50%;
+        margin: -218px 0 0 -180px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -o-transition: all 0.2s;
+    }
+
+
+</style>
 
 </body></html>
