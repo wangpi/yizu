@@ -17,6 +17,13 @@ Route::get('/', function () {
 
 //课程
 Route::get('learn',"HelloController@learn");
+//筛选
+Route::post('shai',"HelloController@shai");
+Route::get('shai1',"HelloController@shai1");
+//搜索
+Route::get('search',"HelloController@search");
+//友情链接
+Route::get('you',"HelloController@qing");
 //分类
 Route::get('fenlei',"HelloController@fenlei");
 //登陆
