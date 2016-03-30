@@ -77,6 +77,7 @@ class HelloController extends Controller
     }
 
 
+
     public function Shai(){
         $nan_id = $_REQUEST['nan_id'];
         $c_id = $_REQUEST['c_id'];
@@ -84,6 +85,13 @@ class HelloController extends Controller
     }
     public function Fenlei()
     {
+        //微博第三方登录
+        include_once( './weibosdk/config.php' );
+        include_once( './weibosdk/saetv2.ex.class.php' );
+
+        $o = new \SaeTOAuthV2( WB_AKEY , WB_SKEY );
+
+        $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
         //多条件筛选
         @$nan_id = $_REQUEST['nan_id'];
         @$c_id = $_REQUEST['c_id'];
@@ -110,7 +118,7 @@ class HelloController extends Controller
             //难度查询
             $nandu = DB::select("select * from difficulty");
             $hot = DB::table('hot')->get();
-            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'id' => $id, 'list' => $list, 'hot' => $hot]);
+            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'id' => $id, 'list' => $list, 'hot' => $hot,'code_url'=>$code_url]);
         }
 
     }
@@ -206,6 +214,7 @@ class HelloController extends Controller
         public
         function yanzheng()
         {
+            set_time_limit(0);
             session_start();
             //$userInput = \Request::get('captcha');
             $email = $_POST['email'];

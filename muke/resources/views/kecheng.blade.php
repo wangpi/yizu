@@ -35,7 +35,7 @@ var is_choice = "";
         <h1>登录</h1>
         <ul class="login-bind-tp">
             <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
-            <li class="sina"> <a href="<?= $code_url ?>"><em>&nbsp;</em> 微博登录</a> </li>
+            <li class="sina"> <a href="<?php echo  $code_url; ?>"><em>&nbsp;</em> 微博登录</a> </li>
         </ul>
         <p>或者使用已有帐号登陆：</p>
         <form class="login-form clearfix" method="post" action="">
