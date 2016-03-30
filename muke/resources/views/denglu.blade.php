@@ -53,14 +53,19 @@
                                 <p id="js-g-error" class="tips login-g-error"></p>
                             </div>
                             <div class="form-control">
-                                <input id="email" class="ipt ipt-email" data-validate="email" autocomplete="off" placeholder="请输入昵称" type="text"><span id='email_sp'></span>
+                                <input id="email" class="ipt ipt-email" data-validate="email" autocomplete="off" placeholder="请输入邮箱" type="text"><span id='email_sp'></span>
                                 <p class="tips"></p>
                                 <input style="display:none" type="text"> <!-- hack:to void chrome autocomplete -->
                             </div>
                             <div class="form-control">
-                                <input id="pwd" class="ipt ipt-pwd" autocomplete="off" placeholder="请输入登录密码" type="password">
+                                <form name="forms" method="post">
+                                <span id="box">
+                                <input id="pwd" name="password" class="ipt ipt-pwd" autocomplete="off" placeholder="请输入登录密码" type="password">
                                 <span class='rlf-tip-wrap rlf-tip-error' id='pwd_sp'></span>
+                                <span id=click><a href="javascript:ps()">显示密码</a></span>
                                 <p class="tips"></p>
+                                </span>
+
                             </div>
                             <div class="form-control clearfix" id="js-login-verify" style="display: none">
                                 <input name="verify" class="ipt ipt-verify l" placeholder="请输入验证码" type="text">
@@ -88,6 +93,21 @@
                 </div>
             </div>
         </div>
+
+        <SCRIPT language=JavaScript>
+            function ps() {
+                if (this.forms.password.type = "password")
+                    box.innerHTML = "<input type=\"html\" name=\"password\" size=\"20\" value=" + this.forms.password.value + ">";
+                click.innerHTML = "<a href=\"javascript:txt()\">隐藏密码</a>"
+            }
+                function txt(){
+                    if (this.forms.password.type="text")
+                        box.innerHTML="<input type=\"password\" name=\"password\" size=\"20\" value="+this.forms.password.value+">";
+                    click.innerHTML="<a href=\"javascript:ps()\">显示密码</a>"
+                }
+
+        </SCRIPT>
+        </form>
         <!-- <div class="wrap-right l">
             <div class="login-sns-wrap">
                 <h1 class="form-h1">
@@ -144,12 +164,20 @@
 
 <script src="js/jquery.1.8.min.js"></script>
 <script>
-    $(document).on("blur","#email",function(){
-        var name=$("#email").val();
-        if(name==""){
-            $("#email_sp").html('<font style="color:red">用户名不能为空哦！</font>');
+    $(document).on("blur","#email",function() {
+        var name = $("#email").val();
+        var reg = /^\w+@\w+(\.)\w+$/;
+        if (name!= "") {
+            if (reg.test(name)) {
+                $("#email_sp").html('√');
+                return true;
+            }else{
+                $("#email_sp").html('<font style="color:red">邮箱格式错误！</font>');
+                return false;
+            }
         }else{
-            $("#email_sp").html('√');
+            $("#email_sp").html('<font style="color:red">邮箱不能为空哦！</font>');
+            return false;
         }
     });
     $(document).on("blur","#pwd",function(){
@@ -163,10 +191,23 @@
     $(document).on("click","#signin-btn",function(){
         var name=$("#email").val();
         var pwd=$("#pwd").val();
-        if(name==""){
-            $("#email_sp").html('<font style="color:red">用户名不能为空哦！</font>');
+        var reg = /^\w+@\w+(\.)\w+$/;
+        /*if (name!= "") {
+            if (reg.test(name)) {
+                $("#email_sp").html('√');
+                return true;
+            }else{
+                $("#email_sp").html('<font style="color:red">邮箱格式错误！</font>');
+                return false;
+            }
         }else{
-            $("#email_sp").html('√');
+            $("#email_sp").html('<font style="color:red">邮箱不能为空哦！</font>');
+            return false;
+        }*/
+        if(pwd==""){
+            $("#pwd_sp").html('<font style="color:red">密码不能为空哦！</font>');
+        }else{
+            $("#pwd_sp").html(' ');
         }
         $.ajax({
             url:'login',

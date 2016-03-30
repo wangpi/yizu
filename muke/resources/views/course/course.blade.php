@@ -3,8 +3,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title><?php
-            session_start();
-        echo $_SESSION['name']?>课程</title>
+        echo $arr[0]['u_name']?>课程</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta property="qc:admins" content="77103107776157736375">
@@ -76,18 +75,19 @@
                     </a>
                 </li>
                 <li class="set_btn user-card-box">
-                    <a id="header-avator" class="user-card-item" action-type="my_menu" href="http://www.imooc.com/u/3057710/courses" target="_self"><img src="./course/533e55d10001c34d02000200-40-40.jpg" height="40" width="40">
+                    <a id="header-avator" class="user-card-item" action-type="my_menu" href="http://www.imooc.com/u/3057710/courses" target="_self"><img src="<?php echo $brr[0]['u_photo']?>" height="40" width="40">
                         <i class="myspace_remind" style="display: none;"></i>
                         <span style="display: none;">动态提醒</span>
                     </a>
                     <div class="g-user-card">
                         <div class="card-inner">
                             <div class="card-top">
-                                <a href="http://www.imooc.com/u/3057710/courses"><img src="./course/533e55d10001c34d02000200-100-100.jpg" alt="再打小怪兽" class="l"></a>
-                                <a href="http://www.imooc.com/u/3057710/courses"><span class="name text-ellipsis">再打小怪兽</span></a>
+                                <a href="courses"><img src="./course/533e55d10001c34d02000200-100-100.jpg" alt="<?php echo $arr[0]['u_name']?>" class="l"></a>
+                                <a href="courses"><span class="name text-ellipsis">
+                                        <?php echo $arr[0]['u_name']?></span></a>
                                 <p class="meta">
-                                    <a href="http://www.imooc.com/u/3057710/experience">经验<b id="js-user-mp">17</b></a>
-                                    <a href="http://www.imooc.com/u/3057710/credit">积分<b id="js-user-credit">0</b></a>            </p>
+                                    <a href="http://www.imooc.com/u/3057710/experience">经验<b id="js-user-mp"><?php echo $arr[0]['jingyan']?></b></a>
+                                    <a href="http://www.imooc.com/u/3057710/credit">积分<b id="js-user-credit"><?php echo $arr[0]['jifen']?></b></a>            </p>
 
                                 <a href="http://www.imooc.com/user/setprofile" class="icon-set setup"></a>
                             </div>
@@ -100,16 +100,16 @@
                             -->
                             <div class="card-history">
                                 <span class="history-item">
-                                    <span class="tit text-ellipsis">弹出层效果</span>
-                                    <span class="media-name text-ellipsis">3-8 编程练习</span>
+                                    <span class="tit text-ellipsis"><?php echo $brr[0]['dd'][0]['zhang'][0]['course'][0]['c_name']?></span>
+                                    <span class="media-name text-ellipsis"><?php echo $brr[0]['dd'][0]['zhang'][0]['z_title']?></span>
                                     <i class="icon-clock"></i>
-                                                                            <a href="http://www.imooc.com/video/1066" class="continue">继续</a>
+                                                                            <a href="poh?v_id=<?php echo $brr[0]['v_id']?>" class="continue">继续</a>
                                                                     </span>
                             </div>
                             <div class="card-sets clearfix">
                                 <a href="http://www.imooc.com/wenda/save" target="_blank" class="l mr30">发问题</a>
                                 <a href="http://www.imooc.com/article/publish" target="_blank" class="l">写文章</a>
-                                <a href="http://www.imooc.com/passport/user/logout?referer=http://www.imooc.com" class="r">退出</a>
+                                <a href="layout" class="r">退出</a>
                             </div>
                         </div>
                         <i class="card-arr"></i>
@@ -144,28 +144,26 @@
     <div class="big-pic">
         <div class="user-info">
             <h3 class="user-name clearfix">
-                <span>再打小怪兽</span>
+                <span><?php echo $arr[0]['u_name']?></span>
 
 
             </h3>
             <!--25-->
             <p class="about-info">
 
-
-
-                PHP开发工程师
+               <?php echo $arr[0]["pname"]?>
             </p>
             <p class="user-desc"></p>
             <div class="study-info clearfix">
                 <div class="item study-time">
-                    <em> 1小时31分</em><span>学习时长</span>
+                    <em> <?php echo $arr[0]['shichang']?></em><span>学习时长</span>
                 </div>
                 <div class="item integral">
-                    <a href="http://www.imooc.com/u/3057710/credit"><em>0</em><span>赚取积分</span></a>
+                    <a href="http://www.imooc.com/u/3057710/credit"><em><?php echo $arr[0]['jifen']?></em><span>赚取积分</span></a>
 
                 </div>
                 <div class="item experience">
-                    <a href="http://www.imooc.com/u/3057710/experience"><em>17</em><span>获得经验</span></a>
+                    <a href="http://www.imooc.com/u/3057710/experience"><em><?php echo $arr[0]['jingyan']?></em><span>获得经验</span></a>
                 </div>
             </div><!--.study-info end-->
         </div><!-- .user-info end -->
@@ -174,27 +172,31 @@
         <div style="position: absolute; left: 0px; top: -175px;" class="slider">
             <div class="user-pic">
                 <div class="user-pic-bg"></div><!--user-pic-big end-->
-                <img class="img" src="./course/533e55d10001c34d02000200-200-200.jpg" alt="">
+                <img class="img" src="<?php echo $brr[0]['u_photo']?>" alt="">
 
-                <div style="display: block;" class="set-btn"><a href="http://www.imooc.com/user/setprofile"><i class="icon-set"></i></a></div>
+                <div style="display: block;" class="set-btn">
+                    <a href="setprofile"><i class="icon-set"></i>
+
+                    </a>
+                </div>
 
             </div>
 
             <ul>
-                <li><a href="http://www.imooc.com/u/3057710/courses" class="active"><i class="icon-tick"></i><span>课程</span><b class="icon-drop_right"></b></a></li>
+                <li><a href="courses" class="active"><i class="icon-tick"></i><span>课程</span><b class="icon-drop_right"></b></a></li>
                 <!--                                     <li><a href="/u/3057710/szcourses/list" ><i class="icon-shizhan"></i><span>实战</span><b class="icon-drop_right"></b></a></li>
 
                              -->
                 <li><a href="http://www.imooc.com/u/3057710/plans"><i class="icon-plan"></i><span>计划</span><b class="icon-drop_right"></b></a></li>
                 <li><a href="http://www.imooc.com/u/3057710/bbs"><i class="icon-yuanwen"></i><span>猿问</span><b class="icon-drop_right"></b></a></li>
-                <li><a href="http://www.imooc.com/u/3057710/articles"><i class="icon-blog"></i><span>文章</span><b class="icon-drop_right"></b></a></li>
+                <li><a href="articl"><i class="icon-blog"></i><span>文章</span><b class="icon-drop_right"></b></a></li>
                 <li><a href="http://www.imooc.com/u/3057710/wikis"><i class="icon-wiki"></i><span>wiki</span><b class="icon-drop_right"></b></a></li>
             </ul>
         </div><!-- .slider end -->
         <div class="u-container">
             <div class="c-tab clearfix">
                 <div class="tool-left l">
-                    <a href="http://www.imooc.com/u/3057710/courses" class="sort-item active">最近学习</a>
+                    <a href="courses" class="sort-item active">最近学习</a>
                     <a href="http://www.imooc.com/u/3057710/courses?sort=follow" class="sort-item ">我的关注</a>
                 </div>
                 <div class="tool-right r">
@@ -220,22 +222,27 @@
             </div>
 
             <div class="js-course-list my-space-course study-tl">
+
+                <?php foreach($brr as $k=>$v){
+                ?>
+
                 <div class="clearfix tl-item  tl-item-first">
 			            <span class="time">
-                <b>2016</b>
-                <em>03月21日</em>
+
+                <em><?php echo $v['x_time']?></em>
             </span>
                     <div class="course-list course-list-m">
                         <ul class="clearfix">
                             <li class="course-one" data-courseid="530" data-uid="3057710">
                                 <div class="course-list-img l">
-                                    <a href="http://www.imooc.com/learn/530" target="_blank">
-                                        <img alt="jQuery基础修炼圣典—DOM篇" src="./course/56381cc60001456906000338-240-135.jpg" height="113" width="200">
+                                    <a href="aa?k_id=<?php echo $v['dd'][0]['zhang'][0]['k_id']?>" target="_blank">
+                                        <!-- foreach($v['dd'] as $kk=>$vv){?-->
+                                        <img alt="" src="./img/<?php echo $v['dd'][0]['zhang'][0]['course'][0]['c_img']?>" height="113" width="200">
                                     </a>
                                 </div>
                                 <div class="course-list-cont">
                                     <h3 class="study-hd">
-                                        <a href="http://www.imooc.com/learn/530" target="_blank">jQuery基础修炼圣典—DOM篇</a>
+                                        <a href="http://www.imooc.com/learn/530" target="_blank"><?php echo $v['dd'][0]['zhang'][0]['course'][0]['c_name']?></a>
 
                                         <span class="i-new">更新完毕</span>
                                         <!-- 更新完毕 -->
@@ -251,15 +258,15 @@
                                     </h3>
                                     <div class="study-points">
                                         <span class="i-left span-common">已学0%</span>
-                                        <span class="i-mid span-common">用时 0分</span>
-                                        <span class="i-right span-common">学习至1-1 课程介绍</span>
+                                        <span class="i-mid span-common">用时 <?php echo $v['x_atime']?></span>
+                                        <span class="i-right span-common">学习至<?php echo $v['dd'][0]['v_title']?></span>
                                     </div>
                                     <div class="catog-points">
-                                        <span class="i-left span-common"><a href="http://www.imooc.com/u/3057710/course/530/notes">笔记 <i>0</i></a></span>
-                                        <span class="i-mid span-common"><a href="http://www.imooc.com/u/3057710/course/530/codes">代码 <i>0</i></a></span>
-                                        <span class="i-right span-common"><a href="http://www.imooc.com/u/3057710/course/530/questions">问答 <i>0</i></a></span>
+                                        <span class="i-left span-common"><a href="http://www.imooc.com/u/3057710/course/530/notes">笔记 <i><?php echo $v['biji']?></i></a></span>
+                                        <span class="i-mid span-common"><a href="http://www.imooc.com/u/3057710/course/530/codes">代码 <i><?php echo $v['daima']?></i></a></span>
+                                        <span class="i-right span-common"><a href="http://www.imooc.com/u/3057710/course/530/questions">问答 <i><?php echo $v['wenda']?></i></a></span>
 
-                                        <a href="http://www.imooc.com/video/11283" target="_blank" class="btn-red continute-btn">继续学习</a>
+                                        <a href="poh?v_id=<?php echo $v['v_id']?>" target="_blank" class="btn-red continute-btn">继续学习</a>
 
                                     </div>
                                 </div>
@@ -270,7 +277,10 @@
                     </div>
                 </div>
 
-                <div class="clearfix tl-item ">
+                <?php
+                    }
+                    ?>
+                {{--<div class="clearfix tl-item ">
 			            <span class="time">
                 <b>2016</b>
                 <em>03月19日</em>
@@ -318,9 +328,9 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>--}}
 
-                <div class="clearfix tl-item ">
+                {{--<div class="clearfix tl-item ">
 			            <span class="time">
                 <b>2016</b>
                 <em>03月18日</em>
@@ -407,9 +417,9 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>--}}
 
-                <div class="clearfix tl-item  tl-item-last">
+                {{--<div class="clearfix tl-item  tl-item-last">
 			            <span class="time">
                 <b>2016</b>
                 <em>03月17日</em>
@@ -457,7 +467,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>--}}
 
             </div>
             <!-- 分页 -->
