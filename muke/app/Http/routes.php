@@ -136,7 +136,10 @@ Route::post('upload','SetController@upload');
 //个人中心之我的文章
 
 Route::get('setarticle','SetController@setarticle');
-
+//点击视频判断登录
+Route::get('aj',"HelloController@ajax");
+//播放视频
+Route::get('poh1',"HelloController@pohion1");
 /*
 |--------------------------------------------------------------------------
 | Application Routes

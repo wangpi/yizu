@@ -6,3 +6,8 @@
 [30-Mar-2016 15:49:42 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '$k' (T_VARIABLE) in F:\yizu\muke\storage\framework\views\9c68015defbf06c8b647e6cca6ca4eda63cf3047.php on line 4
 [30-Mar-2016 16:31:00 Asia/Shanghai] PHP Parse error:  syntax error, unexpected ')' in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 482
 [31-Mar-2016 11:41:53 Asia/Shanghai] PHP Parse error:  syntax error, unexpected '}' in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 502
+[31-Mar-2016 15:58:08 Asia/shanghai] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 649
+[31-Mar-2016 15:58:15 Asia/shanghai] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 649
+[31-Mar-2016 15:58:18 Asia/shanghai] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 649
+[31-Mar-2016 15:58:22 Asia/shanghai] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 649
+[31-Mar-2016 15:59:24 Asia/shanghai] PHP Parse error:  syntax error, unexpected '｝' (T_STRING), expecting function (T_FUNCTION) in F:\yizu\muke\app\Http\Controllers\HelloController.php on line 649

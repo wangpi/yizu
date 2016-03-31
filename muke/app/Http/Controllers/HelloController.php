@@ -425,7 +425,13 @@ class HelloController extends Controller
                 session_start();
     			$_SESSION['user'] = $re['0']['u_name'];
     			$_SESSION['u_id']=$re['0']['u_id'];
-       			return redirect('/poh');
+                if(isset($_COOKIE['v_id'])){
+                    return redirect('/poh1');
+                }
+                else{
+                    return redirect('/poh');
+                }
+       			
     		}
     		else{
     			echo "<script>alert('密码错误请重新输入');history.go(-1)</script>";
@@ -621,21 +627,21 @@ class HelloController extends Controller
             $user = DB::table('z_u')->where('u_id', $id)->first();
             // print_r($user); 
            if($user['z_id']!=$zid){
-               $sq="insert into z_u(z_id,u_id) values('$zid','$id')";
+                $sq="insert into z_u(z_id,u_id) values('$zid','$id')";
                 $rr=DB::insert($sq);
                 if($rr){
 
-            $id=$_SESSION['u_id'];
-            $sql="select z_id from z_u where u_id='$id'";
-            $re=DB::select($sql);
-            if(empty($re)){
-               /* $sq="insert into z_u(z_id,u_id) vlues('$zid','$id')";
-                $rr=DB::select($sq);
-                if($rr){*/
+                    $id=$_SESSION['u_id'];
+                    $sql="select z_id from z_u where u_id='$id'";
+                    $re=DB::select($sql);
+                    if(empty($re)){
+                       /* $sq="insert into z_u(z_id,u_id) vlues('$zid','$id')";
+                        $rr=DB::select($sq);
+                        if($rr){*/
 
-                    echo '1';
+                            echo '1';
+                        }
                 }
-            }
                 else{
                     $sql="delete from z_u where z_id='$zid' and u_id='$id'";
                     $re=DB::insert($sql);
@@ -643,6 +649,41 @@ class HelloController extends Controller
                         echo '3';
                     }
                 }
+            }
             
         }
+
+        public function ajax(){
+            $vi=$_GET['name'];
+            $_COOKIE['vi']=$vi;
+            session_start();
+            if(isset($_SESSION['u_id'])){
+                echo '2';
+            }
+            else{
+                echo '1';
+            }
+        }
+
+        public function pohion1(){
+       session_start();
+        $id=$_SESSION['u_id'];
+        $sql="select * from user1 where u_id='$id'";
+        $re=DB::select($sql);
+        if(isset($_COOKIE['v_id'])){
+            $ppo=$_COOKIE['v_id'];
+        }
+        else{
+            $ppo='1';
+        }
+        $sq="select * from video where v_id='$ppo'";
+        $rr=DB::select($sq);
+        $qq="select * from comment inner join user1 on comment.u_id=user1.u_id where v_id='$ppo'";
+        $qo=DB::select($qq);
+        //print_r($qo);die;
+        //print_r($re);die;
+        return view('blsh')->with(['re'=>$re,'rr'=>$rr,'qo'=>$qo]);
     }
+
+
+}

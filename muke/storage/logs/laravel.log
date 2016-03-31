@@ -1,0 +1,15 @@
+[2016-03-31 15:58:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file, expecting function (T_FUNCTION)' in F:\yizu\muke\app\Http\Controllers\HelloController.php:649
+Stack trace:
+#0 {main}  
+[2016-03-31 15:58:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file, expecting function (T_FUNCTION)' in F:\yizu\muke\app\Http\Controllers\HelloController.php:649
+Stack trace:
+#0 {main}  
+[2016-03-31 15:58:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file, expecting function (T_FUNCTION)' in F:\yizu\muke\app\Http\Controllers\HelloController.php:649
+Stack trace:
+#0 {main}  
+[2016-03-31 15:58:22] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file, expecting function (T_FUNCTION)' in F:\yizu\muke\app\Http\Controllers\HelloController.php:649
+Stack trace:
+#0 {main}  
+[2016-03-31 15:59:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '｝' (T_STRING), expecting function (T_FUNCTION)' in F:\yizu\muke\app\Http\Controllers\HelloController.php:649
+Stack trace:
+#0 {main}  

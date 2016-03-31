@@ -162,7 +162,7 @@ var GC = {
             <div class="chapter chapter-active">
                  <h3 class='lll' >
                         <span class="icon-plus"></span>
-                        <strong class='aaa' opp="<?php echo $value['z_id'];?>"><i class="state-expand"></i><?php echo $value['z_title']?></strong>
+                        <strong id="aaas" class='aaa' opp="<?php echo $value['z_id'];?>"><i class="state-expand"></i><?php echo $value['z_title']?></strong>
                 </h3>
                 <h4 class="video" value='4'>
                        
@@ -286,25 +286,51 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
 <script type="text/javascript" src="./go/user"></script><script type="text/javascript" src="./go/iplookup.php"></script>
 <script src="./go/jquery-1.8.3.js"></script>    
 <script>
-    $(".aaa").click( function () { 
+$(document).on("click",".aaa",function(){
+  //alert(123);
+
+     // $(".aaa").click( function () { 
         var aaa=$(this).attr("opp");
+    
         var ooo=$(this).parent().next();
         var bbb='';
         $.ajax({
            type: "post",
-           url: "/bl",
+           url: "bl",
            data: "name="+aaa,
            dataType:"json",
            success: function(msg){
             //alert(msg);
             for(i in msg){
-                bbb+=" <h4><a target='_blank' href='oo?id="+msg[i]['v_id']+"' class='J-media-item studyvideo'>"+msg[i]['v_title']+"</a></h4>"
+                bbb+=" <h4><a target='_blank' kk="+msg[i]['v_id']+" class='J-media-item studyvideo'>"+msg[i]['v_title']+"</a></h4>"
             } 
               ooo.html(bbb);
             }
         });
-    });
+     });
 </script> 
+<script>
+    $(document).on("click",".J-media-item",function(){
+        //alert('456')
+        var kk=$(this).attr("kk");
+        //alert(kk);
+        $.ajax({
+               type: "GET",
+               url: "aj",
+                data: "name="+kk,
+               success: function(msg){
+                    if(msg==1){
+                         $('.theme-popover-mask').fadeIn(100);
+                         $('.theme-popover').slideDown(200);
+                    }
+                    else{
+                        window.location.href='poh1';
+                    }
+               }
+        });
+        
+     });
+</script>
 <link rel="stylesheet" href="./go/lanrenzhijia.css" media="all">
 <script src="./go/jquery.min.js"></script>  
 <script>
