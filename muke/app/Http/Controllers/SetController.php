@@ -107,4 +107,18 @@ class SetController extends Controller
     public function upload(){
         print_r($_FILES);
     }
+    //个人中心之文章
+    public function setarticle(){
+        session_start();
+        $u_id=$_SESSION['u_id'];
+        $re=DB::table('user1')->where(['u_id'=>$u_id])->get();
+        $name=$re[0]['u_name'];
+        $arr=DB::table('article')->where(['auser'=>$name])->get();
+        if(empty($arr)){
+            return view('set.setarticle1',['arr'=>$re]);
+        }else{
+            return view('set.setarticle',['arr'=>$arr,'re'=>$re]);
+        }
+
+    }
 }

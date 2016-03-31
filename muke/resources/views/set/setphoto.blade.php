@@ -83,7 +83,7 @@
                                     <a href="javascript:void(0)" hidefocus="true" class="avator-btn-fake">选择头像</a>
 
                                     <input title="选择头像" name="file" id="file" accept="image/*" type="file">
-                                    <input type="submit" value="提交">
+                                    <input type="submit"  value="提交">
                                 </form>
 
                                 <iframe src="./photo/a.htm" id="uploadtarget" name="uploadtarget" style="display:none;" frameborder="0"></iframe>
