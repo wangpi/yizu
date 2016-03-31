@@ -268,4 +268,8 @@ class ArticleController extends Controller
            }
         }
     }
+    //测试公共样式
+    public function cesg(){
+       return view("article.cesg");
+    }
 }

@@ -93,6 +93,7 @@ Route::post('nocollection',"ArticleController@nocollection");
 Route::post('ifdenglu',"ArticleController@ifdenglu");
 Route::post('commentone',"ArticleController@commentone");
 Route::post('commenttwo',"ArticleController@commenttwo");
+Route::get('cesg',"ArticleController@cesg");
 
 //文章结束
 
