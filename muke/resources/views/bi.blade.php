@@ -18,11 +18,12 @@
                url: "zid",
                data: "name="+zid,
                success: function(msg){
-                    if(msg=='1'){
+                    //alert(msg)
+                   if(msg=='1'){
                         alert('点赞成功');
                     }
                     else{
-                        alert('已经点赞');
+                        alert('取消成功');
                     }
                }
             });
