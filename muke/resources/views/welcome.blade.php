@@ -87,64 +87,9 @@ var is_choice = "";
 <script charset="utf-8" async="" src="./shouye/jquery.js"></script><script charset="utf-8" async="" src="./shouye/seajs-text.js"></script><script charset="utf-8" async="" src="./shouye/common.js"></script><script charset="utf-8" async="" src="./shouye/string.js"></script><script charset="utf-8" async="" src="./shouye/suggest.js"></script><script charset="utf-8" async="" src="./shouye/store.js"></script><script charset="utf-8" async="" src="./shouye/json.js"></script><script charset="utf-8" async="" src="./shouye/im.js"></script><script charset="utf-8" async="" src="./shouye/index.js"></script><script charset="utf-8" async="" src="./shouye/socket.io.min.js"></script></head>
 <body id="index">
 
-<div id="header">
-    <div class="page-container" id="nav">
-        <div id="logo" class="logo"><a href="./shouye/慕课网-国内最大的IT技能学习平台.html" target="_self" class="hide-text">慕课网</a></div>
-        <div class="g-menu-mini l">
-            <a href="http://www.imooc.com/#" class="menu-ctrl">
-                <i class="icon-menu"></i>
-            </a>
-            <ul class="nav-item l">
-                <li>
-                    <a href="learn" target="_self">课程</a>
-                </li>
-                <li><a href="http://www.imooc.com/course/program" target="_self">计划</a></li>
-                <li><a href="http://www.imooc.com/wenda" target="_self">猿问</a></li>
-                <li><a href="articl" target="_self">文章</a></li>
-        <!--         <li><a href="/wiki"  target="_self">WIKI</a></li> -->
-                            </ul>
-        </div>
-                <div id="login-area">
-            <ul class="header-unlogin clearfix">
-                <li class="header-app">
-                    <a href="http://www.imooc.com/mobile/app">
-                        <span class="icon-appdownload"></span>
-                    </a>
-                    <div class="QR-download">
-                        <p id="app-text">慕课网APP下载</p>
-                        <p id="app-type">iPhone / Android / iPad</p>
-                        <img src="./shouye/QR-code.jpg">
-                    </div>
-                </li>
-                <li class="header-signin">
-                    <!--<a href="dneglu" id="btnLogin">登录</a>-->
-                    <a href="denglu" id="js-signup-btn">登录</a>
-                </li>
-                <li class="header-signup">
-                    <a href="register" id="js-signup-btn">注册</a>
-                </li>
-            </ul>
-        </div>
-                <!--
-        <div class="app-down-area r">
-            <a href="/mobile/app">
-                <i class="header-app-icon"></i>慕课APP
-            </a>
-        </div>
-        -->
-        
-        
-        <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
-            <div class="search-area min" data-search="top-banner">
-                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
-                <input type="hidden" class="btn_search" data-search-btn="search-btn">
-                <ul class="search-area-result" data-suggest-result="suggest-result">
-                </ul>
-            </div>
-            <div class="showhide-search" data-show="no"><i class="icon-search"></i></div>
-        </div>
-    </div>
-</div>
+@extends('layouts.master')
+@section('sidebar')
+    @parent
 
 
 <div class="g-banner">
@@ -175,9 +120,9 @@ var is_choice = "";
 </div>
 
 
-          
-      
-          
+
+
+
   </div>
 </div>
 <div class="icourse">
@@ -1012,9 +957,11 @@ var is_choice = "";
 
 <div id="main">
 
+
+
 </div>
 
-
+@endsection
 
 
 <!--script-->

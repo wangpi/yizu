@@ -684,6 +684,4 @@ class HelloController extends Controller
         //print_r($re);die;
         return view('blsh')->with(['re'=>$re,'rr'=>$rr,'qo'=>$qo]);
     }
-
-
 }

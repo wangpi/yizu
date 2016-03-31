@@ -46,7 +46,7 @@
                 </li>
                 <li><a href="http://www.imooc.com/course/program" target="_self">计划</a></li>
                 <li><a href="http://www.imooc.com/wenda" target="_self">猿问</a></li>
-                <li><a href="http://www.imooc.com/article" class="active" target="_self">文章</a></li>
+                <li><a href="articl" class="active" target="_self">文章</a></li>
                 <!--         <li><a href="/wiki"  target="_self">WIKI</a></li> -->
             </ul>
         </div>
@@ -232,12 +232,12 @@
                             <div class="arti-info clearfix">
                                 <ul>
                                     <li class="hd-pic">
-                                        <a class="publisher-hd" href="http://www.imooc.com/u/264930/articles" target="_blank">
+                                        <a class="publisher-hd" href="#" target="_blank">
                                         </a>
-                                        <a class="publisher-name" href="http://www.imooc.com/u/264930/articles" target="_blank"><?php echo $vv['auser']?></a>
+                                        <a class="publisher-name" href="#" target="_blank"><?php echo $vv['auser']?></a>
                                     </li>
                                     <li class="now-tag">
-                                        <a class="item-tag" href="http://www.imooc.com/article/index/cid/107/page" target="_blank"><?php echo $vv['d_name']?></a>
+                                        <a class="item-tag" href="articlethree?atypetwo=<?php echo $v['atype']?>" target="_blank"><?php echo $vv['d_name']?></a>
                                     </li>
                                     <li class="now-tag">
                                         <span class="viewed-num"><?php echo $vv['look']?>浏览</span>

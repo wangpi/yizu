@@ -18,10 +18,12 @@
             </div>
             <div id="login-area">
                 <ul class="header-unlogin clearfix">
+                    <li>
+                        <img src="./img/serach.png" style="margin-top:13px" onclick="show()" />
+                    </li>
                     <li class="header-app">
-                        <a href="http://www.imooc.com/mobile/app">
+                        <a href="#">
                             <span class="icon-appdownload"></span>
-                            <img src="./img/serach.png"/>
                         </a>
                         <div class="QR-download">
                             <p id="app-text">慕课网APP下载</p>
@@ -93,15 +95,16 @@
             </div>
 
 
-            <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
-                <div class="search-area min" data-search="top-banner">
-                    <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
-                    <input type="hidden" class="btn_search" data-search-btn="search-btn">
-                    <ul class="search-area-result" data-suggest-result="suggest-result">
-                    </ul>
-                </div>
-                <div class="showhide-search" data-show="no"></div>
-            </div>
+            {{--<div class="search-warp clearfix" style="min-width: 32px; height: 60px;">--}}
+                {{--<div class="search-area min" data-search="top-banner">--}}
+                    {{--<input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">--}}
+                    {{--<input type="hidden" class="btn_search" data-search-btn="search-btn">--}}
+                    {{--<ul class="search-area-result" data-suggest-result="suggest-result">--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+                {{--<div class="showhide-search" data-show="no"></div>--}}
+            {{--</div>--}}
+                    <div><input type="text" placeholder='请输入想搜索的内容...'style="height:25px;margin-left:450px;margin-top:20px;display:none" id="sou" /></div>
         </div>
     </div>
 
@@ -136,3 +139,125 @@
         </div>
     </div>
 </div>
+<script src="./js/jquery.1.8.min.js"></script>
+<link rel="stylesheet" type="text/css" href="static/css/ui2.css?2013032917">
+<script src="./static/js/landing-min.js?2013032917"></script>
+
+
+<div class="modal in" id="login-modal" }> <a class="close" data-dismiss="modal">×</a>
+    <h1>登录</h1>
+    <ul class="login-bind-tp">
+        <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
+
+        <li class="sina"> <a href=""><em>&nbsp;</em> 微博登录</a> </li>
+
+
+
+    </ul>
+    <p>或者使用已有帐号登陆：</p>
+    <form class="login-form clearfix" method="post" action="">
+        <div class="form-arrow"></div>
+        <input id="email" type="text" placeholder="请输入您的邮箱：">
+        <span id='email_sp'></span>
+        <input id="pwd" type="password" placeholder="请输入您的密码：">
+        <span id='pwd_sp'></span>
+        <input type="button" id="login" class="button-blue login" value="登录">
+        <input type="hidden" name="return-url" value="">
+        <div class="clearfix"></div>
+        <label class="remember">
+            <input name="remember" type="checkbox" checked/>
+            下次自动登录 </label>
+        <a href="forgot">忘记密码？</a>
+    </form>
+</div>
+<div class="modal in" id="signup-modal" > <a class="close" data-dismiss="modal">×</a>
+    <h1>注册</h1>
+    <p>使用邮箱注册：</p>
+    <form class="signup-form clearfix" method="post" action="">
+        <p class="error"></p>
+        <input id="emaill" type="text" placeholder="请输入电子邮箱地址：">
+        <span id="emaill_sp"></span>
+        <input id="pwdd" type="password" placeholder="6-16位密码，区分大小写，不能用空格：">
+        <span id="pwdd_sp"></span>
+        <input id="nick" type="text" placeholder="昵称为2-18位，中英文、数字及下划线：">
+        <span id="nick_sp"></span>
+        <input id="yzm" size="20px" placeholder="请输入验证码" type="text">
+        <a onclick="javascript:re_captcha();" >
+            <img src="{{ URL('hello/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="40" id="c2c98f0de5a04167a9e427d883690ff6" border="1"></a>
+        <p class="tips"></p><span id="yzm_sp"></span>
+        <input type="hidden" name="title" value="">
+        <input type="hidden" name="url" value="">
+        <div class="clearfix"></div>
+        <img src="./img/qq.png" width="50px" height="50px">
+        <img src="./img/weibo.jpg" width="50px" height="50px">
+        {{--<ul class="login-bind-tp">
+            <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
+            <li class="sina"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> 微博登录</a> </li>
+        </ul>--}}
+        <input type="button" name="type" class="button-blue reg" value="注册" data-category="UserAccount" data-action="regist" id="js-signup-submit">
+    </form>
+</div>
+
+
+
+<script>
+
+    $("#layout").click(function(){
+        if(confirm("你确定退出吗?")){
+            window.location.href="layout";
+        }
+    })
+    $(document).on("blur","#email",function(){
+        var name=$("#email").val();
+        if(name==""){
+            $("#email_sp").html('<font style="color:red">用户名不能为空哦！</font>');
+        }else{
+            $("#email_sp").html('√');
+        }
+    });
+    $(document).on("blur","#pwd",function(){
+        var pwd=$("#pwd").val();
+        if(pwd==""){
+            $("#pwd_sp").html("<font style='color:red'>密码不能为空哦！</font>");
+        }else{
+            $("#pwd_sp").html(" ");
+        }
+    })
+    $(document).on("click",".login",function(){
+        var name=$("#email").val();
+        var pwd=$("#pwd").val();
+        if(name==""){
+            $("#email_sp").html('<font style="color:red">用户名不能为空哦！</font>');
+        }else{
+            $("#email_sp").html('√');
+        }
+        $.ajax({
+            url:'login',
+            type:'post',
+            data:'name='+name+'&pwd='+pwd,
+            success:function(txt){
+                if(txt==1){
+                    $("#pwd_sp").html("√");
+                    window.location.href='learn'
+                }else if(txt==0){
+                    $("#pwd_sp").html("<font style='color:red'>用户名或密码错误!</font>");
+                }else if(txt==2){
+                    $("#email_sp").html('<font style="color:red">用户名不存在！</font>');
+                }else{
+                    alert(txt);
+                }
+            }
+        })
+    })
+
+    function show(){
+        var sou = $('#sou').val();
+        //alert(sou)
+        if (sou=='') {
+            $('#sou').toggle();
+        }else{
+            location.href="search?sou="+sou;
+        }
+    }
+
+</script>

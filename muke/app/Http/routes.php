@@ -93,6 +93,7 @@ Route::post('nocollection',"ArticleController@nocollection");
 Route::post('ifdenglu',"ArticleController@ifdenglu");
 Route::post('commentone',"ArticleController@commentone");
 Route::post('commenttwo',"ArticleController@commenttwo");
+Route::get('cesg',"ArticleController@cesg");
 
 //文章结束
 
@@ -136,10 +137,17 @@ Route::post('upload','SetController@upload');
 //个人中心之我的文章
 
 Route::get('setarticle','SetController@setarticle');
+
 //点击视频判断登录
 Route::get('aj',"HelloController@ajax");
 //播放视频
 Route::get('poh1',"HelloController@pohion1");
+
+
+//第三方之微博登陆
+Route::get('weibologin','LoginController@weibo');
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
