@@ -17,6 +17,13 @@ Route::get('/', function () {
 
 //课程
 Route::get('learn',"HelloController@learn");
+//筛选
+Route::post('shai',"HelloController@shai");
+Route::get('shai1',"HelloController@shai1");
+//搜索
+Route::get('search',"HelloController@search");
+//友情链接
+Route::get('you',"HelloController@qing");
 //分类
 Route::get('fenlei',"HelloController@fenlei");
 //登陆
@@ -71,6 +78,29 @@ Route::GET('bi',"HelloController@bi");
 Route::GET('zid',"HelloController@zid");
 
 Route::get('articl',"ArticleController@show");
+Route::get('articletwo',"ArticleController@show");
+Route::get('articlethree',"ArticleController@show");
+Route::get('articlenew',"ArticleController@show");
+Route::get('articlere',"ArticleController@show");
+Route::get('articledeta',"ArticleController@articledeta");
+Route::get('addarticle',"ArticleController@addarticle");
+Route::post('addarticletwo',"ArticleController@addarticletwo");
+Route::get('ces',"ArticleController@ces");
+Route::post('aclick',"ArticleController@aclick");
+Route::post('noaclick',"ArticleController@noaclick");
+Route::post('collection',"ArticleController@collection");
+Route::post('nocollection',"ArticleController@nocollection");
+Route::post('ifdenglu',"ArticleController@ifdenglu");
+Route::post('commentone',"ArticleController@commentone");
+Route::post('commenttwo',"ArticleController@commenttwo");
+
+//文章结束
+
+
+
+
+
+
 
 //个人中心之课程
 Route::get('courses',"CourseController@course");
@@ -81,6 +111,31 @@ Route::get('setprofile',"SetController@setprofile");
 //个人中心设置的地区
 Route::post('qu','SetController@qu');
 
+//个人资料修改
+Route::post('setown','SetController@setown');
+
+//个人资料之头像
+Route::get('setphoto','SetController@setphoto');
+//换一换
+Route::post('imhuan','SetController@imhuan');
+
+//个人中心之修改密码
+Route::get('setpwd','SetController@setpwd');
+//头部
+Route::get('head','CourseController@head');
+//修改密码
+Route::post('xiugaimima','SetController@xiugaimima');
+//绑定手机
+Route::get('setphone','SetController@setphone');
+//绑定邮箱
+Route::get('setemail','SetController@setemail');
+
+//上传头像
+Route::post('upload','SetController@upload');
+
+//个人中心之我的文章
+
+Route::get('setarticle','SetController@setarticle');
 
 /*
 |--------------------------------------------------------------------------

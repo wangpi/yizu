@@ -33,110 +33,11 @@
     <link rel="stylesheet" href="./course/a.css" type="text/css">
     <script src="./course/jquery.js" async="" charset="utf-8"></script><script src="./course/seajs-text.js" async="" charset="utf-8"></script><script src="./course/common.js" async="" charset="utf-8"></script><script src="./course/string.js" async="" charset="utf-8"></script><script src="./course/suggest.js" async="" charset="utf-8"></script><script src="./course/store.js" async="" charset="utf-8"></script><script src="./course/json.js" async="" charset="utf-8"></script><script src="./course/im.js" async="" charset="utf-8"></script><script src="./course/courses.js" async="" charset="utf-8"></script><script src="./course/socket.js" async="" charset="utf-8"></script><script src="./course/u_common.js" async="" charset="utf-8"></script><script src="./course/layer.js" async="" charset="utf-8"></script><script src="./course/share.js"></script><link href="./course/share_style0_16.css" rel="stylesheet"></head>
 <body>
-
-<div id="header">
-    <div class="page-container" id="nav">
-        <div id="logo" class="logo"><a href="http://www.imooc.com/" target="_self" class="hide-text">慕课网</a></div>
-        <div class="g-menu-mini l">
-            <a href="#" class="menu-ctrl">
-                <i class="icon-menu"></i>
-            </a>
-            <ul class="nav-item l">
-                <li>
-                    <a href="learn" target="_self">课程</a>
-                </li>
-                <li><a href="http://www.imooc.com/course/program" target="_self">计划</a></li>
-                <li><a href="http://www.imooc.com/wenda" target="_self">猿问</a></li>
-                <li><a href="articl" target="_self">文章</a></li>
-                <!--         <li><a href="/wiki"  target="_self">WIKI</a></li> -->
-            </ul>
-        </div>
-        <div id="login-area">
-            <ul class="clearfix logined">
-                <li class="header-app">
-                    <a href="http://www.imooc.com/mobile/app">
-                        <span class="icon-appdownload"></span>
-                    </a>
-                    <div class="QR-download">
-                        <p id="app-text">慕课网APP下载</p>
-                        <p id="app-type">iPhone / Android / iPad</p>
-                        <img src="./course/QR-code.jpg">
-                    </div>
-                </li>
-                <li class="remind_warp">
-                    <i style="display: none;" class="msg_remind"></i>
-                    <a target="_blank" href="http://www.imooc.com/u/3057710/notices"><i class="icon-notifi"></i></a>
-                </li>
-                <li class="my_message">
-                    <a href="http://www.imooc.com/u/3057710/messages" title="我的消息" target="_blank">
-                        <span class="msg_icon" style="display: none;"></span>
-                        <i class="icon-mail"></i>
-                        <span style="display: none;">我的消息</span>
-                    </a>
-                </li>
-                <li class="set_btn user-card-box">
-                    <a id="header-avator" class="user-card-item" action-type="my_menu" href="http://www.imooc.com/u/3057710/courses" target="_self"><img src="<?php echo $brr[0]['u_photo']?>" height="40" width="40">
-                        <i class="myspace_remind" style="display: none;"></i>
-                        <span style="display: none;">动态提醒</span>
-                    </a>
-                    <div class="g-user-card">
-                        <div class="card-inner">
-                            <div class="card-top">
-                                <a href="courses"><img src="./course/533e55d10001c34d02000200-100-100.jpg" alt="<?php echo $arr[0]['u_name']?>" class="l"></a>
-                                <a href="courses"><span class="name text-ellipsis">
-                                        <?php echo $arr[0]['u_name']?></span></a>
-                                <p class="meta">
-                                    <a href="http://www.imooc.com/u/3057710/experience">经验<b id="js-user-mp"><?php echo $arr[0]['jingyan']?></b></a>
-                                    <a href="http://www.imooc.com/u/3057710/credit">积分<b id="js-user-credit"><?php echo $arr[0]['jifen']?></b></a>            </p>
-
-                                <a href="http://www.imooc.com/user/setprofile" class="icon-set setup"></a>
-                            </div>
-                            <!--
-                            <div class="card-links">
-                                <a href="/space/index" class="my-mooc l">我的慕课<i class="dot-update"></i></a>
-                                <span class="split l"></span>
-                                <a href="/myclub/myquestion/t/ques" class="my-sns l">我的社区</a>
-                            </div>
-                            -->
-                            <div class="card-history">
-                                <span class="history-item">
-                                    <span class="tit text-ellipsis"><?php echo $brr[0]['dd'][0]['zhang'][0]['course'][0]['c_name']?></span>
-                                    <span class="media-name text-ellipsis"><?php echo $brr[0]['dd'][0]['zhang'][0]['z_title']?></span>
-                                    <i class="icon-clock"></i>
-                                                                            <a href="poh?v_id=<?php echo $brr[0]['v_id']?>" class="continue">继续</a>
-                                                                    </span>
-                            </div>
-                            <div class="card-sets clearfix">
-                                <a href="http://www.imooc.com/wenda/save" target="_blank" class="l mr30">发问题</a>
-                                <a href="http://www.imooc.com/article/publish" target="_blank" class="l">写文章</a>
-                                <a href="layout" class="r">退出</a>
-                            </div>
-                        </div>
-                        <i class="card-arr"></i>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!--
-<div class="app-down-area r">
-    <a href="/mobile/app">
-        <i class="header-app-icon"></i>慕课APP
-    </a>
-</div>
--->
+@extends('layouts.master')
+@section('sidebar')
+    @parent
 
 
-        <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
-            <div class="search-area min" data-search="top-banner">
-                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." autocomplete="off" type="text">
-                <input class="btn_search" data-search-btn="search-btn" type="hidden">
-                <ul class="search-area-result" data-suggest-result="suggest-result">
-                </ul>
-            </div>
-            <div class="showhide-search" data-show="no"><i class="icon-search"></i></div>
-        </div>
-    </div>
-</div>
 
 
 <div id="main">
@@ -189,7 +90,7 @@
                              -->
                 <li><a href="http://www.imooc.com/u/3057710/plans"><i class="icon-plan"></i><span>计划</span><b class="icon-drop_right"></b></a></li>
                 <li><a href="http://www.imooc.com/u/3057710/bbs"><i class="icon-yuanwen"></i><span>猿问</span><b class="icon-drop_right"></b></a></li>
-                <li><a href="articl"><i class="icon-blog"></i><span>文章</span><b class="icon-drop_right"></b></a></li>
+                <li><a href="setarticle"><i class="icon-blog"></i><span>文章</span><b class="icon-drop_right"></b></a></li>
                 <li><a href="http://www.imooc.com/u/3057710/wikis"><i class="icon-wiki"></i><span>wiki</span><b class="icon-drop_right"></b></a></li>
             </ul>
         </div><!-- .slider end -->
@@ -280,195 +181,6 @@
                 <?php
                     }
                     ?>
-                {{--<div class="clearfix tl-item ">
-			            <span class="time">
-                <b>2016</b>
-                <em>03月19日</em>
-            </span>
-                    <div class="course-list course-list-m">
-                        <ul class="clearfix">
-                            <li class="course-one" data-courseid="58" data-uid="3057710">
-                                <div class="course-list-img l">
-                                    <a href="http://www.imooc.com/learn/58" target="_blank">
-                                        <img alt="弹出层效果" src="./course/532bcf8f00012bae06000338-240-135.jpg" height="113" width="200">
-                                    </a>
-                                </div>
-                                <div class="course-list-cont">
-                                    <h3 class="study-hd">
-                                        <a href="http://www.imooc.com/learn/58" target="_blank">弹出层效果</a>
-
-                                        <span class="i-new">更新完毕</span>
-                                        <!-- 更新完毕 -->
-                                        <!-- 关注和删除 -->
-                                        <div class="share-box clearfix">
-                                            <div class="show-btn"><i class="icon-down2"></i></div>
-                                            <div class="share-box-con courses-r">
-                                                <a href="javascript:;" title="关注" class="follow custom_f"><i class="icon icon-heart"></i></a>
-                                                <a href="javascript:;" title="删除" class="del"><i class="icon icon-notdisplay"></i></a>
-
-                                            </div>
-                                        </div>
-                                    </h3>
-                                    <div class="study-points">
-                                        <span class="i-left span-common">已学17%</span>
-                                        <span class="i-mid span-common">用时54分</span>
-                                        <span class="i-right span-common">学习至3-8 编程练习</span>
-                                    </div>
-                                    <div class="catog-points">
-                                        <span class="i-left span-common"><a href="http://www.imooc.com/u/3057710/course/58/notes">笔记 <i>0</i></a></span>
-                                        <span class="i-mid span-common"><a href="http://www.imooc.com/u/3057710/course/58/codes">代码 <i>1</i></a></span>
-                                        <span class="i-right span-common"><a href="http://www.imooc.com/u/3057710/course/58/questions">问答 <i>0</i></a></span>
-
-                                        <a href="http://www.imooc.com/video/1066" target="_blank" class="btn-red continute-btn">继续学习</a>
-
-                                    </div>
-                                </div>
-
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>--}}
-
-                {{--<div class="clearfix tl-item ">
-			            <span class="time">
-                <b>2016</b>
-                <em>03月18日</em>
-            </span>
-                    <div class="course-list course-list-m">
-                        <ul class="clearfix">
-                            <li class="course-one" data-courseid="85" data-uid="3057710">
-                                <div class="course-list-img l">
-                                    <a href="http://www.imooc.com/learn/85" target="_blank">
-                                        <img alt="Java入门第一季" src="./course/536059be00010b6d06000338-240-135.jpg" height="113" width="200">
-                                    </a>
-                                </div>
-                                <div class="course-list-cont">
-                                    <h3 class="study-hd">
-                                        <a href="http://www.imooc.com/learn/85" target="_blank">Java入门第一季</a>
-
-                                        <span class="i-new">更新完毕</span>
-                                        <!-- 更新完毕 -->
-                                        <!-- 关注和删除 -->
-                                        <div class="share-box clearfix">
-                                            <div class="show-btn"><i class="icon-down2"></i></div>
-                                            <div class="share-box-con courses-r">
-                                                <a href="javascript:;" title="关注" class="follow custom_f"><i class="icon icon-heart"></i></a>
-                                                <a href="javascript:;" title="删除" class="del"><i class="icon icon-notdisplay"></i></a>
-
-                                            </div>
-                                        </div>
-                                    </h3>
-                                    <div class="study-points">
-                                        <span class="i-left span-common">已学0%</span>
-                                        <span class="i-mid span-common">用时 2分</span>
-                                        <span class="i-right span-common">学习至1-2 Java开发环境搭建</span>
-                                    </div>
-                                    <div class="catog-points">
-                                        <span class="i-left span-common"><a href="http://www.imooc.com/u/3057710/course/85/notes">笔记 <i>0</i></a></span>
-                                        <span class="i-mid span-common"><a href="http://www.imooc.com/u/3057710/course/85/codes">代码 <i>0</i></a></span>
-                                        <span class="i-right span-common"><a href="http://www.imooc.com/u/3057710/course/85/questions">问答 <i>0</i></a></span>
-
-                                        <a href="http://www.imooc.com/video/1459" target="_blank" class="btn-red continute-btn">继续学习</a>
-
-                                    </div>
-                                </div>
-
-
-                            </li>
-                            <li class="course-one" data-courseid="9" data-uid="3057710">
-                                <div class="course-list-img l">
-                                    <a href="http://www.imooc.com/learn/9" target="_blank">
-                                        <img alt="HTML+CSS基础课程" src="./course/529dc3380001379906000338-240-135.jpg" height="113" width="200">
-                                    </a>
-                                </div>
-                                <div class="course-list-cont">
-                                    <h3 class="study-hd">
-                                        <a href="http://www.imooc.com/learn/9" target="_blank">HTML+CSS基础课程</a>
-
-                                        <span class="i-new">更新完毕</span>
-                                        <!-- 更新完毕 -->
-                                        <!-- 关注和删除 -->
-                                        <div class="share-box clearfix">
-                                            <div class="show-btn"><i class="icon-down2"></i></div>
-                                            <div class="share-box-con courses-r">
-                                                <a href="javascript:;" title="关注" class="follow custom_f"><i class="icon icon-heart"></i></a>
-                                                <a href="javascript:;" title="删除" class="del"><i class="icon icon-notdisplay"></i></a>
-
-                                            </div>
-                                        </div>
-                                    </h3>
-                                    <div class="study-points">
-                                        <span class="i-left span-common">已学0%</span>
-                                        <span class="i-mid span-common">用时31分</span>
-                                        <span class="i-right span-common">学习至13-1 盒模型代码简写</span>
-                                    </div>
-                                    <div class="catog-points">
-                                        <span class="i-left span-common"><a href="http://www.imooc.com/u/3057710/course/9/notes">笔记 <i>0</i></a></span>
-                                        <span class="i-mid span-common"><a href="http://www.imooc.com/u/3057710/course/9/codes">代码 <i>0</i></a></span>
-                                        <span class="i-right span-common"><a href="http://www.imooc.com/u/3057710/course/9/questions">问答 <i>0</i></a></span>
-
-                                        <a href="http://www.imooc.com/video/2088" target="_blank" class="btn-red continute-btn">继续学习</a>
-
-                                    </div>
-                                </div>
-
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>--}}
-
-                {{--<div class="clearfix tl-item  tl-item-last">
-			            <span class="time">
-                <b>2016</b>
-                <em>03月17日</em>
-            </span>
-                    <div class="course-list course-list-m">
-                        <ul class="clearfix">
-                            <li class="course-one" data-courseid="208" data-uid="3057710">
-                                <div class="course-list-img l">
-                                    <a href="http://www.imooc.com/learn/208" target="_blank">
-                                        <img alt="版本管理工具介绍—Git篇" src="./course/5437461b0001f18706000338-240-135.jpg" height="113" width="200">
-                                    </a>
-                                </div>
-                                <div class="course-list-cont">
-                                    <h3 class="study-hd">
-                                        <a href="http://www.imooc.com/learn/208" target="_blank">版本管理工具介绍—Git篇</a>
-
-                                        <span class="i-new">更新完毕</span>
-                                        <!-- 更新完毕 -->
-                                        <!-- 关注和删除 -->
-                                        <div class="share-box clearfix">
-                                            <div class="show-btn"><i class="icon-down2"></i></div>
-                                            <div class="share-box-con courses-r">
-                                                <a href="javascript:;" title="关注" class="follow custom_f"><i class="icon icon-heart"></i></a>
-                                                <a href="javascript:;" title="删除" class="del"><i class="icon icon-notdisplay"></i></a>
-
-                                            </div>
-                                        </div>
-                                    </h3>
-                                    <div class="study-points">
-                                        <span class="i-left span-common">已学0%</span>
-                                        <span class="i-mid span-common">用时 4分</span>
-                                        <span class="i-right span-common">学习至1-1 版本管理工具简介</span>
-                                    </div>
-                                    <div class="catog-points">
-                                        <span class="i-left span-common"><a href="http://www.imooc.com/u/3057710/course/208/notes">笔记 <i>0</i></a></span>
-                                        <span class="i-mid span-common"><a href="http://www.imooc.com/u/3057710/course/208/codes">代码 <i>0</i></a></span>
-                                        <span class="i-right span-common"><a href="http://www.imooc.com/u/3057710/course/208/questions">问答 <i>0</i></a></span>
-
-                                        <a href="http://www.imooc.com/video/4293" target="_blank" class="btn-red continute-btn">继续学习</a>
-
-                                    </div>
-                                </div>
-
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>--}}
-
             </div>
             <!-- 分页 -->
             <div class="qa-comment-page">
@@ -479,36 +191,9 @@
     </div><!-- .wrap end-->
 
 </div>
+@endsection
 
-<div id="footer">
-    <div class="waper">
-        <div class="footerwaper clearfix">
-            <div class="followus r">
-                <a class="followus-weixin" href="javascript:;" target="_blank" title="微信">
-                    <div class="flw-weixin-box"></div>
-                </a>
-                <a class="followus-weibo" href="http://weibo.com/u/3306361973" target="_blank" title="新浪微博"></a>
-                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
-            </div>
-            <div class="footer_intro l">
-                <div class="footer_link">
-                    <ul>
-                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
-                        <li><a href="http://www.imooc.com/about/job" target="_blank">人才招聘</a></li>
-                        <li> <a href="http://www.imooc.com/about/contact" target="_blank">联系我们</a></li>
-                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
-                        <li><a href="http://www.imooc.com/corp/index" target="_blank">合作专区</a></li>
-                        <li><a href="http://www.imooc.com/about/us" target="_blank">关于我们</a></li>
-                        <li> <a href="http://www.imooc.com/about/recruit" target="_blank">讲师招募</a></li>
-                        <li> <a href="http://www.imooc.com/user/feedback" target="_blank">意见反馈</a></li>
-                        <li> <a href="http://www.imooc.com/about/friendly" target="_blank">友情链接</a></li>
-                    </ul>
-                </div>
-                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div id="J_GotoTop" class="elevator">
     <a class="elevator-weixin" href="javascript:;">
         <div class="elevator-weixin-box">

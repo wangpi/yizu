@@ -34,108 +34,9 @@
     <script src="./setprofiles/jquery.js" async="" charset="utf-8"></script><script src="./setprofiles/seajs-text.js" async="" charset="utf-8"></script><script src="./setprofiles/common.js" async="" charset="utf-8"></script><script src="./setprofiles/string.js" async="" charset="utf-8"></script><script src="./setprofiles/suggest.js" async="" charset="utf-8"></script><script src="./setprofiles/store.js" async="" charset="utf-8"></script><script src="./setprofiles/json.js" async="" charset="utf-8"></script><script src="./setprofiles/im.js" async="" charset="utf-8"></script><script src="./setprofiles/setprofile.js" async="" charset="utf-8"></script><script src="./setprofiles/socket.js" async="" charset="utf-8"></script><script src="./setprofiles/placeholder.js" async="" charset="utf-8"></script><script src="./setprofiles/validate.js" async="" charset="utf-8"></script><script src="./setprofiles/messagebox.js" async="" charset="utf-8"></script><script src="./setprofiles/settingUitl.js" async="" charset="utf-8"></script><script src="./setprofiles/layer.js" async="" charset="utf-8"></script><link href="./setprofiles/layer.css" rel="stylesheet" charset="utf-8"></head>
 <body>
 
-<div id="header">
-    <div class="page-container" id="nav">
-        <div id="logo" class="logo"><a href="http://www.imooc.com/" target="_self" class="hide-text">慕课网</a></div>
-        <div class="g-menu-mini l">
-            <a href="#" class="menu-ctrl">
-                <i class="icon-menu"></i>
-            </a>
-            <ul class="nav-item l">
-                <li>
-                    <a href="http://www.imooc.com/course/list" target="_self">课程</a>
-                </li>
-                <li><a href="http://www.imooc.com/course/program" target="_self">计划</a></li>
-                <li><a href="http://www.imooc.com/wenda" target="_self">猿问</a></li>
-                <li><a href="http://www.imooc.com/article" target="_self">文章</a></li>
-                <!--         <li><a href="/wiki"  target="_self">WIKI</a></li> -->
-            </ul>
-        </div>
-        <div id="login-area">
-            <ul class="clearfix logined">
-                <li class="header-app">
-                    <a href="http://www.imooc.com/mobile/app">
-                        <span class="icon-appdownload"></span>
-                    </a>
-                    <div class="QR-download">
-                        <p id="app-text">慕课网APP下载</p>
-                        <p id="app-type">iPhone / Android / iPad</p>
-                        <img src="./setprofiles/QR-code.jpg">
-                    </div>
-                </li>
-                <li class="remind_warp">
-                    <i style="display: none;" class="msg_remind"></i>
-                    <a target="_blank" href="http://www.imooc.com/u/3057710/notices"><i class="icon-notifi"></i></a>
-                </li>
-                <li class="my_message">
-                    <a href="http://www.imooc.com/u/3057710/messages" title="我的消息" target="_blank">
-                        <span class="msg_icon" style="display: none;"></span>
-                        <i class="icon-mail"></i>
-                        <span style="display: none;">我的消息</span>
-                    </a>
-                </li>
-                <li class="set_btn user-card-box">
-                    <a id="header-avator" class="user-card-item" action-type="my_menu" href="http://www.imooc.com/u/3057710/courses" target="_self"><img src="./setprofiles/54584e120001811202200220-40-40.jpg" height="40" width="40">
-                        <i class="myspace_remind" style="display: none;"></i>
-                        <span style="display: none;">动态提醒</span>
-                    </a>
-                    <div class="g-user-card">
-                        <div class="card-inner">
-                            <div class="card-top">
-                                <a href="http://www.imooc.com/u/3057710/courses"><img src="./setprofiles/54584e120001811202200220-100-100.jpg" alt="再打小怪兽" class="l"></a>
-                                <a href="http://www.imooc.com/u/3057710/courses"><span class="name text-ellipsis">再打小怪兽</span></a>
-                                <p class="meta">
-                                    <a href="http://www.imooc.com/u/3057710/experience">经验<b id="js-user-mp">17</b></a>
-                                    <a href="http://www.imooc.com/u/3057710/credit">积分<b id="js-user-credit">0</b></a>            </p>
-
-                                <a href="http://www.imooc.com/user/setprofile" class="icon-set setup"></a>
-                            </div>
-                            <!--
-                            <div class="card-links">
-                                <a href="/space/index" class="my-mooc l">我的慕课<i class="dot-update"></i></a>
-                                <span class="split l"></span>
-                                <a href="/myclub/myquestion/t/ques" class="my-sns l">我的社区</a>
-                            </div>
-                            -->
-                            <div class="card-history">
-                                <span class="history-item">
-                                    <span class="tit text-ellipsis">进击Node.js基础（二）</span>
-                                    <span class="media-name text-ellipsis">2-4 横扫 Nodejs API-Stream你是我的小水管</span>
-                                    <i class="icon-clock"></i>
-                                                                            <a href="http://www.imooc.com/video/11555" class="continue">继续</a>
-                                                                    </span>
-                            </div>
-                            <div class="card-sets clearfix">
-                                <a href="http://www.imooc.com/wenda/save" target="_blank" class="l mr30">发问题</a>
-                                <a href="http://www.imooc.com/article/publish" target="_blank" class="l">写文章</a>
-                                <a href="http://www.imooc.com/passport/user/logout?referer=http://www.imooc.com" class="r">退出</a>
-                            </div>
-                        </div>
-                        <i class="card-arr"></i>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!--
-<div class="app-down-area r">
-    <a href="/mobile/app">
-        <i class="header-app-icon"></i>慕课APP
-    </a>
-</div>
--->
-
-
-        <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
-            <div class="search-area min" data-search="top-banner">
-                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." autocomplete="off" type="text">
-                <input class="btn_search" data-search-btn="search-btn" type="hidden">
-                <ul class="search-area-result" data-suggest-result="suggest-result">
-                </ul>
-            </div>
-            <div class="showhide-search" data-show="no"><i class="icon-search"></i></div>
-        </div>
-    </div>
-</div>
+@extends('layouts.master')
+@section('sidebar')
+    @parent
 
 
 <div id="main">
@@ -145,25 +46,26 @@
         <div class="setting-left l">
             <ul class="wrap-boxes">
                 <li class="active">
-                    <a href="http://www.imooc.com/user/setprofile" class="onactive">个人资料</a>
-                </li>
-                <li>
-                    <a href="http://www.imooc.com/user/setavator">头像设置</a>
+                    <a href="setprofile" class="onactive">个人资料</a>
                 </li>
 
                 <li>
-                    <a href="http://www.imooc.com/user/setphone">手机设置</a>
+                    <a href="setphoto">头像设置</a>
+                </li>
+
+                <li>
+                    <a href="setphone">手机设置</a>
                     <span class="unbound">未绑定</span>
                 </li>
 
                 <li>
-                    <a href="http://www.imooc.com/user/setverifyemail">邮箱验证</a>
+                    <a href="setemail">邮箱验证</a>
                 </li>
                 <li>
-                    <a href="http://www.imooc.com/user/setresetpwd">修改密码</a>
+                    <a href="setpwd">修改密码</a>
                 </li>
                 <li>
-                    <a no-pjajx="" href="http://www.imooc.com/user/setbindsns">绑定帐号</a>
+                    <a no-pjajx="" href="setbind">绑定帐号</a>
                 </li>
             </ul>
         </div>
@@ -172,7 +74,7 @@
 
 
                 <div id="setting-profile" class="setting-wrap setting-profile">
-                    <form id="profile">
+                    <form id="profile" action="setown" method="post">
 
                         <div class="wlfg-wrap clearfix">
                             <label class="label-name" for="nick">昵称</label>
@@ -199,16 +101,16 @@
                         <div class="wlfg-wrap clearfix">
                             <label class="label-name" for="province-select">城市</label>
                             <div class="rlf-group profile-address">
-                                <select id="province-select" class="input" hidefocus="true">
+                                <select name="sheng" class="one" class="input" hidefocus="true">
                                     <option selected="selected" >选择省份</option>
                                     <?php foreach($area as $k=>$v){?>
                                     <option value="<?php echo $v['region_id']?>"><?php echo $v['region_name']?></option>
                                     <?php }?>
                                 </select>
-                                <select class="input" id="city-select" hidefocus="true">
+                                <select class="two" name="shi" id="city-select" hidefocus="true">
                                     <option selected="selected" class="two" value="0">选择城市</option>
                                 </select>
-                                <select class="input mr0" id="area-select" hidefocus="true">
+                                <select name="qu" class="input mr0 three" id="area-select" hidefocus="true">
                                     <option selected="selected" value="0">选择区县</option>
                                 </select>
                                 <p class="rlf-tip-wrap"></p>
@@ -218,9 +120,15 @@
                         <div class="wlfg-wrap clearfix">
                             <label class="label-name">性别</label>
                             <div class="rlf-group rlf-radio-group">
-                                <label><input hidefocus="true" value="0" name="sex" type="radio">保密</label>
-                                <label><input hidefocus="true" value="1" name="sex" type="radio">男</label>
-                                <label><input hidefocus="true" value="2" checked="checked" name="sex" type="radio">女</label>
+                                <?php  if($arr[0]['u_sex']=="女"){?>
+                                <label><input hidefocus="true" value="保密" name="sex" type="radio">保密</label>
+                                <label><input hidefocus="true" value="男" name="sex" type="radio">男</label>
+                                <label><input hidefocus="true" value="女" checked="checked" name="sex" type="radio">女</label>
+                                <?php }else{?>
+                                    <label><input hidefocus="true" value="保密" name="sex" type="radio">保密</label>
+                                    <label><input hidefocus="true" value="男" name="sex" checked="checked" type="radio">男</label>
+                                    <label><input hidefocus="true" value="女"  name="sex" type="radio">女</label>
+                                   <?php }?>
                             </div>
                             <p class="rlf-tip-wrap"></p>
                         </div>
@@ -228,7 +136,7 @@
                         <div class="wlfg-wrap clearfix">
                             <label class="label-name" for="aboutme">个性签名</label>
                             <div class="rlf-group">
-                                <textarea name="aboutme" id="aboutme" cols="30" rows="5" class="textarea"></textarea>
+                                <textarea name="aboutme" id="aboutme" cols="30" rows="5" class="textarea"><?php echo $arr[0]['u_qian']?></textarea>
                                 <p class="rlf-tip-wrap"></p>
                             </div>
                         </div>
@@ -236,7 +144,7 @@
                         <div class="wlfg-wrap clearfix">
                             <label class="label-name" for=""></label>
                             <div class="rlf-group">
-                                <span id="profile-submit" hidefocus="true" aria-role="button" class="rlf-btn-green btn-block profile-btn">保存</span>
+                                <span id="profile-submit" hidefocus="true" aria-role="button" class="rlf-btn-green btn-block profile-btn"><input type="submit" value="保存"></span>
                             </div>
                         </div>
                     </form>
@@ -251,35 +159,7 @@
 
 </div>
 
-<div id="footer">
-    <div class="waper">
-        <div class="footerwaper clearfix">
-            <div class="followus r">
-                <a class="followus-weixin" href="javascript:;" target="_blank" title="微信">
-                    <div class="flw-weixin-box"></div>
-                </a>
-                <a class="followus-weibo" href="http://weibo.com/u/3306361973" target="_blank" title="新浪微博"></a>
-                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
-            </div>
-            <div class="footer_intro l">
-                <div class="footer_link">
-                    <ul>
-                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
-                        <li><a href="http://www.imooc.com/about/job" target="_blank">人才招聘</a></li>
-                        <li> <a href="http://www.imooc.com/about/contact" target="_blank">联系我们</a></li>
-                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
-                        <li><a href="http://www.imooc.com/corp/index" target="_blank">合作专区</a></li>
-                        <li><a href="http://www.imooc.com/about/us" target="_blank">关于我们</a></li>
-                        <li> <a href="http://www.imooc.com/about/recruit" target="_blank">讲师招募</a></li>
-                        <li> <a href="http://www.imooc.com/user/feedback" target="_blank">意见反馈</a></li>
-                        <li> <a href="http://www.imooc.com/about/friendly" target="_blank">友情链接</a></li>
-                    </ul>
-                </div>
-                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
-            </div>
-        </div>
-    </div>
-</div>
+@endsection
 <div id="J_GotoTop" class="elevator">
     <a class="elevator-weixin" href="javascript:;">
         <div class="elevator-weixin-box">
@@ -295,22 +175,43 @@
 
 <script src="./js/jquery.1.8.min.js"></script>
 <script>
-    $("#province-select").change(function(){
+    //$(".two").change(function(){
+    $(document).on("change",".two",function(){
         var c_id=$(this).val();
         $.ajax({
             url:'qu',
             type:'post',
-            date:'c_id='+c_id,
+            data:'c_id='+c_id,
             dataType:'json',
             success:function(data){
-                alert(data)
-                /*str="<select class='two' name='class_id'>";
+                //alert(data)
+                str="<select class='three' name='class_id'>";
                 str+="<option>请选择</option>";
                 for(  i in data){
                     str+="<option value='"+data[i]['region_id']+"'>"+data[i]['region_name']+"</option>";
                 }
                 str+="</select>";
-                $(".two").html(str)*/
+                $(".three").html(str);
+            }
+        })
+    })
+    //$(".one").change(function(){
+    $(document).on("change",".one",function(){
+        var c_id=$(this).val();
+        $.ajax({
+            url:'qu',
+            type:'post',
+            data:'c_id='+c_id,
+            dataType:'json',
+            success:function(data){
+                //alert(data)
+                str="<select class='two' name='class_id'>";
+                str+="<option>请选择</option>";
+                for(  i in data){
+                    str+="<option value='"+data[i]['region_id']+"'>"+data[i]['region_name']+"</option>";
+                }
+                str+="</select>";
+                $(".two").html(str);
             }
         })
     })

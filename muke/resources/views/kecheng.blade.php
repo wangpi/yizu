@@ -35,7 +35,11 @@ var is_choice = "";
         <h1>登录</h1>
         <ul class="login-bind-tp">
             <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
-            <li class="sina"> <a href="<?= $code_url ?>"><em>&nbsp;</em> 微博登录</a> </li>
+
+            <li class="sina"> <a href="<?php echo  $code_url ?>"><em>&nbsp;</em> 微博登录</a> </li>
+
+          
+
         </ul>
         <p>或者使用已有帐号登陆：</p>
         <form class="login-form clearfix" method="post" action="">
@@ -341,10 +345,13 @@ var is_choice = "";
         </div>
         <div id="login-area">
             <ul class="header-unlogin clearfix">
+            <li>
+                <img src="./img/serach.png" style="margin-top:13px" onclick="show()" />
+            </li>
                 <li class="header-app">
                     <a href="http://www.imooc.com/mobile/app">
                         <span class="icon-appdownload"></span>
-                        <img src="./img/serach.png"/>
+                        
                     </a>
                     <div class="QR-download">
                         <p id="app-text">慕课网APP下载</p>
@@ -415,6 +422,15 @@ var is_choice = "";
             </ul>
         </div>
 
+                
+        <!-- <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div> -->
+        
+<div><input type="text" placeholder='请输入想搜索的内容...'style="height:25px;margin-left:450px;margin-top:20px;display:none" id="sou" /></div>
+       <!--  <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
 
         <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
             <div class="search-area min" data-search="top-banner">
@@ -424,14 +440,16 @@ var is_choice = "";
                 </ul>
             </div>
             <div class="showhide-search" data-show="no"></div>
-        </div>
+        </div> -->
     </div>
 </div>
 
 
 
 <div id="main">
-
+<div style="background-color:#DDDDDD;width:50px;height:50px;line-height:50px;text-align:center;position:fixed;right:5px;top:500px"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=271833261&site=qq&menu=yes">聊聊</a></div>
+<div style="background-color:#DDDDDD;width:50px;height:50px;line-height:50px;text-align:center;position:fixed;right:5px;top:550px;font-size:40px"><a href="javascript:scrollTo(0, document.body.scrollHeight);">∨</a></div>
+<div style="background-color:#DDDDDD;width:50px;height:50px;line-height:50px;text-align:center;position:fixed;right:5px;top:600px;font-size:40px" id="ding"><!-- <a href="javascript:scroll(0,0)">∧</a> -->∧</div>  
     <div class="container">
         <div class="course-content">
             <div class="course-nav-box">
@@ -443,15 +461,15 @@ var is_choice = "";
                     <span class="hd l">方向：</span>
                     <div class="bd">
                         <ul class="">
-                        <li class="course-nav-item on">
-                                <a href="fenlei">全部</a>
+                        <li class="course-nav-item on qq" >
+                                <a href="javascript:void(0)" id="quan2">全部</a>
                             </li>
 
                             
                                 <?php foreach($direction as $k=>$v){?>
                                                                 <li class="course-nav-item
                                 ">
-                                    <a href="fenlei?d_id=<?php echo $v['d_id']?>" data-ct="be" id="d" d_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
+                                    <a href="javascript:void(0)" data-ct="be" class='fff' id="d" d_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                                 </li>
                                <?php }?>
 
@@ -459,14 +477,14 @@ var is_choice = "";
                 </div>
                 <div class="course-nav-row clearfix">
                     <span class="hd l">分类：</span>
-                    <div class="bd">
-                    <li class="course-nav-item on">
-                                <a href="javascript:void(0)" onclick="fen()">全部</a>
+                    <div class="bd" id="nidie">
+                    <li class="course-nav-item on cc">
+                                <a href="javascript:void(0)" onclick="fen()" id="quan1">全部</a>
                             </li>
                         
                                         <?php foreach($class as $k=>$v){?>
                                                                                 <li class="course-nav-item ">
-                                            <a href="javascript:void(0)" data-id="44" data-ct="fe" id="c" c_id="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></a>
+                                            <a href="javascript:void(0)" data-id="44" data-ct="fe" class="ccc" id="c" c_id="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></a>
                                         </li>
                                         <?php }?>
                                                                                </div>
@@ -475,12 +493,12 @@ var is_choice = "";
                     <span class="hd l">难度：</span>
                     <div class="bd">
                         <ul class="">
-                        <li class="course-nav-item on">
-                                <a href="javascript:void(0)" onclick="nandu()">全部</a>
+                        <li class="course-nav-item on yy">
+                                <a href="javascript:void(0)" onclick="nandu()" id="quan">全部</a>
                             </li>
                             <?php foreach ($nandu as $k=>$v){?>
                             <li class="course-nav-item ">
-                                <a href="javascript:void(0)" id="nan" nan_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
+                                <a href="javascript:void(0)" id="nan" class="ttt" nan_id="<?php echo $v['d_id']?>"><?php echo $v['d_name']?></a>
                             </li>
                             <?php }?>
                         </ul>
@@ -497,6 +515,7 @@ var is_choice = "";
                                             <a href="javascript:void(0)" class="sort-item" id="z" z_id="<?php echo $v['z_id']?>"><?php echo $v['z_name']?></a>
                                         <?php endforeach ?>
                                     </div>
+
                 <div class="l">
                     <span class="tool-item" style="display: none;">
                         <a class="follow-learn tool-chk" href="javascript:void(0);">跟我学</a>
@@ -508,16 +527,17 @@ var is_choice = "";
                     </span>
                     <span class="tool-item tool-pager">
                                                 <span class="pager-num">
-                            <b class="pager-cur">1</b>/<em class="pager-total">26</em>
+                            <b class="pager-cur"><?php echo $page?></b>/<em class="pager-total"><?php echo $page_count?></em>
                         </span>
-                                                <a href="javascript:void(0)" class="pager-action pager-prev hide-text disabled">上一页</a>
+                                                <a href="learn?p=<?php echo $last ?>" class="pager-action pager-prev hide-text disabled">上一页</a>
 
-                                                <a href="http://www.imooc.com/course/list?page=2" class="pager-action pager-next hide-text">下一页</a>
+                                                <a href="learn?p=<?php echo $next ?>" class="pager-action pager-next hide-text">下一页</a>
                                             </span>
                 </div>
             </div>
+
             <div class="course-list">
-                <div class="js-course-lists">
+                <div class="js-course-lists" id="nima">
                     <ul>
 
 
@@ -550,7 +570,7 @@ var is_choice = "";
 
                                             </ul>
                 </div>
-                <div class="page"><span class="disabled_page">首页</span><span class="disabled_page">上一页</span><a href="javascript:void(0)" class="active">1</a><a href="http://www.imooc.com/course/list?page=2">2</a><a href="http://www.imooc.com/course/list?page=3">3</a><a href="http://www.imooc.com/course/list?page=4">4</a><a href="http://www.imooc.com/course/list?page=5">5</a><a href="http://www.imooc.com/course/list?page=6">6</a><a href="http://www.imooc.com/course/list?page=7">7</a><a href="http://www.imooc.com/course/list?page=2">下一页</a><a href="http://www.imooc.com/course/list?page=26">尾页</a></div>
+                <div class="page"><span class="disabled_page"><a href="learn?p=1">首页</a></span><span class="disabled_page"><a href="learn?p=<?php echo $last?>">上一页</a></span><a href="learn?p=1" class="active">1</a><a href="learn?p=2">2</a><a href="learn?p=3">3</a><a href="learn?p=4">4</a><a href="learn?p=5">5</a><a href="learn?p=6">6</a><a href="learn?p=7">7</a><a href="learn?p=<?php echo $next?>">下一页</a><a href="learn?p=<?php echo $page_count?>">尾页</a></div>
             </div>
         </div>
     </div>
@@ -578,7 +598,7 @@ var is_choice = "";
                         <li><a href="http://www.imooc.com/about/us" target="_blank">关于我们</a></li>
                         <li> <a href="http://www.imooc.com/about/recruit" target="_blank">讲师招募</a></li>
                         <li> <a href="http://www.imooc.com/user/feedback" target="_blank">意见反馈</a></li>
-                        <li> <a href="http://www.imooc.com/about/friendly" target="_blank">友情链接</a></li>
+                        <li> <a href="you" target="_blank">友情链接</a></li>
                     </ul>
                 </div>
                 <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
@@ -586,7 +606,7 @@ var is_choice = "";
         </div>
     </div>
 </div>
-<div id="J_GotoTop" class="elevator">
+<!-- <div id="J_GotoTop" class="elevator">
     <a class="elevator-weixin" href="javascript:;">
         <div class="elevator-weixin-box">
         </div>
@@ -597,7 +617,7 @@ var is_choice = "";
         </div>
     </a>
     <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
-</div>
+</div> -->
 
 
 
@@ -664,6 +684,7 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
 </style>
 <script src="./js/jquery.1.8.min.js"></script>
 <script>
+
     $("#layout").click(function(){
         if(confirm("你确定退出吗?")){
             window.location.href="layout";
@@ -713,95 +734,203 @@ var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
     })
     $(document).on('click','#nan',function(){
         var nan_id = $(this).attr('nan_id');
-        //alert(nan_id);
-        var c_id = $('#zhi3').attr('value');
-        //alert(c_id)
-        var z_id = $('#zhi2').attr('value');
-        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-        location=url;
+        //alert(nan_id)
+        $(".yy").removeClass("on");
+        $(this).parent().attr('class','course-nav-item yy on');
+        $.ajax({
+            url:'shai',
+            type:'post',
+            data:'nan_id='+nan_id,
+            success:function(o){
+                //alert(o)
+                $('#nima').html(o);
+            }
+        })
+    })
+    $(document).on('click','#quan',function(){
+        var kong = '';
+        $(this).parent().addClass('on');
+        $('.ttt').parent().removeClass("on");
+        $.ajax({
+            url:'shai',
+            type:'post',
+            data:'nan_id='+kong,
+            success:function(o){
+                //alert(o)
+                $('#nima').html(o);
+            }
+        })
     })
     $(document).on('click','#c',function(){
         var c_id = $(this).attr('c_id');
-        //alert(nan_id);
-        var nan_id = $('#zhi1').attr('value');
-        //alert(c_id)
-        var z_id = $('#zhi2').attr('value');
-        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-        location=url;
+        $(".cc").removeClass("on");
+        $(this).parent().attr('class','course-nav-item cc on');
+        $.ajax({
+            url:'shai',
+            type:'post',
+            data:'c_id='+c_id,
+            success:function(o){
+                //alert(o)
+                $('#nima').html(o);
+            }
+        })
     })
+    $(document).on('click','#quan1',function(){
+        var kong = '';
+        $(this).parent().addClass('on');
+        $('.ccc').parent().removeClass("on");
+        $.ajax({
+            url:'shai',
+            type:'post',
+            data:'c_id='+kong,
+            success:function(o){
+                //alert(o)
+                $('#nima').html(o);
+            }
+        })
+    })
+    $(document).on('click','#d',function(){
+        var d_id = $(this).attr('d_id');
+        $(".qq").removeClass("on");
+        $(this).parent().attr('class','course-nav-item qq on');
+        $.ajax({
+            url:'shai',
+            type:'post',
+            data:'d_id='+d_id,
+            success:function(o){
+                //alert(o)
+                $('#nima').html(o);
+            }
+        })
+    })
+    $(document).on('click','#d',function(){
+        var d_id = $(this).attr('d_id');
+        $(".qq").removeClass("on");
+        $(this).parent().attr('class','course-nav-item qq on');
+        $.ajax({
+            url:'shai1',
+            type:'get',
+            data:'d_id='+d_id,
+            success:function(o){
+                //alert(o)
+                $('#nidie').html(o);
+            }
+        })
+    })
+    $(document).on('click','#quan2',function(){
+        var kong = '';
+        $(this).parent().addClass('on');
+        $('.fff').parent().removeClass("on");
+        $.ajax({
+            url:'shai',
+            type:'post',
+            data:'kong='+kong,
+            success:function(o){
+                //alert(o)
+                $('#nima').html(o);
+            }
+        })
+    })
+    $(document).on('click','#quan2',function(){
+        var kong = '1';
+        $(this).parent().addClass('on');
+        $('.fff').parent().removeClass("on");
+        $.ajax({
+            url:'shai1',
+            type:'get',
+            data:'kong='+kong,
+            success:function(o){
+                //alert(o)
+                $('#nidie').html(o);
+            }
+        })
+    })
+    // $(document).on('click','#nan',function(){
+    //     var nan_id = $(this).attr('nan_id');
+    //     //alert(nan_id);
+    //     var c_id = $('#zhi3').attr('value');
+    //     //alert(c_id)
+    //     var z_id = $('#zhi2').attr('value');
+    //     url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+    //     location=url;
+    // })
+    // $(document).on('click','#c',function(){
+    //     var c_id = $(this).attr('c_id');
+    //     //alert(nan_id);
+    //     var nan_id = $('#zhi1').attr('value');
+    //     //alert(c_id)
+    //     var z_id = $('#zhi2').attr('value');
+    //     url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+    //     location=url;
+    // })
     $(document).on('click','#z',function(){
         var z_id = $(this).attr('z_id');
         //alert(z_id);
-        var c_id = $('#zhi3').attr('value');
-        //alert(c_id)
-        var nan_id = $('#zhi1').attr('value');
-        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-        location=url;
+        // var c_id = $('#zhi3').attr('value');
+        // //alert(c_id)
+        // var nan_id = $('#zhi1').attr('value');
+        // url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+        // location=url;
+        $.ajax({
+            url:'shai',
+            type:'post',
+            data:'z_id='+z_id,
+            success:function(o){
+                //alert(o)
+                $('#nima').html(o);
+            }
+        })
     })
-    function nandu(){
-        var nan_id = '';
-        $('#zhi1').val(nan_id);
-        var c_id = $('#zhi3').attr('value');
-        var z_id = $('#zhi2').attr('value');
-        var nan_id = $('#zhi1').attr('value');
-        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-        location=url;
-    }
-    function fen(){
-        var c_id = '';
-        $('#zhi3').val(c_id);
-        var c_id = $('#zhi3').attr('value');
-        var z_id = $('#zhi2').attr('value');
-        var nan_id = $('#zhi1').attr('value');
-        url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-        location=url;
-    }
-</script>
-<script>
-   
-        $(document).on('click','#nan',function(){
-            var nan_id = $(this).attr('nan_id');
-            //alert(nan_id);
-            var c_id = $('#zhi3').attr('value');
-            //alert(c_id)
-            var z_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        })
-        $(document).on('click','#c',function(){
-            var c_id = $(this).attr('c_id');
-            //alert(nan_id);
-            var nan_id = $('#zhi1').attr('value');
-            //alert(c_id)
-            var z_id = $('#zhi2').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        })
-        $(document).on('click','#z',function(){
-            var z_id = $(this).attr('z_id');
-            //alert(z_id);
-            var c_id = $('#zhi3').attr('value');
-            //alert(c_id)
-            var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        })
-        function nandu(){
-            var nan_id = '';
-            $('#zhi1').val(nan_id);
-            var c_id = $('#zhi3').attr('value');
-            var z_id = $('#zhi2').attr('value');
-            var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        }
-        function fen(){
-            var c_id = '';
-            $('#zhi3').val(c_id);
-            var c_id = $('#zhi3').attr('value');
-            var z_id = $('#zhi2').attr('value');
-            var nan_id = $('#zhi1').attr('value');
-            url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
-            location=url;
-        }
+    // function nandu(){
+    //     var nan_id = '';
+    //     $('#zhi1').val(nan_id);
+    //     var c_id = $('#zhi3').attr('value');
+    //     var z_id = $('#zhi2').attr('value');
+    //     var nan_id = $('#zhi1').attr('value');
+    //     url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+    //     location=url;
+    // }
+    // function fen(){
+    //     var c_id = '';
+    //     $('#zhi3').val(c_id);
+    //     var c_id = $('#zhi3').attr('value');
+    //     var z_id = $('#zhi2').attr('value');
+    //     var nan_id = $('#zhi1').attr('value');
+    //     url="learn?nan_id="+nan_id+"&c_id="+c_id+"&z_id="+z_id;
+    //     location=url;
+    // }
+    function show(){
+                var sou = $('#sou').val();
+                //alert(sou)
+                if (sou=='') {
+                    $('#sou').toggle();
+                }else{
+                    location.href="search?sou="+sou;
+                }
+            }
+    $(function(){
+
+$(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+
+var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+
+if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+
+$("#ding").fadeIn(400); //淡出     
+
+}else{      
+
+$("#ding").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+
+}
+
+});
+
+$("#ding").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+
+$("html,body").animate({scrollTop:"0px"},200);
+
+});
+
+});
 </script>
