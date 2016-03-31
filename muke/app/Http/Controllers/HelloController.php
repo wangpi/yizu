@@ -81,13 +81,13 @@ class HelloController extends Controller
        session_start();
        $session_id = session_id();
         //$name="王平";
-        if (empty($_SESSION['name'])) {
+        if (empty($_SESSION['u_id'])) {
             return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'list' => $list, 'id' => $id, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
         } else {
-            $name = $_SESSION['name'];
+            $id = $_SESSION['u_id'];
             //根据名称查询个人信息
-            $arr = DB::select("select * from user1 where u_name='$name'");
-            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'name' => $name, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
+            $arr = DB::select("select * from user1 where u_id='$id'");
+            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
         }
     }
     //友情链接
@@ -169,6 +169,7 @@ class HelloController extends Controller
 
     public function Fenlei()
     {
+        session_start();
         //微博第三方登录
         include_once( './weibosdk/config.php' );
         include_once( './weibosdk/saetv2.ex.class.php' );
@@ -226,7 +227,9 @@ class HelloController extends Controller
             //难度查询
             $nandu = DB::select("select * from difficulty");
             $hot = DB::table('hot')->get();
-        return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'id' => $id, 'list' => $list, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
+        $u_id=$_SESSION['u_id'];
+        $arr=DB::table('user1')->where(['u_id'=>$u_id])->get();
+        return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'id' => $id, 'list' => $list, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url,'arr'=>$arr]);
         
     }
 
