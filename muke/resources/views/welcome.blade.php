@@ -100,7 +100,7 @@ var is_choice = "";
                 </li>
                 <li><a href="http://www.imooc.com/course/program" target="_self">计划</a></li>
                 <li><a href="http://www.imooc.com/wenda" target="_self">猿问</a></li>
-                <li><a href="http://www.imooc.com/article" target="_self">文章</a></li>
+                <li><a href="articl" target="_self">文章</a></li>
         <!--         <li><a href="/wiki"  target="_self">WIKI</a></li> -->
                             </ul>
         </div>

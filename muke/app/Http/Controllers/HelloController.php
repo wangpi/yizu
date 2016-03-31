@@ -78,8 +78,8 @@ class HelloController extends Controller
         }else{
             $next = $page+1;
         }
-       session_start();
-       $session_id = session_id();
+        session_start();
+        $session_id = session_id();
         //$name="王平";
         if (empty($_SESSION['name'])) {
             return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'list' => $list, 'id' => $id, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
@@ -90,6 +90,7 @@ class HelloController extends Controller
             return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'name' => $name, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
         }
     }
+
     //友情链接
     public function qing(){
         return view('youqing');
