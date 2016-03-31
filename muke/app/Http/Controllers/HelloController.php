@@ -58,32 +58,124 @@ class HelloController extends Controller
         $where = empty($nan_id) ? $where : $where . " and nandu_id like '%$nan_id%'";
         $where = empty($c_id) ? $where : $where . " and class_id like '%$c_id%'";
         //列表查询
-        $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where limit 20");
-
+        @$page = $_REQUEST['p']?$_REQUEST['p']:1;
+        //echo $page;die;
+        $page_size = 20;
+        $list1 = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where");
+        $zong = count($list1);
+        //echo $zong;die;
+        $limit = ($page-1)*$page_size;
+        $page_count = ceil($zong/$page_size);
+        $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where limit $limit,$page_size");
+        //print_r($list);die;
+        if ($page-1==0) {
+            $last=1;
+        }else{
+            $last = $page-1;
+        }
+        if ($page+1>$page_count) {
+            $next = $page_count;
+        }else{
+            $next = $page+1;
+        }
        session_start();
-        $session_id = session_id();
-
-
+       $session_id = session_id();
         //$name="王平";
-        if (empty($_SESSION['u_id'])) {
-            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'list' => $list, 'id' => $id, 'hot' => $hot,'code_url'=>$code_url]);
+        if (empty($_SESSION['name'])) {
+            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'list' => $list, 'id' => $id, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
         } else {
-            $id = $_SESSION['u_id'];
-            //根据id查询个人信息(两表联查)
-            //$arr=DB::table('user1')->join("user2","user1.u_id","=","user2.u_id")->where(['u_name'=>$name])->get();
-            $arr = DB::select("select * from user1 where u_id='$id'");
-            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot,'code_url'=>$code_url]);
+            $name = $_SESSION['name'];
+            //根据名称查询个人信息
+            $arr = DB::select("select * from user1 where u_name='$name'");
+            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'name' => $name, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
         }
     }
-
-
-    public function Shai(){
-        $nan_id = $_REQUEST['nan_id'];
-        $c_id = $_REQUEST['c_id'];
-        echo $nan_id,$c_id;die;
+    //友情链接
+    public function qing(){
+        return view('youqing');
     }
+    //搜索
+    public function search(){
+        @$sou = $_REQUEST['sou'];
+        //echo $sou;die;
+        @$page = $_REQUEST['p']?$_REQUEST['p']:1;
+        //echo $page;die;
+        $page_size = 6;
+        $suoo = DB::select("select * from course where c_name like '%$sou%'");
+        $zong = count($suoo);
+        //echo $zong;die;
+        $limit = ($page-1)*$page_size;
+        $page_count = ceil($zong/$page_size);
+        $suo = DB::select("select * from course where c_name like '%$sou%' limit $limit,$page_size");
+        //print_r($suo);die;
+        foreach ($suo as $k => $v) {
+            //$suo[$k] = str_replace($sou, "<span style='color:red'>".$sou."</span>", $v);
+            $suo[$k]['c_name'] = str_replace(strtoupper($sou),"<font color='red'>$sou</font>",strtoupper($v['c_name']));
+            $suo[$k]['c_desc'] = str_replace(strtoupper($sou),"<font color='red'>$sou</font>",strtoupper($v['c_zong']));
+            $suo[$k]['c_zong'] = str_replace(strtoupper($sou),"<font color='red'>$sou</font>",strtoupper($v['c_desc']));
+        }
+        //print_r($suo);die;
+        if ($page-1==0) {
+            $last=1;
+        }else{
+            $last = $page-1;
+        }
+        if ($page+1>$page_count) {
+            $next = $page_count;
+        }else{
+            $next = $page+1;
+        }
+        return view('sousuo',['suo'=>$suo,'zong'=>$zong,'last'=>$last,'next'=>$next,'page_count'=>$page_count,'sou'=>$sou]);
+    }
+    public function shai(){
+        @$nan_id = $_REQUEST['nan_id'];
+        @$c_id = $_REQUEST['c_id'];
+        @$d_id = $_REQUEST['d_id'];
+        @$z_id = $_REQUEST['z_id'];
+        @$kong = $_REQUEST['kong'];
+        //echo $nan_id;die;
+        $where = empty($z_id) ? 1 : "z_id like '%$z_id%'";
+        $where = empty($nan_id) ? $where : $where . " and nandu_id like '%$nan_id%'";
+        $where = empty($c_id) ? $where : $where . " and class_id like '%$c_id%'";
+        if ($d_id) {
+            $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where d_id like '%$d_id%'");
+        }else{
+            $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where");
+        }
+        return view('shai',['list'=>$list]);
+    }
+    public function shai1(){
+        @$d_id = $_REQUEST['d_id'];
+        @$kong = $_REQUEST['kong'];
+        if ($d_id) {
+            $class = DB::select("select * from classs where d_id='$d_id'");
+        }
+        if ($kong==1) {
+            $class = DB::select("select * from classs");
+        }
+        return view('shai1',['class'=>$class]);
+
+        // if (empty($_SESSION['u_id'])) {
+        //     return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'list' => $list, 'id' => $id, 'hot' => $hot,'code_url'=>$code_url]);
+        // } else {
+        //     $id = $_SESSION['u_id'];
+        //     //根据id查询个人信息(两表联查)
+        //     //$arr=DB::table('user1')->join("user2","user1.u_id","=","user2.u_id")->where(['u_name'=>$name])->get();
+        //     $arr = DB::select("select * from user1 where u_id='$id'");
+        //     return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'arr' => $arr, 'list' => $list, 'id' => $id, 'hot' => $hot,'code_url'=>$code_url]);
+        // }
+    }
+
+
     public function Fenlei()
     {
+        //微博第三方登录
+        include_once( './weibosdk/config.php' );
+        include_once( './weibosdk/saetv2.ex.class.php' );
+
+        $o = new \SaeTOAuthV2( WB_AKEY , WB_SKEY );
+
+        $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
         //多条件筛选
         @$nan_id = $_REQUEST['nan_id'];
         @$c_id = $_REQUEST['c_id'];
@@ -99,20 +191,43 @@ class HelloController extends Controller
             'z_id' => $z_id,
             'd_id' => $d_id
         );
+        $where = empty($z_id) ? 1 : "z_id like '%$z_id%'";
+        $where = empty($nan_id) ? $where : $where . " and nandu_id like '%$nan_id%'";
+        $where = empty($c_id) ? $where : $where . " and class_id like '%$c_id%'";
+        @$page = $_REQUEST['p']?$_REQUEST['p']:1;
+        //echo $page;die;
+        $page_size = 20;
+        $list1 = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where");
+        $zong = count($list1);
+        //echo $zong;die;
+        $limit = ($page-1)*$page_size;
+        $page_count = ceil($zong/$page_size);
+        $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where $where limit $limit,$page_size");
+        //print_r($list);die;
+        if ($page-1==0) {
+            $last=1;
+        }else{
+            $last = $page-1;
+        }
+        if ($page+1>$page_count) {
+            $next = $page_count;
+        }else{
+            $next = $page+1;
+        }
         if ($d_id == "") {
             $class = DB::select("select * from classs");
             $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id limit 20");
         } else {
             $class = DB::select("select * from classs where d_id='$d_id'");
             $list = DB::select("select * from course inner join difficulty on course.nandu_id=difficulty.d_id where direction_id='$d_id' limit 20");
-            //方向查询
+        }
+        //方向查询
             $direction = DB::select("select * from direction");
             //难度查询
             $nandu = DB::select("select * from difficulty");
             $hot = DB::table('hot')->get();
-            return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'id' => $id, 'list' => $list, 'hot' => $hot]);
-        }
-
+        return view('kecheng', ['direction' => $direction, 'class' => $class, 'nandu' => $nandu, 'id' => $id, 'list' => $list, 'hot' => $hot,'last'=>$last,'next'=>$next,'page'=>$page,'page_count'=>$page_count,'code_url'=>$code_url]);
+        
     }
 
         public function Login()
@@ -209,6 +324,7 @@ class HelloController extends Controller
         public
         function yanzheng()
         {
+            set_time_limit(0);
             session_start();
             //$userInput = \Request::get('captcha');
             $email = $_POST['email'];

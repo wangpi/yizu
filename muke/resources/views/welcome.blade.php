@@ -173,69 +173,10 @@ var is_choice = "";
   <a href="javascript:;" class="banner-anchor prev">上一张</a>
   <a href="javascript:;" class="banner-anchor next">下一张</a>
 </div>
-<div id="js-index-video" class="video-container">
-  <div class="video-wrap" id="js-video-wrap">
-    <div id="js-video"></div>
-  </div>
-  <div class="video-mask"></div>
-  <div id="js-video-close" class="video-close"></div>
-</div>
-<div id="characters" class="characters idx-minwidth">
-  <div class="idx-width">
-    <div class="characters-wrap">
-      <span class="char-icon1 hide-text">专注IT学习</span>
-      <span class="char-icon2 hide-text">聚焦实战开发</span>
-      <span class="char-icon3 hide-text">课程完全免费</span>
-    </div>
-  </div>
-</div>
-<div id="intro1" class="intro intro1 bg-grey idx-minwidth">
-  <div class="intro1-wrap idx-width">
-    <div class="intro1-star"></div>
-    <div class="intro1-video-wrap">
-      <div class="intro1-video"></div>
-    </div>
-    <div class="intro1-text hide-text">精心制作的视频课程。老师都技术大牛实战派。课程内容接地气，实际工作用得着。</div>
-  </div>
-</div>
-<div id="intro2" class="intro intro2 bg-white idx-minwidth">
-  <div class="intro2-wrap idx-width">
-    <div class="intro2-text hide-text">实时交互的在线编程，无需配置任何编程环境，直接就能在线学习编程。省时省力省心。</div>
-    <div class="intro2-computer1"></div>
-    <div class="intro2-computer2"></div>
-  </div>
-</div>
-<div id="intro3" class="intro intro3 bg-grey idx-minwidth">
-  <div class="intro3-wrap idx-width">
-    <div class="intro3-calendar"></div>
-    <div class="intro3-smoke"></div>
-    <div class="intro3-rockets"></div>
-    <div class="intro3-text hide-text">循序渐近的学习计划，专治各种学习编程迷茫症。有目标有路径，一切尽在掌握中。</div>
-  </div>
-</div>
-<div id="intro4" class="intro intro4 bg-white idx-minwidth">
-  <div class="intro4-wrap idx-width">
-    <div class="intro4-text hide-text">互帮互助的问答社区，有问有答有分享。老师学员同交流，高手小白共进步。</div>
-    <div class="intro4-hand"></div>
-    <div class="intro4-icon"></div>
-  </div>
-</div>
-<div id="mooc-dynamic" class="dynamic bg-grey idx-minwidth">
-  <div id="dynamic-wrap" class="dynamic-wrap idx-width">
-    <div id="dynamic-left" class="dynamic-left"></div>
-    <div id="dynamic-right" class="dynamic-right"></div>
+
 
           
-      <ul class="dynamic-group clearfix">
-
-
       
-        <li><a href="http://www.imooc.com/mobile/app"><img src="./shouye/5673db6d0001e3a304000200.jpg" alt="手机APP"></a></li>
-                
-        <li><a href="http://www.imooc.com/activity/iwatch" target="_blank"><img src="./shouye/5677ae970001c70404000200.jpg" alt="苹果表"></a></li>
-                
-        <li><a href="http://www.imooc.com/course/programdetail/pid/32" target="_blank"><img src="./shouye/56a59f870001bd2e04000200.jpg" alt="前端学习计划"></a></li>
-            </ul>
           
   </div>
 </div>
@@ -413,7 +354,7 @@ var is_choice = "";
       </li>
         </ul>
     <div class="icourse-footer">
-      <a href="http://www.imooc.com/course/list">全部课程</a>
+      <a href="learn">全部课程</a>
     </div>
   </div>
 </div>
@@ -1008,18 +949,18 @@ var is_choice = "";
   <div id="js-family-mask" class="family-big-mask"></div>
   <div id="js-family-text" class="family-text hide-text">慕课大家庭</div>
 </div>
-<div class="mobile idx-minwidth">
+<!-- <div class="mobile idx-minwidth">
   <div class="mobile-wrap idx-width">
     <h2 class="mobile-title hide-text">手机慕课，随时随地学习！</h2>
     <div class="mobile-entry">
-      <a href="http://www.imooc.com/mobile/app" target="_blank"><!-- Android版 -->手机版</a>
-      <a href="http://www.imooc.com/mobile/app?curr=ipad" target="_blank"><!-- IOS版 -->iPad版</a>
+      <a href="http://www.imooc.com/mobile/app" target="_blank"><!-- Android版 --><!-- 手机版</a>
+      <a href="http://www.imooc.com/mobile/app?curr=ipad" target="_blank"><!-- IOS版 --><!-- iPad版</a>
       <span id="js-mobile-trigger" class="mobile-trigger"></span>
     </div>
     <div class="mk-mobile-bg" id="J-mk-mobile-bg"></div>
     <div class="mk-down-qrcode" id="J-mk-down-qrcode"></div>
-  </div>
-</div>
+  </div> --> 
+<!-- </div>
 <div class="joinmooc bg-grey idx-minwidth">
   <div class="joinmooc-wrap idx-width">
     <h2 class="hide-text">慕课网，只学有用的！</h2>
@@ -1029,7 +970,7 @@ var is_choice = "";
       </a>
     </div>
   </div>
-</div>
+</div> --> 
 <div class="footer bg-white idx-minwidth">
   <div class="container">
     <div class="footer-wrap idx-width">

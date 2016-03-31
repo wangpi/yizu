@@ -55,7 +55,6 @@ return [
 
     'timezone' => 'Asia/shanghai',
 
-    'timezone' => 'Asia/Shanghai',
 
 
     /*
