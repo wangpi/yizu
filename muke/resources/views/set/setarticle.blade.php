@@ -108,7 +108,7 @@
                             <div class="card-sets clearfix">
                                 <a href="http://www.imooc.com/wenda/save" target="_blank" class="l mr30">发问题</a>
                                 <a href="addarticle" target="_blank" class="l">写文章</a>
-                                <a href="http://www.imooc.com/passport/user/logout?referer=http://www.imooc.com" class="r">退出</a>
+                                <a href="#" id="layout" class="r">退出</a>
                             </div>
                         </div>
                         <i class="card-arr"></i>
@@ -136,6 +136,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 <div id="main">
@@ -198,12 +201,12 @@
 
                 <ul class="clearfix toptab">
                     <li class="tabactive">
-                        <a href="http://www.imooc.com/u/3057710/articles">我的原创</a>
+                        <a href="article">我的原创</a>
                     </li>
                     <li class="">
                         <a href="http://www.imooc.com/u/3057710/articles?type=collect">我的收藏</a>
                     </li>
-                    <a href="http://www.imooc.com/article/publish" target="_blank" class="wanna-build">写文章</a>
+                    <a href="addarticle" target="_blank" class="wanna-build">写文章</a>
                 </ul>
 
                 <div id="articlesList" class="articles-list">
@@ -352,3 +355,12 @@
 
 
 </body></html>
+<script src="./js/jquery.1.8.min.js"></script>
+<script>
+
+    $("#layout").click(function(){
+        if(confirm("你确定退出吗?")){
+            window.location.href="layout";
+        }
+    })
+</script>

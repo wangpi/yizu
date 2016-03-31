@@ -420,7 +420,7 @@ class HelloController extends Controller
     	$sql="select u_name,u_pwd,u_id from user1  where u_name = '$log'";
     	$re=DB::select($sql);
     	//print_r($re);die;
-    	if($re){
+    	if(!empty($re)){
     		if($pass==$re['0']['u_pwd']){
                 session_start();
     			$_SESSION['user'] = $re['0']['u_name'];
@@ -428,9 +428,12 @@ class HelloController extends Controller
        			return redirect('/poh');
     		}
     		else{
-    			echo "<script>alert('密码错误请重新输入')";
+    			echo "<script>alert('密码错误请重新输入');history.go(-1)</script>";
 			}
 		}
+        else{
+            echo "<script>alert('用户名错误请重新输入');history.go(-1)</script>";
+        }
 	}
         public function Golist()
         {
@@ -613,6 +616,15 @@ class HelloController extends Controller
         public function zid(){
             session_start();
             $zid=$_GET['name'];
+
+            $id=$_SESSION['id'];
+            $user = DB::table('z_u')->where('u_id', $id)->first();
+            // print_r($user); 
+           if($user['z_id']!=$zid){
+               $sq="insert into z_u(z_id,u_id) values('$zid','$id')";
+                $rr=DB::insert($sq);
+                if($rr){
+
             $id=$_SESSION['u_id'];
             $sql="select z_id from z_u where u_id='$id'";
             $re=DB::select($sql);
@@ -620,11 +632,18 @@ class HelloController extends Controller
                /* $sq="insert into z_u(z_id,u_id) vlues('$zid','$id')";
                 $rr=DB::select($sq);
                 if($rr){*/
+
                     echo '1';
                 }
+            }
                 else{
-                    echo '3';
+                    $sql="delete from z_u where z_id='$zid' and u_id='$id'";
+                    $re=DB::insert($sql);
+                    if($re){
+                        echo '3';
+                    }
                 }
             
         }
     }
+}

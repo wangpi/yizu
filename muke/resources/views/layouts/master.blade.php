@@ -136,3 +136,54 @@
         </div>
     </div>
 </div>
+<script src="./js/jquery.1.8.min.js"></script>
+<script>
+
+    $("#layout").click(function(){
+        if(confirm("你确定退出吗?")){
+            window.location.href="layout";
+        }
+    })
+    $(document).on("blur","#email",function(){
+        var name=$("#email").val();
+        if(name==""){
+            $("#email_sp").html('<font style="color:red">用户名不能为空哦！</font>');
+        }else{
+            $("#email_sp").html('√');
+        }
+    });
+    $(document).on("blur","#pwd",function(){
+        var pwd=$("#pwd").val();
+        if(pwd==""){
+            $("#pwd_sp").html("<font style='color:red'>密码不能为空哦！</font>");
+        }else{
+            $("#pwd_sp").html(" ");
+        }
+    })
+    $(document).on("click",".login",function(){
+        var name=$("#email").val();
+        var pwd=$("#pwd").val();
+        if(name==""){
+            $("#email_sp").html('<font style="color:red">用户名不能为空哦！</font>');
+        }else{
+            $("#email_sp").html('√');
+        }
+        $.ajax({
+            url:'login',
+            type:'post',
+            data:'name='+name+'&pwd='+pwd,
+            success:function(txt){
+                if(txt==1){
+                    $("#pwd_sp").html("√");
+                    window.location.href='learn'
+                }else if(txt==0){
+                    $("#pwd_sp").html("<font style='color:red'>用户名或密码错误!</font>");
+                }else if(txt==2){
+                    $("#email_sp").html('<font style="color:red">用户名不存在！</font>');
+                }else{
+                    alert(txt);
+                }
+            }
+        })
+    })
+</script>

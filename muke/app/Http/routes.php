@@ -138,6 +138,9 @@ Route::post('upload','SetController@upload');
 
 Route::get('setarticle','SetController@setarticle');
 
+//第三方之微博登陆
+Route::get('weibologin','LoginController@weibo');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
