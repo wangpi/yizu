@@ -278,7 +278,7 @@ class HelloController extends Controller
 
     public function Beg(){
         session_start();
-    	if(!isset($_SESSION['user'])){
+    	if(!isset($_SESSION['u_id'])){
     		echo '1';
     	}
     	else{
@@ -304,7 +304,7 @@ class HelloController extends Controller
     		if($pass==$re['0']['u_pwd']){
                 session_start();
     			$_SESSION['user'] = $re['0']['u_name'];
-    			$_SESSION['id']=$re['0']['u_id'];
+    			$_SESSION['u_id']=$re['0']['u_id'];
        			return redirect('/poh');
     		}
     		else{
@@ -323,7 +323,7 @@ class HelloController extends Controller
 
     public function pohion(){
        session_start();
-        $id=$_SESSION['id'];
+        $id=$_SESSION['u_id'];
         $sql="select * from user1 where u_id='$id'";
         $re=DB::select($sql);
         if(!isset($_GET['v_id'])){
@@ -345,7 +345,7 @@ class HelloController extends Controller
         session_start();
     	$text=$_GET['text'];
         $vi=$_GET['vi'];
-        $id=$_SESSION['id'];
+        $id=$_SESSION['u_id'];
         $time=date("Y-m-d H:i:s",time());
         //echo $time;
         $sql="insert into comment(v_id,comment,ctime,u_id) values('$vi','$text','$time','$id')";
@@ -493,7 +493,7 @@ class HelloController extends Controller
         public function zid(){
             session_start();
             $zid=$_GET['name'];
-            $id=$_SESSION['id'];
+            $id=$_SESSION['u_id'];
             $sql="select z_id from z_u where u_id='$id'";
             $re=DB::select($sql);
             if(empty($re)){

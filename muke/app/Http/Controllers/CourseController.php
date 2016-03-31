@@ -18,12 +18,12 @@ class CourseController extends Controller
     public function course(){
         //根据session中存的信息，查询个人基本信息
         session_start();
-        $name=$_SESSION['name'];
-        $arr=DB::table("user1")->where(['u_name'=>$name])->get();
+        $name=$_SESSION['u_id'];
+        $arr=DB::table("user1")->where(['u_id'=>$name])->get();
         
-        $name=$_SESSION['name'];//邮箱
+        $name=$_SESSION['u_id'];//邮箱
         //查询职位id
-        $re=DB::table('user1')->where(['u_email'=>$name])->get();
+        $re=DB::table('user1')->where(['u_id'=>$name])->get();
         $zhiwei=$re[0]['u_zhiwei'];
         $userid=$re[0]['u_id'];
         //联查个人信息(可以获得pname)
