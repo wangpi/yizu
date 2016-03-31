@@ -18,8 +18,6 @@
 <meta name="Description" content="慕课网精品课程，为您提供专业的IT实战开发课程，包含前端开发、后端开发、移动端开发、数据处理、图像处理等各方面IT技能，课程全面、制作精良、讲解通俗易懂。">
 
 
-
-
 <script src="./kecheng/push.js"></script><script type="text/javascript" async="" src="./kecheng/rt.js"></script><script type="text/javascript">
 
       var OP_CONFIG={"module":"course","page":"list"};
@@ -30,6 +28,297 @@ var is_choice = "";
 
 </script>
 <link rel="stylesheet" href="./kecheng/saved_resource" type="text/css">
+
+
+    <script src="./static/js/landing-min.js?2013032917"></script>
+    <div class="modal in" id="login-modal" }> <a class="close" data-dismiss="modal">×</a>
+        <h1>登录</h1>
+        <ul class="login-bind-tp">
+            <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
+            <li class="sina"> <a href="<?php echo  $code_url; ?>"><em>&nbsp;</em> 微博登录</a> </li>
+        </ul>
+        <p>或者使用已有帐号登陆：</p>
+        <form class="login-form clearfix" method="post" action="">
+            <div class="form-arrow"></div>
+            <input id="email" type="text" placeholder="请输入您的邮箱：">
+            <span id='email_sp'></span>
+            <input id="pwd" type="password" placeholder="请输入您的密码：">
+            <span id='pwd_sp'></span>
+            <input type="button" id="login" class="button-blue login" value="登录">
+            <input type="hidden" name="return-url" value="">
+            <div class="clearfix"></div>
+            <label class="remember">
+                <input name="remember" type="checkbox" checked/>
+                下次自动登录 </label>
+            <a href="forgot">忘记密码？</a>
+        </form>
+    </div>
+    <link rel="stylesheet" type="text/css" href="static/css/ui2.css?2013032917">
+    <script src="js/jquery.1.8.min.js"></script>
+    <script>
+        //$(document).on("blur","#email",function() {
+        $("#email").blur(function(){
+            var name = $("#email").val();
+            var reg = /^\w+@\w+(\.)\w+$/;
+            if (name!= " ") {
+                if (reg.test(name)) {
+                    $("#email_sp").html('√');
+                    return true;
+                }else{
+                    $("#email_sp").html('<font style="color:red">邮箱格式错误！</font>');
+                    return false;
+                }
+            }else{
+                $("#email_sp").html('<font style="color:red">邮箱不能为空哦！</font>');
+                return false;
+            }
+        });
+        $(document).on("blur","#pwd",function(){
+            var pwd=$("#pwd").val();
+            if(pwd==""){
+                $("#pwd_sp").html("<font style='color:red'>密码不能为空哦！</font>");
+            }else{
+                $("#pwd_sp").html(" ");
+            }
+        })
+        $(document).on("click","#signin-btn",function(){
+            var name=$("#email").val();
+            var pwd=$("#pwd").val();
+            var reg = /^\w+@\w+(\.)\w+$/;
+            /*if (name!= "") {
+             if (reg.test(name)) {
+             $("#email_sp").html('√');
+             return true;
+             }else{
+             $("#email_sp").html('<font style="color:red">邮箱格式错误！</font>');
+             return false;
+             }
+             }else{
+             $("#email_sp").html('<font style="color:red">邮箱不能为空哦！</font>');
+             return false;
+             }*/
+            if(pwd==""){
+                $("#pwd_sp").html('<font style="color:red">密码不能为空哦！</font>');
+            }else{
+                $("#pwd_sp").html(' ');
+            }
+            $.ajax({
+                url:'login',
+                type:'post',
+                data:'name='+name+'&pwd='+pwd,
+                success:function(txt){
+                    if(txt==1){
+                        $("#pwd_sp").html("√");
+                        window.location.href='learn'
+                    }else if(txt==0){
+                        $("#pwd_sp").html("<font style='color:red'>用户名或密码错误!</font>");
+                    }else if(txt==2){
+                        $("#email_sp").html('<font style="color:red">用户名不存在！</font>');
+                    }else{
+                        alert(txt);
+                    }
+                }
+            })
+        })
+    </script>
+    <script>
+    function openNew(){
+        //获取页面的高度和宽度
+        var sWidth=document.body.scrollWidth;
+        var sHeight=document.body.scrollHeight;
+
+        //获取页面的可视区域高度和宽度
+        var wHeight=document.documentElement.clientHeight;
+
+        var oMask=document.createElement("div");
+        oMask.id="mask";
+        oMask.style.height=sHeight+"px";
+        oMask.style.width=sWidth+"px";
+        document.body.appendChild(oMask);
+        var oLogin=document.createElement("div");
+        oLogin.id="login";
+        oLogin.innerHTML="<div id='signin' width='300px' class='rl-modal in' aria-hidden='false'><div class='rl-modal-header'><h1><span class='active-title' id='btnLogin'>登录</span><span data-fromto='signin:signup' id='btnRe'>注册</span></h1><img src='../img/close.png' id='close'><button type='button' class='rl-close' data-dismiss='modal' hidefocus='true' aria-hidden='true'></button></div><div class='rl-modal-body'><div class='clearfix'><div class='l-left-wrap l'><form id='signup-form' autocomplete='off' method='post' action='login'><p class='rlf-tip-globle' id='signin-globle-error'></p><div class='rlf-group'><input type='text' value='' name='email' id='username' data-validate='email' autocomplete='off' class='ipt ipt-email js-own-name' placeholder='请输入登录邮箱'><p class='rlf-tip-wrap'></p></div><input style='display:none' type='text' name='fakeusernameremembered'><input style='display:none' type='password' name='fakepasswordremembered'><div class='rlf-group'><input type='password' name='password' autocomplete='off' class='ipt ipt-pwd ipt-error' placeholder='请输入密码' id='pwd'></div><div class='rlf-group js-verify-row clearfix' style='display: none'><input type='text' name='verify' class='ipt ipt-verify l' placeholder='请输入验证码'><a href='javascript:void(0)' class='verify-img-wrap js-verify-refresh'><img class='verify-img' src='../js/verifycode'></a><a href='javascript:void(0)' class='icon-refresh js-verify-refresh'></a><p class='rlf-tip-wrap'></p></div><div class='rlf-group rlf-appendix clearfix'><label for='auto-signin' class='rlf-autoin l' hidefocus='true'><input type='checkbox' checked='checked' class='auto-cbx' id='auto-signin'>下次自动登录</label><a href='http://www.imooc.com/user/newforgot' class='rlf-forget r' target='_blank' hidefocus='true'>忘记密码 </a></div><div class='rlf-group clearfix'><input type='submit' id='signin-btn' value='登录' hidefocus='true' class='btn-red btn-full'>&nbsp&nbsp&nbsp&nbsp<input type='reset' id='signin-btn' value='取消' hidefocus='true' class='btn-red btn-full'></div></form></div></div></div><div class='rl-model-footer'><div class='pop-login-sns clearfix'><span class='l'>其他方式登录</span><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=weibo' class='pop-sns-weibo r'><i class='icon-weibo'></i></a><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=qq' class='pop-sns-qq r'><i class='icon-qq'></i></a><a href='javascript:void(0)' hidefocus='true' data-login-sns='/passport/user/tplogin?tp=weixin' class='pop-sns-weixin r'><i class='icon-weixin'></i></a></div></div></div><div id='close'>";
+        document.body.appendChild(oLogin);
+
+        //获取登陆框的宽和高
+        var dHeight=oLogin.offsetHeight;
+        var dWidth=oLogin.offsetWidth;
+        //设置登陆框的left和top
+        oLogin.style.left=sWidth/2-dWidth/2+"px";
+        oLogin.style.top=wHeight/2-dHeight/2+"px";
+        //点击关闭按钮
+        var oClose=document.getElementById("close");
+
+        //点击登陆框以外的区域也可以关闭登陆框
+        oClose.onclick=oMask.onclick=function(){
+            document.body.removeChild(oLogin);
+            document.body.removeChild(oMask);
+        };
+    };
+
+
+
+    window.onload=function(){
+        var oBtn=document.getElementById("btnLogin");
+        //点击登录按钮
+        oBtn.onclick=function(){
+            openNew();
+            return false;
+        }
+    }
+</script>
+
+    <div class="modal in" id="signup-modal" > <a class="close" data-dismiss="modal">×</a>
+        <h1>注册</h1>
+        <p>使用邮箱注册：</p>
+        <form class="signup-form clearfix" method="post" action="">
+            <p class="error"></p>
+            <input id="emaill" type="text" placeholder="请输入电子邮箱地址：">
+            <span id="emaill_sp"></span>
+            <input id="pwdd" type="password" placeholder="6-16位密码，区分大小写，不能用空格：">
+            <span id="pwdd_sp"></span>
+            <input id="nick" type="text" placeholder="昵称为2-18位，中英文、数字及下划线：">
+            <span id="nick_sp"></span>
+            <input id="yzm" size="20px" placeholder="请输入验证码" type="text">
+            <a onclick="javascript:re_captcha();" >
+                <img src="{{ URL('hello/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="40" id="c2c98f0de5a04167a9e427d883690ff6" border="1"></a>
+            <p class="tips"></p><span id="yzm_sp"></span>
+            <input type="hidden" name="title" value="">
+            <input type="hidden" name="url" value="">
+            <div class="clearfix"></div>
+            <img src="./img/qq.png" width="50px" height="50px">
+            <img src="./img/weibo.jpg" width="50px" height="50px">
+            {{--<ul class="login-bind-tp">
+                <li class="qweibo"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> QQ登录</a> </li>
+                <li class="sina"> <a href="http://sc.chinaz.com"><em>&nbsp;</em> 微博登录</a> </li>
+            </ul>--}}
+            <input type="button" name="type" class="button-blue reg" value="注册" data-category="UserAccount" data-action="regist" id="js-signup-submit">
+        </form>
+    </div>
+
+    <script>
+        $("#nick").blur(function(){
+            var nick=$("#nick").val();
+            if(nick==""){
+                $("#nick_sp").html("<font style='color:red'>昵称不能为空！</font>");
+                return false;
+            }else{
+                $("#nick_sp").html(" ");
+                return true;
+            }
+        })
+        $("#yzm").blur(function(){
+            var yzm=$("#yzm").val();
+            if(yzm==""){
+                $("#yzm_sp").html("<font style='color:red'>验证码不能为空！</font>");
+                return false;
+            }else{
+                $("#yzm_sp").html(" ");
+                $.post('zhu',{
+                    'yzm':yzm
+                },function (txt){
+                    if(txt==2){
+                        $("#yzm_sp").html("<font style='color:red'>验证码错误！</font>");
+                    }
+                })
+                return true;
+            }
+        })
+        //$("#email").blur(function(){
+        $(document).on("blur","#emaill",function(){
+            var email=$("#emaill").val();
+            if(email==""){
+                $("#emaill_sp").html(" ");
+                return true;
+            }else{
+                var reg=/^\w+@\w+(\.)\w+$/;
+                if(reg.test(email)){
+                    //将邮箱传到前台，判断是否已经注册过
+                    $.get('register1',{
+                        'email':email
+                    },function(txt){
+                        if(txt==1){
+                            $("#emaill_sp").html(" ");
+                            return true;
+                        }else if(txt==0){
+                            $("#emaill_sp").html("<font style='color:red'>已注册！！</font>");
+                            return false;
+                        }
+                    })
+                }else{
+                    $("#emaill_sp").html("<font style='color:red'>邮箱格式不对</font>");
+                    return false;
+                }
+            }
+        });
+        //$("#pwd").blur(function(){
+        $(document).on("blur","#pwdd",function(){
+            //计算密码的长度
+            var pwd=$("#pwdd").val();
+            pwd.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            if(pwd.length>16  ){
+                $("#pwdd_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+                $("#pwdd").keyup(function(){
+                    var pw=$("#pwdd").val();
+                    if(pw.length==0){
+                        $("#pwdd_sp").html("<font style='color:red'>密码不能为空！</font>");
+                    }else if(pw.length<6){
+                        $("#pwdd_sp").html("<font style='color:red'>请输入6-16位密码，区分大小写，不能使用空格！</font>");
+                    }else{
+                        $("#pwdd_sp").html(" ");
+                    }
+                })
+            }
+        });
+        $("#js-signup-submit").click(function(){
+            var email=$("#emaill").val();
+            var pwd=$("#pwdd").val();
+            var nick=$("#nick").val();
+            var yzm=$("#yzm").val();
+            if(email==""){
+                $("#emaill_sp").html("<font style='color:red'>邮箱不能为空！</font>");
+                return false;
+            }
+            if(pwd==""){
+                $("#pwdd_sp").html("<font style='color:red'>密码不能为空！</font>");
+                return false;
+            }
+            if(nick==""){
+                $("#nick_sp").html("<font style='color:red'>昵称不能为空！</font>");
+                return false;
+            }
+            if(yzm==""){
+                $("#yzm_sp").html("<font style='color:red'>验证码不能为空！</font>");
+                return false;
+            }
+            $.post('zhu',{
+                'email':email,
+                'nick':nick,
+                'pwd':pwd,
+                'yzm':yzm
+            },function(txt){
+                if(txt==1){
+                    alert('注册成功');
+                    window.location.href='denglu';
+                }else if(txt==0){
+                    alert('注册失败');
+                    window.location.href='learn';
+                }else if(txt==2){
+                    alert('验证码有误');
+                    window.history.go(0);
+                }
+            })
+        })
+    </script>
+
+    <script>
+        function re_captcha() {
+            $url = "{{ URL('hello/captcha') }}";
+            $url = $url + "/" + Math.random();
+            document.getElementById('c2c98f0de5a04167a9e427d883690ff6').src=$url;
+        }
+    </script>
+
 <script charset="utf-8" async="" src="./kecheng/jquery.js"></script><script charset="utf-8" async="" src="./kecheng/seajs-text.js"></script><script charset="utf-8" async="" src="./kecheng/common.js"></script><script charset="utf-8" async="" src="./kecheng/string.js"></script><script charset="utf-8" async="" src="./kecheng/suggest.js"></script><script charset="utf-8" async="" src="./kecheng/store.js"></script><script charset="utf-8" async="" src="./kecheng/json.js"></script><script charset="utf-8" async="" src="./kecheng/im.js"></script><script charset="utf-8" async="" src="./kecheng/list.js"></script><script charset="utf-8" async="" src="./kecheng/socket.io.min.js"></script></head>
 <body id="List_courseId">
 
@@ -46,7 +335,7 @@ var is_choice = "";
                 </li>
                 <li><a href="index.php/jihua" target="_self">计划</a></li>
                 <li><a href="../yuanwen" target="_self">猿问</a></li>
-                <li><a href="../article" target="_self">文章</a></li>
+                <li><a href="../articl" target="_self">文章</a></li>
                 <!--         <li><a href="/wiki"  target="_self">WIKI</a></li> -->
             </ul>
         </div>
@@ -67,12 +356,14 @@ var is_choice = "";
                     </div>
                 </li>
 
-                <?php if(empty($_SESSION['name'])){ ?>
+                <?php if(empty($_SESSION['u_id'])){ ?>
                 <li class="header-signin">
-                    <a href="denglu" id="">登录</a>
+                    <a role="button" data-category="UserAccount" data-action="login" data-toggle="modal" href="#login-modal">登录</a>
+                    <!--<a href="denglu" id="btnZhu">登录</a>-->
                 </li>
                 <li class="header-signup">
-                    <a href="register" id="btnZhu">注册</a>
+                    <!--<a href="register" id="btnZhu">注册</a>-->
+                    <a role="button" data-category="UserAccount" data-action="login" data-toggle="modal" href="#signup-modal">注册</a>
                 </li>
                 <?php }else{ ?>
                 <li class='header-app'>
@@ -89,7 +380,7 @@ var is_choice = "";
 
                 <li class="set_btn user-card-box header-unlogin clearfix" style="background-position: 0 -16px;vertical-align: -3px;
   margin-right: 5px;">
-                    <a id="header-avator" class="user-card-item" action-type="my_menu"  href="/u/3059476/courses" target="_self"><img src="<?php echo $arr[0]['u_photo']?>" width='40' height='40' />
+                    <a id="header-avator" class="user-card-item" action-type="my_menu"  href="courses" target="_self"><img src="<?php echo $arr[0]['u_photo']?>" width='40' height='40' />
                         <i class="myspace_remind" style="display: none;"></i>
                         <span style="display: none;">动态提醒</span>
                     </a>
@@ -97,7 +388,7 @@ var is_choice = "";
                         <div class="card-inner">
                             <div class="card-top">
                                 <a href='/u/3059476/courses'><img src="<?php echo $arr[0]['u_photo']?>" alt="yjtlgp" class="l"></a>
-                                <a href='/u/3059476/courses'><span class="name text-ellipsis"><?php echo $_SESSION['name']?></span></a>
+                                <a href='/u/3059476/courses'><span class="name text-ellipsis"><?php echo $arr[0]['u_name']?></span></a>
                                 <p class="meta">
                                     <a href="/u/3059476/experience">经验<b id="js-user-mp">0</b></a>
                                     <a href="/u/3059476/credit">积分<b id="js-user-credit">0</b></a>            </p>
@@ -136,6 +427,8 @@ var is_choice = "";
         
 <div><input type="text" placeholder='请输入想搜索的内容...'style="height:25px;margin-left:450px;margin-top:20px;display:none" id="sou" /></div>
        <!--  <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
+
+        <div class="search-warp clearfix" style="min-width: 32px; height: 60px;">
             <div class="search-area min" data-search="top-banner">
                 <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
                 <input type="hidden" class="btn_search" data-search-btn="search-btn">
