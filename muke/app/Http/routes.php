@@ -126,6 +126,10 @@ Route::get('setemail','SetController@setemail');
 //上传头像
 Route::post('upload','SetController@upload');
 
+//个人中心之我的文章
+
+Route::get('setarticle','SetController@setarticle');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
