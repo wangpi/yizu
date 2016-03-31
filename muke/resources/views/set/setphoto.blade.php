@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html><head>
+
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>慕课网</title>
@@ -78,13 +80,16 @@
                     <div class="avator-btn-group">
                         <div id="avator-btns" class="avator-btn-inner">
 
-                            <div class="avator-btn-wrap">
+                            <div>
                                 <form target="uploadtarget" action="upload" method="post" enctype="multipart/form-data">
-                                    <a href="javascript:void(0)" hidefocus="true" class="avator-btn-fake">选择头像</a>
+                                    <a href="javascript:void(0)" hidefocus="true" class="avator-btn-fake" id="up"><input title="选择头像" name="file" id="file" accept="image/*" type="file">选择头像</a>
 
-                                    <input title="选择头像" name="file" id="file" accept="image/*" type="file">
-                                    <input type="submit"  value="提交">
+
+                                    <input type="submit" id="sub"  value="提交">
                                 </form>
+
+
+
 
                                 <iframe src="./photo/a.htm" id="uploadtarget" name="uploadtarget" style="display:none;" frameborder="0"></iframe>
                             </div>
@@ -132,6 +137,7 @@
     <script type="text/javascript">
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+
         (function (d) {
             window.bd_cpro_rtid="rHT4P1c";
             var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
@@ -148,11 +154,10 @@
     </script>
     <script>
         //上传头像
-        /*$(document).on("click","#file",function(){
-            $("#sub_img").click();
-            return false;
-            var image=$("#file").val();
-        })*/
+//        $(document).on("change","#file",function(){
+//            $("#sub_img").click();
+//        })
+
         //头像换一换
         //$("#huan").click(function(){
             $(document).on("click","#huan",function(){
