@@ -13,5 +13,8 @@ class Index extends CI_Controller {
 		$c=$this->Index_models->video($z_id);
 		echo json_encode($c);
 	}
+    public function aa(){
+        
+    }
 }
 ?>
