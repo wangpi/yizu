@@ -21,7 +21,7 @@ if ($token) {
 	setcookie( 'weibojs_'.$o->client_id, http_build_query($token) );
 ?>
 <?php 
-	echo "<script>alert('登录成功即将进入首页');location.href='http://www.muke.com/weibologin'</script>";
+	echo "<script>alert('登录成功即将进入首页');location.href='http://www.mk.com/weibologin'</script>";
 	?>
 <?php
 } else {

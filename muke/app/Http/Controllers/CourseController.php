@@ -34,7 +34,6 @@ class CourseController extends Controller
         //print_r($arr);die;
         //联查个人详细信息
         $brr=DB::table('xuexi')->join('user1',"xuexi.u_id","=","user1.u_id")->where(['user1.u_id'=>$userid])->get();
-        //print_r($brr);die;
         //如果该人没有学习过任何课程
         if(empty($brr)){
             return view('course.course1',['arr'=>$arr]);
