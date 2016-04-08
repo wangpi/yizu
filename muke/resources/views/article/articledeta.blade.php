@@ -60,7 +60,7 @@
                 </li>
                 <li><a href="http://www.imooc.com/course/program" target="_self">计划</a></li>
                 <li><a href="http://www.imooc.com/wenda" target="_self">猿问</a></li>
-                <li><a href="http://www.imooc.com/article" class="active" target="_self">文章</a></li>
+                <li><a href="articl" class="active" target="_self">文章</a></li>
                 <!--         <li><a href="/wiki"  target="_self">WIKI</a></li> -->
             </ul>
         </div>
@@ -166,7 +166,7 @@
             <h1 class="detail-title"><?php echo $article[0]['aname']?></h1>
             <div class="dc-addon clearfix">
                 <div class="dc-profile l">
-                    <a class="cat" href="http://www.imooc.com/article/index/cid/105"><?php echo $article[0]['d_name']?></a>
+                    <a class="cat" href="articlethree?atypetwo=<?php echo $article[0]['atype']?>"><?php echo $article[0]['d_name']?></a>
                     <span class="spacer">
                          <?php
                          isset($str)?$str:$str='m-d';
@@ -412,47 +412,47 @@
 
 </div>
 
-<div id="footer">
-    <div class="waper">
-        <div class="footerwaper clearfix">
-            <div class="followus r">
-                <a class="followus-weixin" href="javascript:;" target="_blank" title="微信">
-                    <div class="flw-weixin-box"></div>
-                </a>
-                <a class="followus-weibo" href="http://weibo.com/u/3306361973" target="_blank" title="新浪微博"></a>
-                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
-            </div>
-            <div class="footer_intro l">
-                <div class="footer_link">
-                    <ul>
-                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
-                        <li><a href="http://www.imooc.com/about/job" target="_blank">人才招聘</a></li>
-                        <li> <a href="http://www.imooc.com/about/contact" target="_blank">联系我们</a></li>
-                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
-                        <li><a href="http://www.imooc.com/corp/index" target="_blank">合作专区</a></li>
-                        <li><a href="http://www.imooc.com/about/us" target="_blank">关于我们</a></li>
-                        <li> <a href="http://www.imooc.com/about/recruit" target="_blank">讲师招募</a></li>
-                        <li> <a href="http://www.imooc.com/user/feedback" target="_blank">意见反馈</a></li>
-                        <li> <a href="http://www.imooc.com/about/friendly" target="_blank">友情链接</a></li>
-                    </ul>
-                </div>
-                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="J_GotoTop" class="elevator">
-    <a class="elevator-weixin" href="javascript:;">
-        <div class="elevator-weixin-box">
-        </div>
-    </a>
-    <a class="elevator-msg" href="http://www.imooc.com/user/feedback" target="_blank" id="feedBack"></a>
-    <a class="elevator-app" href="http://www.imooc.com/mobile/app">
-        <div class="elevator-app-box">
-        </div>
-    </a>
-    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
-</div>
+<!--<div id="footer">-->
+<!--    <div class="waper">-->
+<!--        <div class="footerwaper clearfix">-->
+<!--            <div class="followus r">-->
+<!--                <a class="followus-weixin" href="javascript:;" target="_blank" title="微信">-->
+<!--                    <div class="flw-weixin-box"></div>-->
+<!--                </a>-->
+<!--                <a class="followus-weibo" href="http://weibo.com/u/3306361973" target="_blank" title="新浪微博"></a>-->
+<!--                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>-->
+<!--            </div>-->
+<!--            <div class="footer_intro l">-->
+<!--                <div class="footer_link">-->
+<!--                    <ul>-->
+<!--                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>-->
+<!--                        <li><a href="http://www.imooc.com/about/job" target="_blank">人才招聘</a></li>-->
+<!--                        <li> <a href="http://www.imooc.com/about/contact" target="_blank">联系我们</a></li>-->
+<!--                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>-->
+<!--                        <li><a href="http://www.imooc.com/corp/index" target="_blank">合作专区</a></li>-->
+<!--                        <li><a href="http://www.imooc.com/about/us" target="_blank">关于我们</a></li>-->
+<!--                        <li> <a href="http://www.imooc.com/about/recruit" target="_blank">讲师招募</a></li>-->
+<!--                        <li> <a href="http://www.imooc.com/user/feedback" target="_blank">意见反馈</a></li>-->
+<!--                        <li> <a href="http://www.imooc.com/about/friendly" target="_blank">友情链接</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div id="J_GotoTop" class="elevator">-->
+<!--    <a class="elevator-weixin" href="javascript:;">-->
+<!--        <div class="elevator-weixin-box">-->
+<!--        </div>-->
+<!--    </a>-->
+<!--    <a class="elevator-msg" href="http://www.imooc.com/user/feedback" target="_blank" id="feedBack"></a>-->
+<!--    <a class="elevator-app" href="http://www.imooc.com/mobile/app">-->
+<!--        <div class="elevator-app-box">-->
+<!--        </div>-->
+<!--    </a>-->
+<!--    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>-->
+<!--</div>-->
 
 
 
