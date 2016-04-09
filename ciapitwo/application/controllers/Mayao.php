@@ -9,40 +9,137 @@ class mayao extends CI_Controller {
 public  function __construct(){
     parent::__construct();
 }
-public function article(){
-//加载model
-    $model=$this->load->model("mayao_models");
-    $arr=$this->mayao_models->getarticle();
-    foreach($arr as $k=>$v){
-        //获取文章id
-        $aid=$v['aid'];
-        //通过aid获取评论数量
-        $clickcomment=$this->mayao_models->clickcomment($aid);
-        $clickcommentcount=count($clickcomment);
-       $arr['clickcomment']=$clickcommentcount;
-        //获取点赞数量
-        $clickarticle=$this->mayao_models->clickarticle($aid);
-        $clickarticlecount=count($clickarticle);
-        $arr['clickarticle']=$clickarticlecount;
+public function article()
+{
+    $models=$this->load->model("mayao_models");
+    $arr=$this->mayao_models->articleone();
+    echo json_encode($arr);
+}
+    //文章所属的分类接口
+    public function gettype(){
+        $models=$this->load->model("mayao_models");
+        $brr=$this->mayao_models->getdirection();
+       echo json_encode($brr);
     }
-   echo json_encode($arr);
+    //点击上方分类然后根据类型匹配数据
+public function typearticle(){
+    $atype=empty($_GET['atype'])?"":$_GET['atype'];
+    $models=$this->load->model("mayao_models");
+    if($atype==""){
+        $data=array(
+            'state'=>100,
+            'msg'=>'没有该分类文章'
+
+        );
+    }else if($atype=="6"){
+        $data=$this->mayao_models->articleone();
+    }else {
+        $data = $this->mayao_models->gettypearticle($atype);
+    }
+   echo json_encode($data);
 }
     //文章详情页接口
-    public function articlecontent(){
-        $model=$this->load->model("mayao_models");
+    public function articlecontent()
+    {
         $aid=empty($_GET['aid'])?"":$_GET['aid'];
-
+       $models=$this->load->model("mayao_models");
         if($aid==""){
             $data=array(
-                'state'=>'10010',
-                'msg'=>'没有该文章详情'
+                'state'=>100,
+                'msg'=>'没有该文章信息'
+            );
+        }else {
+            $data = $this->mayao_models->contentone($aid);
+            $clickarticle=$this->mayao_models->clickarticle($aid);
+            $clcikcount=count($clickarticle);
+            $data['clickarticle']=$clcikcount;
+            $clickcomment=$this->mayao_models->clickcomment($aid);
+            if(empty($clickcomment)){
+             $clickcomment=array(
+                 'state'=>101,
+                 'msg'=>'该文章没有评论'
+             );
+                $data['clickcomment']=$clickcomment;
+            }else {
+                $data['clickcomment'] = $clickcomment;
+            }
+        }
+      echo json_encode($data);
+    }
+    //评论接口
+    public function addcomment(){
+        $aid=empty($_GET['aid'])?"":$_GET['aid'];
+        $cuser=empty($_GET['cuser'])?"":$_GET['cuser'];
+        $ctime=empty($_GET['ctime'])?"":$_GET['ctime'];
+        $ccomment=empty($_GET['ccomment'])?"":$_GET['ccomment'];
+        if(empty($aid)){
+            $data=array(
+                'state'=>100,
+                'msg'=>'文章id不能为空'
+            );
+        }else if(empty($cuser)){
+            $data=array(
+                'state'=>101,
+                'msg'=>'评论的用户名称不能为空'
+            );
+        }else if(empty($ctime)){
+            $data=array(
+                'state'=>102,
+                'msg'=>'评论添加时间不能为空'
+            );
+        }else if(empty($ccomment)){
+            $data=array(
+                'state'=>103,
+                'msg'=>'评论内容不能为空'
             );
         }else{
-        $data=$this->mayao_models->getarticlecontent($aid);
-            if($data==""){
+       $models=$this->load->model("mayao_models");
+            $data=$this->mayao_models->getcomment($aid,$cuser,$ctime,$ccomment);
+         if($data=="1"){
+             $data=array(
+                 'state'=>200,
+                 'msg'=>'评论成功'
+             );
+         }
+        }
+     echo json_encode($data);
+    }
+    //回复接口
+    public function reply(){
+        $aid=empty($_GET['aid'])?"":$_GET['aid'];
+        $cuser=empty($_GET['cuser'])?"":$_GET['cuser'];
+        $ctime=empty($_GET['ctime'])?"":$_GET['ctime'];
+        $ccomment=empty($_GET['ccomment'])?"":$_GET['ccomment'];
+     if(!empty($cuser)){
+         $cuser="@".$cuser;
+     }
+        if(empty($aid)){
+            $data=array(
+                'state'=>100,
+                'msg'=>'文章id不能为空'
+            );
+        }else if(empty($cuser)){
+            $data=array(
+                'state'=>101,
+                'msg'=>'被回复的用户不能为空'
+            );
+        }else if(empty($ctime)){
+            $data=array(
+                'state'=>102,
+                'msg'=>'回复添加时间不能为空'
+            );
+        }else if(empty($ccomment)){
+            $data=array(
+                'state'=>103,
+                'msg'=>'回复内容不能为空'
+            );
+        }else{
+            $models=$this->load->model("mayao_models");
+            $data=$this->mayao_models->getcomment($aid,$cuser,$ctime,$ccomment);
+            if($data=="1"){
                 $data=array(
-                    'state'=>'10010',
-                    'msg'=>'没有该文章详情'
+                    'state'=>200,
+                    'msg'=>'回复成功'
                 );
             }
         }
