@@ -73,5 +73,14 @@ class Mayao_models extends CI_Model
         );
         return $this->db->insert('acomment',$arr);
     }
+    //文章搜索接口
+    public function articles($d_name){
+        return $this->db->join("direction","article.atype=direction.d_id")->where("d_name like '%$d_name%'")->select('aid,aname,d_name,look,acontent')->get("article")->result_array();
+    }
+    //搜索接口two
+    public function articlestwo($aname){
+
+        return $this->db->join("direction","direction.d_id=article.atype")->where("aname like '%$aname%'")->select('aid,aname,d_name,look,acontent')->get("article")->result_array();
+    }
 }
 ?>
